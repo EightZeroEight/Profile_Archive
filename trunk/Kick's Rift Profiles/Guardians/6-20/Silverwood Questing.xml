@@ -127,11 +127,124 @@
     <PickUpQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	<PickUpQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
 	
+		<UseItemOnMobsObjective Quest="Divine Inspiration" Item="Sigil of Inspiration" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Guardian Sentry</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6199.271" Y="830.579" Z="3829.679" />
+				<Hotspot X="6184.914" Y="831.4158" Z="3860.701" />
+				<Hotspot X="6161.475" Y="831.4333" Z="3877.123" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Ghastly Tinder" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Wanton Tinder</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6154.379" Y="829.2518" Z="3847.431" />
+				<Hotspot X="6155.885" Y="828.6653" Z="3809.895" />
+				<Hotspot X="6132.021" Y="828.7676" Z="3780.637" />
+				<Hotspot X="6144.372" Y="828.6712" Z="3754.013" />
+				<Hotspot X="6167.714" Y="829.5905" Z="3748.34" />
+				<Hotspot X="6207.292" Y="828.6207" Z="3779.03" />	
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Offworld Woes" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Wanton Destroyer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6154.379" Y="829.2518" Z="3847.431" />
+				<Hotspot X="6155.885" Y="828.6653" Z="3809.895" />
+				<Hotspot X="6132.021" Y="828.7676" Z="3780.637" />
+				<Hotspot X="6144.372" Y="828.6712" Z="3754.013" />
+				<Hotspot X="6167.714" Y="829.5905" Z="3748.34" />
+				<Hotspot X="6207.292" Y="828.6207" Z="3779.03" />	
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Ghastly Tinder" Reward="1" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
+	<PickUpQuest Name="Out of the Hands of Evil" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
+    <TurnInQuest Name="Divine Inspiration" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <TurnInQuest Name="Offworld Woes" Reward="1" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" /> <!-- if condition me is cleric, Reward="4"  (shield) or caster cleric - 3. 1 is rogue (dagger), 2 is warrior (shield), 3 is off hand cleric / mage -->
+    <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	
+		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Reliquary of Thontic</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6310.467" Y="820.5375" Z="3842.31" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseItemOnMobsObjective Quest="Wanton Flame" Item="Spear of Light" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area> <!-- this might be just a /use at location -->
+			<Mobs>
+			  <Mob>Specter of Maelforge</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6342.104" Y="821.127" Z="3797.997" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Reliquary of Tavril</Object>
+			</Objects>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+	<PickUpQuest Name="Recovered Notes" Npc="Scattered Stones"  <!-- a rock - turns in to Legate Nathen Creen -->
+
+		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Reliquary of Bahralt</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6319.979" Y="852.2883" Z="3693.153" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Help From Above" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 	
+	<!-- Reward="1" 
 	
+	<TurnInQuest Name="Out of the Hands of Evil" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
+    <TurnInQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <TurnInQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	
-	
+	<TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen"  <!-- a rock - turns in to Legate Nathen Creen -->
+	-->
 	
 	
 	
