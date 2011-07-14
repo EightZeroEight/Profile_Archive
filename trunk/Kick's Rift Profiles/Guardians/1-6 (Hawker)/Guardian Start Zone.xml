@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <LoadMesh Name="Guardian 1-6" />
+
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+          <!-- Valor Hold -->
+          <Vendor X="1046.511" Y="838.4155" Z="1067.127" />
+        </Vendors>
+      </Vendor>
+    </AddJob>
+
+    <PickUpQuest Name="Chosen" Npc="Messenger of the Vigil" X="1115.46" Y="920.0596" Z="1438.771" />
+
+    <If Condition="HasQuest(&quot;Chosen&quot;)">
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <TurnInQuest Name="Chosen" Npc="Sanctuary Warden" X="1122.715" Y="905.0605" Z="1393.072" Reward="2" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <TurnInQuest Name="Chosen" Npc="Sanctuary Warden" X="1122.715" Y="905.0605" Z="1393.072" Reward="8" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <TurnInQuest Name="Chosen" Npc="Sanctuary Warden" X="1122.715" Y="905.0605" Z="1393.072" Reward="2" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <!-- Beastmaster 1 Champion 2 Paladin 3 -->
+        <TurnInQuest Name="Chosen" Npc="Sanctuary Warden" X="1122.715" Y="905.0605" Z="1393.072" Reward="2" />
+      </If>
+    </If>
+
+    <PickUpQuest Name="Ascended Allies" Npc="Sanctuary Warden" X="1122.715" Y="905.0605" Z="1393.072" />
+    <TurnInQuest Name="Ascended Allies" Npc="Fayne Doran" X="1150.96" Y="898.661" Z="1346.83" />
+
+    <PickUpQuest Name="Avenging Hand" Npc="Fayne Doran" X="1150.96" Y="898.661" Z="1346.83" />
+
+    <If Condition="HasQuest(&quot;Avenging Hand&quot;)">
+      <MoveTo X="1063.53" Y="898.6801" Z="1403.153" />
+      <Wait Seconds="5" />
+    </If>
+
+    <KillMobsObjective Quest="Avenging Hand" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Ashen Defiler</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1057.82" Y="898.3577" Z="1406.715" />
+          <Hotspot X="1104.836" Y="900.3302" Z="1360.544" />
+          <Hotspot X="1169.217" Y="900.6133" Z="1393.862" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <TurnInQuest Name="Avenging Hand" Npc="Fayne Doran" X="1150.96" Y="898.661" Z="1346.83" />
+
+    <PickUpQuest Name="Steel Reckoning" Npc="Fayne Doran" X="1150.96" Y="898.661" Z="1346.83" />
+
+    <PickUpQuest Name="Knights of Aedraxis" Npc="Orin Bancroft" X="1155.742" Y="898.6946" Z="1349.398" />
+
+    <KillMobsObjective Quest="Knights of Aedraxis" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Corrupted Knight</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1219.037" Y="885.2656" Z="1387.16" />
+          <Hotspot X="1208.895" Y="885.2656" Z="1348.847" />
+          <Hotspot X="1242.519" Y="871.1293" Z="1288.69" />
+          <Hotspot X="1195.034" Y="860.6699" Z="1237.384" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <UseObjectsObjective Quest="Steel Reckoning" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Imbued Sword</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1180.135" Y="861.4919" Z="1235.556" />
+          <Hotspot X="1214.493" Y="864.9528" Z="1239.369" />
+          <Hotspot X="1218.781" Y="874.7558" Z="1307.836" />
+          <Hotspot X="1248.316" Y="871.8511" Z="1309.749" />
+          <Hotspot X="1224.161" Y="885.231" Z="1383.871" />
+
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <TurnInQuest Name="Steel Reckoning" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" />
+    <PickUpQuest Name="Unholy Shackles" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" />
+
+    <If Condition="HasQuest(&quot;Unholy Shackles&quot;)">
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <TurnInQuest Name="Knights of Aedraxis" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" Reward="3" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Maul&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <TurnInQuest Name="Knights of Aedraxis" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" Reward="7" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Greatstaff&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <TurnInQuest Name="Knights of Aedraxis" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" Reward="5" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Dagger&quot;)" />
+        <Wait Seconds="1" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Longbow&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <TurnInQuest Name="Knights of Aedraxis" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" Reward="2" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Axe&quot;)" />
+        <Wait Seconds="1" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Ascension Longbow&quot;)" />
+      </If>
+    </If>
+
+    <PickUpQuest Name="Weakened Ward" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" />
+
+    <UseObjectsObjective Quest="Unholy Shackles" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Morbid Infuser</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1253.689" Y="864.0236" Z="1201.433" />
+          <Hotspot X="1232.363" Y="864.0146" Z="1226.179" />
+          <Hotspot X="1207.796" Y="860.2193" Z="1169.812" />
+          <Hotspot X="1127.591" Y="863.2404" Z="1250.406" />
+          <Hotspot X="1146.566" Y="863.2504" Z="1265.734" />
+          <Hotspot X="1168.531" Y="863.2504" Z="1254.048" />
+          <Hotspot X="1099.871" Y="860.2217" Z="1183.046" />
+          <Hotspot X="1136.122" Y="860.2217" Z="1199.159" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <KillMobsObjective Quest="Weakened Ward" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Ardenburgh Horror</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1253.689" Y="864.0236" Z="1201.433" />
+          <Hotspot X="1232.363" Y="864.0146" Z="1226.179" />
+          <Hotspot X="1207.796" Y="860.2193" Z="1169.812" />
+          <Hotspot X="1127.591" Y="863.2404" Z="1250.406" />
+          <Hotspot X="1146.566" Y="863.2504" Z="1265.734" />
+          <Hotspot X="1168.531" Y="863.2504" Z="1254.048" />
+          <Hotspot X="1099.871" Y="860.2217" Z="1183.046" />
+          <Hotspot X="1136.122" Y="860.2217" Z="1199.159" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <TurnInQuest Name="Unholy Shackles" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" Reward="1" />
+     <If Condition="HasQuest(&quot;Weakened Ward&quot;)">
+   <TurnInQuest Name="Weakened Ward" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" />
+      <Wait Seconds="5" />
+    </If>
+
+    <If Condition="HasQuestAvailable(&quot;Thomas Penthas&quot;)">
+      <PickUpQuest Name="Mathosian Inquisition" Npc="Thomas Penthas" X="1202.001" Y="860.9378" Z="1198.544" />
+      <Wait Seconds="1" />
+      <Python Statement = "GigaRift.Me.ClearTarget()" />
+    </If>
+
+    <UseObjectsObjective Quest="Mathosian Inquisition" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Altar of Thedeor</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1157.402" Y="860.5017" Z="1153.597" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <UseItemOnMobsObjective Quest="Mathosian Inquisition" Item="Mathosian Shield" CastTime="3" Cooldown="4" WhenDead="False" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Thrall</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1085.602" Y="860.2195" Z="1225.681" />
+          <Hotspot X="1058.269" Y="860.2195" Z="1253.537" />
+          <Hotspot X="1099.311" Y="860.2095" Z="1248.385" />
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+    <TurnInQuest Name="Mathosian Inquisition" Npc="Thomas Penthas" X="1202.001" Y="860.9378" Z="1198.544" />
+
+    <If Condition="not SpellManager.HasSpell(&quot;Angelic Flight&quot;) and not SpellManager.HasSpell(&quot;Motivational Roar&quot;)">
+      <If Condition="HasQuestAvailable(&quot;Borrin Gammult&quot;)">
+        <PickUpQuest Name="Dwarven Inquisition" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" />
+        <Wait Seconds="1" />
+        <Python Statement = "GigaRift.Me.ClearTarget()" />
+      </If>
+    </If>
+
+    <UseObjectsObjective Quest="Dwarven Inquisition" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Altar of Bahralt</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1113.425" Y="860.931" Z="1216.395" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <UseItemOnMobsObjective Quest="Dwarven Inquisition" Item="Dwarven Hammer" CastTime="5" Cooldown="4" WhenDead="False" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Thrall</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1085.602" Y="860.2195" Z="1225.681" />
+          <Hotspot X="1058.269" Y="860.2195" Z="1253.537" />
+          <Hotspot X="1099.311" Y="860.2095" Z="1248.385" />
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+    <TurnInQuest Name="Dwarven Inquisition" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" />
+
+    <If Condition="HasQuestAvailable(&quot;Shyla Starhearth&quot;)">
+      <PickUpQuest Name="High Elven Inquisition" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" />
+      <Wait Seconds="1" />
+      <Python Statement = "GigaRift.Me.ClearTarget()" />
+    </If>
+
+    <UseObjectsObjective Quest="High Elven Inquisition" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Altar of Tavril</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1107.538" Y="864.1046" Z="1284.477"/>
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <UseItemOnMobsObjective Quest="High Elven Inquisition" Item="Elven Dagger" CastTime="5" Cooldown="4" WhenDead="False" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Thrall</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1085.602" Y="860.2195" Z="1225.681" />
+          <Hotspot X="1058.269" Y="860.2195" Z="1253.537" />
+          <Hotspot X="1099.311" Y="860.2095" Z="1248.385" />
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+    <TurnInQuest Name="High Elven Inquisition" Npc="Shyla Starhearth" X="1198.219" Y="860.9377" Z="1199.823" />
+
+    <PickUpQuest Name="Uncivil War" Npc="Borrin Gammult" X="1198.608" Y="860.158" Z="1203.882" />
+    <TurnInQuest Name="Uncivil War" Npc="Brother Jebiah" X="1117.545" Y="860.1392" Z="1158.779" />
+
+    <PickUpQuest Name="Sourcestone" Npc="Brother Jebiah" X="1117.545" Y="860.1392" Z="1158.779" />
+    <PickUpQuest Name="Betrayers" Npc="Tam Daggerborne" X="1125.233" Y="860.1434" Z="1158.427"/>
+
+    <If Condition="HasQuest(&quot;Sourcestone&quot;)">
+      <Wait Seconds="2" />
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Hauberk of the Savior&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Vestments of the Savior&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Jerkin of the Savior&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Cuirass of the Savior&quot;)" />
+      </If>
+      <Wait Seconds="2" />
+      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Timeworn Pouch&quot;)" />
+      <Wait Seconds="2" />
+      <If Condition="GigaRift.Frames.YesNoDialogFrame.IsVisible">
+        <Python Statement="GigaRift.Frames.YesNoDialogFrame.ClickYes()" />
+      </If>
+    </If>
+
+    <UseObjectsObjective Quest="Sourcestone" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Sourcestone Core</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1155.467" Y="846.5281" Z="1076.622" />
+          <Hotspot X="1136.891" Y="848.2775" Z="1080.082" />
+          <Hotspot X="1122.056" Y="848.0276" Z="1106.848" />
+          <Hotspot X="1055.579" Y="844.7117" Z="1132.471" />
+          <Hotspot X="1026.937" Y="848.0061" Z="1181.265" />
+          <Hotspot X="1036.894" Y="847.9985" Z="1171.487" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <KillMobsObjective Quest="Betrayers" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Defiant Thaumaturge</Mob>
+          <Mob>Defiant Traitor</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1155.467" Y="846.5281" Z="1076.622" />
+          <Hotspot X="1136.891" Y="848.2775" Z="1080.082" />
+          <Hotspot X="1122.056" Y="848.0276" Z="1106.848" />
+          <Hotspot X="1055.579" Y="844.7117" Z="1132.471" />
+          <Hotspot X="1026.937" Y="848.0061" Z="1181.265" />
+          <Hotspot X="1036.894" Y="847.9985" Z="1171.487" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <KillMobsObjective Quest="Betrayers" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Defiant Thaumaturge</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1155.467" Y="846.5281" Z="1076.622" />
+          <Hotspot X="1136.891" Y="848.2775" Z="1080.082" />
+          <Hotspot X="1122.056" Y="848.0276" Z="1106.848" />
+          <Hotspot X="1055.579" Y="844.7117" Z="1132.471" />
+          <Hotspot X="1026.937" Y="848.0061" Z="1181.265" />
+          <Hotspot X="1036.894" Y="847.9985" Z="1171.487" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <TurnInQuest Name="Betrayers" Npc="Tam Daggerborne" X="1125.233" Y="860.1434" Z="1158.427"/>
+
+    <TurnInQuest Name="Sourcestone" Npc="Brother Jebiah" X="1117.545" Y="860.1392" Z="1158.779" />
+
+    <PickUpQuest Name="Rifts Between Worlds" Npc="Brother Jebiah" X="1117.545" Y="860.1392" Z="1158.779" />
+
+    <If Condition="HasQuest(&quot;Rifts Between Worlds&quot;)">
+      <Wait Seconds="2" />
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Consecrated Linked Boots&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Consecrated Woven Boots&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Consecrated Embossed Boots&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Consecrated Hammered Boots&quot;)" />
+      </If>
+      <Wait Seconds="2" />
+      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Timeworn Pouch&quot;)" />
+      <Wait Seconds="2" />
+      <If Condition="GigaRift.Frames.YesNoDialogFrame.IsVisible">
+        <Python Statement="GigaRift.Frames.YesNoDialogFrame.ClickYes()" />
+      </If>
+    </If>
+
+    <UseItemOnMobsObjective Quest="Rifts Between Worlds" Item="Imbued Sigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Defiant Construct</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1152.826" Y="845.7465" Z="1046.745" />
+          <Hotspot X="1151.028" Y="846.2437" Z="1043.048" />
+          <Hotspot X="1138.31" Y="844.6808" Z="1043.755" />
+          <Hotspot  X="1126.004" Y="842.4066" Z="1037.205" />
+          <Hotspot X="1113.776" Y="842.3937" Z="1035.457" />
+          <Hotspot X="1113.922" Y="842.4" Z="1035.704" />
+          <Hotspot X="1116.195" Y="843.9556" Z="1053.077" />
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+    <TurnInQuest Name="Rifts Between Worlds" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+
+    <PickUpQuest Name="Brood of Regulos" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+
+    <If Condition="HasQuest(&quot;Brood of Regulos&quot;)">
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <PickUpQuest Name="Path of the Righteous" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+        <TurnInQuest Name="Path of the Righteous"  Npc="Enora Malorim" X="1027.528" Y="838.2434" Z="1070.54" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Hallowed Protector's Fascia&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <PickUpQuest Name="Principles of War" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+        <TurnInQuest Name="Principles of War" Npc="Brael Worthon" X="1056.168" Y="838.1934" Z="1047.049" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Hallowed Protector's Sash&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <PickUpQuest Name="A Nimble Art" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+        <TurnInQuest Name="A Nimble Art" Npc="Rovena Karn" X="1066.735" Y="838.2427" Z="1045.704" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Hallowed Protector's Belt&quot;)" />
+      </If>
+
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <PickUpQuest Name="Principles of War" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+        <TurnInQuest Name="Principles of War" Npc="Garig Nitmer" X="1037.504" Y="838.2434" Z="1073.528" />
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Hallowed Protector's Girdle&quot;)" />
+      </If>
+    </If>
+
+    <If Condition="HasQuest(&quot;Brood of Regulos&quot;)">
+      <MoveTo X="1118.211" Y="835.4714" Z="987.4492" />
+      <Wait Seconds="2" />
+      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Warding Orb of the Vigil&quot;)" />
+      <Wait Seconds="5" />
+    </If>
+
+    <Escort Npc="Carwin Mathos" Quest="Brood of Regulos" Tracking="2" />
+
+    <KillMobsObjective Quest="Brood of Regulos" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Spawn of Regulos</Mob>
+          <Mob>Deathbound Captain</Mob>
+          <Mob>Deathbound Knight</Mob>
+          <Mob>Deathbound Rogue</Mob>
+          <Mob>Deathbound Soldier</Mob>
+        </Mobs>
+      </Area>
+    </KillMobsObjective>
+
+    <TurnInQuest Name="Brood of Regulos" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+    <PickUpQuest Name="The Pariah" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+
+    <PickUpQuest Name="Fields Run Red" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+
+    <If Condition="HasQuest(&quot;Fields Run Red&quot;)">
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Grips of Sacrifice&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Handwraps of Sacrifice&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Gloves of Sacrifice&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Gauntlets of Sacrifice&quot;)" />
+      </If>
+    </If>
+
+    <KillMobsObjective Quest="Fields Run Red" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Captain</Mob>
+          <Mob>Deathbound Sorcerer</Mob>
+          <Mob>Deathbound Knight</Mob>
+          <Mob>Deathbound Rogue</Mob>
+          <Mob>Deathbound Soldier</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1114.532" Y="835.3946" Z="1015.586" />
+          <Hotspot X="1156.939" Y="836.8889" Z="1002.88" />
+          <Hotspot X="1156.263" Y="835.0947" Z="978.5585" />
+          <Hotspot X="1165.051" Y="835.537" Z="961.6164" />
+          <Hotspot X="1126.597" Y="834.8327" Z="950.8466" />
+          <Hotspot X="1074.077" Y="834.321" Z="970.8588" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <KillMobsObjective Quest="Fields Run Red" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Captain</Mob>
+          <Mob>Deathbound Sorcerer</Mob>
+          <Mob>Deathbound Knight</Mob>
+          <Mob>Deathbound Rogue</Mob>
+          <Mob>Deathbound Soldier</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1114.532" Y="835.3946" Z="1015.586" />
+          <Hotspot X="1156.939" Y="836.8889" Z="1002.88" />
+          <Hotspot X="1156.263" Y="835.0947" Z="978.5585" />
+          <Hotspot X="1165.051" Y="835.537" Z="961.6164" />
+          <Hotspot X="1126.597" Y="834.8327" Z="950.8466" />
+          <Hotspot X="1074.077" Y="834.321" Z="970.8588" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <KillMobsObjective Quest="Fields Run Red" Tracking="3">
+      <Area>
+        <Mobs>
+          <Mob>Deathbound Captain</Mob>
+          <Mob>Deathbound Sorcerer</Mob>
+          <Mob>Deathbound Knight</Mob>
+          <Mob>Deathbound Rogue</Mob>
+          <Mob>Deathbound Soldier</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1114.532" Y="835.3946" Z="1015.586" />
+          <Hotspot X="1156.939" Y="836.8889" Z="1002.88" />
+          <Hotspot X="1156.263" Y="835.0947" Z="978.5585" />
+          <Hotspot X="1165.051" Y="835.537" Z="961.6164" />
+          <Hotspot X="1126.597" Y="834.8327" Z="950.8466" />
+          <Hotspot X="1074.077" Y="834.321" Z="970.8588" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <TurnInQuest Name="Fields Run Red" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" Reward="5"/>
+    <PickUpQuest Name="Rightful Owners" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+
+    <If Condition="HasQuest(&quot;Rightful Owners&quot;)">
+      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Flamewrought Bag&quot;)" />
+    </If>
+
+    <KillMobsObjective Quest="Rightful Owners" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob>Carrior Flayer</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1144.473" Y="847.6377" Z="919.1944" />
+          <Hotspot X="1106.995" Y="869.8164" Z="834.8453" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <UseObjectsObjective Quest="The Pariah" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Orphiel's Corruptor</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="1094.573" Y="872.217" Z="890.0643" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <KillMobsObjective Quest="Fields Run Red" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob>Ethect</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="1092.038" Y="872.2197" Z="894.6619" />
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <If Condition="HasQuest(&quot;The Pariah&quot;)">
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <TurnInQuest Name="The Pariah" Npc="Messenger of the Vigil" X="1061.051" Y="870.9924" Z="919.6915" Reward="5"  />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <TurnInQuest Name="The Pariah" Npc="Messenger of the Vigil" X="1062.873" Y="870.9764" Z="919.1137" Reward="4" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <TurnInQuest Name="The Pariah" Npc="Messenger of the Vigil" X="1061.051" Y="870.9924" Z="919.6915"  Reward="2" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <TurnInQuest Name="The Pariah" Npc="Messenger of the Vigil" X="1061.051" Y="870.9924" Z="919.6915" Reward="1" />
+      </If>
+    </If>
+
+    <TurnInQuest Name="Rightful Owners" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+
+    <PickUpQuest Name="Shot in the Back" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+
+    <UseObjectsObjective Quest="Shot in the Back" Tracking="2">
+      <Area>
+        <Objects>
+          <Object>Catapult</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot X="890.3459" Y="824.3467" Z="972.9332" />
+          <Hotspot X="965.1609" Y="828.536" Z="948.2401" />
+          <Hotspot X="1002.549" Y="828.3784" Z="908.4467" />
+          <Hotspot X="889.8068" Y="827.5898" Z="1026.353" />
+          <Hotspot X="864.6838" Y="834.8713" Z="1073.865" />
+          <Hotspot X="1047.703" Y="833.9073" Z="901.2239" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+     <If Condition="HasQuest(&quot;Shot in the Back&quot;)">
+   <TurnInQuest Name="Shot in the Back" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
+       <Wait Seconds="5" />
+   </If>
+
+    <PickUpQuest Name="Gathering Strength" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+
+    <If Condition="HasQuest(&quot;Gathering Strength&quot;)">
+      <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leg Guards&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Mage">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Leggings&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Rogue">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Trousers&quot;)" />
+      </If>
+      <If Condition="GigaRift.Me.Class == UnitClass.Warrior">
+        <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Relentless Greaves&quot;)" />
+      </If>
+
+      <MoveTo X="933.2256" Y="825.3702" Z="971.3724" />
+
+      <UseItemOnMobsObjective Quest="Gathering Strength" Item="Cyril's Bridle" CastTime="3" Cooldown="4" WhenDead="False" Tracking="1">
+        <Area>
+          <Mobs>
+            <Mob>Shadetouched Horse</Mob>
+          </Mobs>
+          <Hotspots>
+            <Hotspot X="933.2256" Y="825.3702" Z="971.3724" />
+          </Hotspots>
+        </Area>
+      </UseItemOnMobsObjective>
+
+	  <!-- if condition me is on vehicle / transport ? -->
+	  <RemoveJob>
+		<Job Name="HandleCombat" />
+	  </RemoveJob>
+      <!--Bring horse to stable-->
+      <MoveTo X="1039.698" Y="838.2992" Z="1044.713" />
+
+		<AddJob>
+			<HandleCombat />
+		</AddJob>
+    </If>
+
+    <TurnInQuest Name="Gathering Strength" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" Reward="1"/>
+
+    <PickUpQuest Name="A Dim, Dark Eye" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
+
+    <If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
+
+      <MoveTo X="881.4838" Y="824.8659" Z="943.6005" />
+      <Wait Seconds="2" />
+    </If>
+
+    <UseObjectsObjective Quest="A Dim, Dark Eye" Tracking="1">
+      <Area>
+        <Objects>
+          <Object>Rift Generator</Object>
+        </Objects>
+        <Hotspots>
+          <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
+          <Hotspot X="811.6838" Y="843.201" Z="891.847" />
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <Escort Npc="Borrin Gammult" Quest="Brood of Regulos" Tracking="2" /> <!-- Escort fails.  so we'll need to put in vile drake x2, ettin x2 -->
+
+    <UseItemOnMobsObjective Quest="A Dim, Dark Eye" Item="Hammer of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="3">
+      <Area>
+        <Mobs>
+          <Mob>Shade of Regulos</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
+          <Hotspot X="811.6838" Y="843.201" Z="891.847" />
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+    <If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
+      <Wait Seconds="45" /> <!-- Video -->
+    </If>
+
+  </Tasks>
+  <!-- Auto Load 6-20 profile.    ..\6-20\SilverwoodQuesting.xml   at least that's the name it is currently -->
+</Profile>

@@ -1,0 +1,134 @@
+<Profile>
+
+
+
+	<PickUpQuest Name=""  />
+	<TurnInQuest Name=""  Reward="1" />
+
+
+    <If Condition="HasQuest(&quot;&quot;)">
+    </If>
+	
+	<!-- Npc Name -->
+    <If Condition="HasQuestAvailable(&quot;&quot;)">
+    </If>
+
+
+
+      <MoveTo  />
+      <Wait Seconds="" />
+
+      <Wait Seconds="1" />
+      <Python Statement = "GigaRift.Me.ClearTarget()" />
+
+    <KillMobsObjective Quest="" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob></Mob>
+        </Mobs>
+        <Hotspots>
+		
+        </Hotspots>
+      </Area>
+    </KillMobsObjective>
+
+    <UseObjectsObjective Quest="" Tracking="1">
+      <Area>
+        <Objects>
+          <Object></Object>
+        </Objects>
+        <Hotspots>
+		
+        </Hotspots>
+      </Area>
+    </UseObjectsObjective>
+
+    <UseItemOnMobsObjective Quest="" Item="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+      <Area>
+        <Mobs>
+          <Mob></Mob>
+        </Mobs>
+        <Hotspots>
+
+        </Hotspots>
+      </Area>
+    </UseItemOnMobsObjective>
+
+
+
+
+
+
+
+
+
+
+
+    <If Condition="HasQuest(&quot;&quot;)">
+      <MoveTo  />
+      <Wait Seconds="2" />
+      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use itemnamehere&quot;)" />
+      <Wait Seconds="5" />
+    </If>
+
+    <Escort Npc="" Quest=""Tracking="2" />
+
+    <KillMobsObjective Quest="" Tracking="2">
+      <Area>
+        <Mobs>
+          <Mob></Mob>
+          <Mob></Mob>
+          <Mob></Mob>
+        </Mobs>
+      </Area>
+    </KillMobsObjective>
+
+
+      <Else>
+        <Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct soul!&quot;)" />
+        <Python Statement="GigaBot.Stop()" />
+      </Else>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</Profile>
