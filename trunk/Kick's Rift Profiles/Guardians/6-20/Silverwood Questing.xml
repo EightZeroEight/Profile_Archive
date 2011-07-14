@@ -25,6 +25,7 @@
     <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
 
     <If Condition="HasQuest(&quot;The Return&quot;)">
+		<!-- click gossip 1, 2 times per npc -->
       <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="What happened" />
       <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="I am here" />
       <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="What happened" />
@@ -36,6 +37,7 @@
     <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
 
     <If Condition="HasQuest(&quot;Last Breath&quot;)">
+		<!-- click gossip 1, 2 times per npc -->
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="Wake Up" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Text="With the" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Text="The Guardian" />
@@ -47,6 +49,149 @@
     </If>
 
     <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+	<PickUpQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+	
+		<If Condition="HasQuest(&quot;Fire Upon the Water&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't collect water nor uses the Guardian Catapult&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!-- doesn't use / collect the bucket, and it doesn't use the Guardian Catapult (interactwith).  After i turned in this quest, i added the mesh for buckets and catapults, so let me know if it works or not -->
+		
+		<UseObjectsObjective Quest="Fire Upon the Water" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Water Bucket</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6165.36" Y="820.3151" Z="3984.948" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		  <MoveTo X="6177.874" Y="820.4697" Z="3955.326" />
+		  <Wait Seconds="3" />
+		  
+		<UseObjectsObjective Quest="Fire Upon the Water" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Guardian Catapult</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6178.449" Y="820.4684" Z="3956.304" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		</If>
+	
+	<TurnInQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+ 	<PickUpQuest Name="Moral Chasm" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+	
+		<If Condition="HasQuest(&quot;Moral Chasm&quot;)">
+			<UseObjectsObjective Quest="Moral Chasm" Tracking="1">
+			  <Area>
+				<Objects>
+				  <Object>Guardian Corpse</Object>
+				</Objects>
+				<Hotspots>
+					<Hotspot X="6127.907" Y="857.1672" Z="4004.832" />
+				</Hotspots>
+			  </Area>
+			</UseObjectsObjective>
+
+			<!-- Toon falls into water and off of bridge here
+		<UseItemOnMobsObjective Quest="Moral Chasm" Item="Harrowing Talisman" CastTime="1000" Cooldown="5000" WhenDead="False" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Centurion Osteneer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6139.415" Y="866.2838" Z="4106.292"/> // his hotspot across the bridge \\
+				<Hotspot X="6135.959" Y="866.2277" Z="4067.066" /> // my position on the bridge.  looks like a 60 yard range \\
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		 -->
+		 
+		  <MoveTo  X="6135.959" Y="866.2277" Z="4067.066" />
+		  <Wait Seconds="1" />
+		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Centurion Osteneer&quot;)" />
+		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Harrowing Talisman&quot;)" />
+		  <Wait Seconds="5" />
+		
+		</If>
+	
+    <TurnInQuest Name="Moral Chasm" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+	<PickUpQuest Name="The Holy Forest" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+		<!-- if con hasquest holy forest, force train -->
+    <TurnInQuest Name="The Holy Forest" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <PickUpQuest Name="Divine Inspiration" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <PickUpQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+	<PickUpQuest Name="Ghastly Tinder" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
     <Loop />
   </Tasks>
