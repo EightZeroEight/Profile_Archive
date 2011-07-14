@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <LoadMesh Name="Guardian 6-20" />
+
+    <If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+      <TurnInQuest Name="A Dim, Dark Eye" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" Reward="3" />
+
+      <ElseIf Condition="Me.Class == UnitClass.Rogue">
+        <TurnInQuest Name="Thorn in My Side" Npc="Asha Catari" X="602.5042" Y="37.95127" Z="1008.978" Reward="5" />
+      </ElseIf>
+      <ElseIf Condition="Me.Class == UnitClass.Mage">
+        <TurnInQuest Name="Thorn in My Side" Npc="Asha Catari" X="602.5042" Y="37.95127" Z="1008.978" Reward="7" />
+      </ElseIf>
+      <ElseIf Condition="Me.Class == UnitClass.Warrior">
+        <TurnInQuest Name="Thorn in My Side" Npc="Asha Catari" X="602.5042" Y="37.95127" Z="1008.978" Reward="2" />
+      </ElseIf>
+      <Else>
+        <Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct soul!&quot;)" />
+        <Python Statement="GigaBot.Stop()" />
+      </Else>
+    </If>
+
+    <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
+
+    <If Condition="HasQuest(&quot;The Return&quot;)">
+      <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="What happened" />
+      <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="I am here" />
+      <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="What happened" />
+      <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="We will" />
+    </If>
+
+    <TurnInQuest Name="The Return" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
+
+    <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
+
+    <If Condition="HasQuest(&quot;Last Breath&quot;)">
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="Wake Up" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Text="With the" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Text="The Guardian" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6042.759" Y="819.0661" Z="4065.603" Text="We will" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6079.757" Y="819.0661" Z="4073.073"  Text="We will" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Text="We will" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Text="We will" />
+      <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="We will" />
+    </If>
+
+    <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
+
+    <Loop />
+  </Tasks>
+</Profile>
