@@ -514,7 +514,34 @@
 		<!-- if con hasquest - forcetrain -->
 	<TurnInQuest Name="Brougan Grote" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
 	<PickUpQuest Name="Border Town" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+	<PickUpQuest Name="The Art of Soul Binding" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" />
+	<TurnInQuest Name="The Art of Soul Binding" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" /> <!-- Learn Soul Recall (Hearthstone).  We are now set to Argent Glade -->
+	<PickUpQuest Name="The Planar Porticulum" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" /> <!-- Turnin later -->
+	<PickUpQuest Name="Midterm Mayhem" Npc="Alan Paton" X="5958.44" Y="812.1588" Z="3061.015" />
+	<PickUpQuest Name="Required Reading" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="Teachers Pet" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	
+		<UseItemOnMobsObjective Quest="Midterm Mayhem" Item="Alan's Polymorph Wand" CastTime="3" Cooldown="3" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Student</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5974.913" Y="812.1876" Z="3019.729" />
+				<Hotspot X="5957.734" Y="812.2322" Z="3012.873" />
+				<Hotspot X="5898.178" Y="817.9121" Z="3035.032" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<!--
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	<PickUpQuest Name="" 
+	-->
 	
 	
 	
