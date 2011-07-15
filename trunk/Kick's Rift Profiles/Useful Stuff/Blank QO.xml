@@ -55,6 +55,11 @@
 		</KillMobsObjective>
 
 
+		<If Condition="HasQuest(&quot;&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't  &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		
 
 
 

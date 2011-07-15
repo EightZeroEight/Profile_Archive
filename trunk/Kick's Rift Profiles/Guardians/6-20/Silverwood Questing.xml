@@ -33,7 +33,6 @@
     </If>
 
     <TurnInQuest Name="The Return" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
-
     <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
 
     <If Condition="HasQuest(&quot;Last Breath&quot;)">
@@ -179,7 +178,7 @@
     <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
     <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	
-		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="1">
+		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="3">
 		  <Area>
 			<Objects>
 			  <Object>Reliquary of Thontic</Object>
@@ -190,8 +189,9 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseItemOnMobsObjective Quest="Wanton Flame" Item="Spear of Light" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
-		  <Area> <!-- this might be just a /use at location -->
+		 <!-- this might be just a /use at location
+		 <UseItemOnMobsObjective Quest="Wanton Flame" Item="Spear of Light" CastTime="2" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
 			<Mobs>
 			  <Mob>Specter of Maelforge</Mob>
 			</Mobs>
@@ -200,21 +200,39 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		-->
+		
+		<!-- This is a UseItem and then click the AoE Circle on ground(UseItemTargetLocation from WoW).  Do note, this npc is not targettable -->
 
+		<If Condition="HasQuest(&quot;Wanton Flame&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't Click the AoE Effect after using item&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+		  <MoveTo  X="6341" Y="820.9684" Z="3798.137" />
+		  <Wait Seconds="2" />
+		  <MoveTo  X="6341.639" Y="821.0468" Z="3797.765" />
+		  <Wait Seconds="2" />
+		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Spear of Light&quot;)" />
+		 <!-- Click at <Hotspot X="6342.104" Y="821.127" Z="3797.997" /> -->
+		  <Wait Seconds="3" />
+		</If>
+		 
 		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="2">
 		  <Area>
 			<Objects>
 			  <Object>Reliquary of Tavril</Object>
 			</Objects>
 			<Hotspots>
-				
+				<Hotspot X="6248.076" Y="821.5458" Z="3751.049" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
 		
-	<PickUpQuest Name="Recovered Notes" Npc="Scattered Stones"  <!-- a rock - turns in to Legate Nathen Creen -->
-
-		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="3">
+		<!--  !HasQuest &amp;&amp; !IsQuestCompleted - pickup quest from gameobject?
+	<PickUpQuest Name="Recovered Notes" Npc="Scattered Stones" X="6279.939" Y="820.6118" Z="3740.049" /> a rock - turns in to Legate Nathen Creen 
+		[10:46:58.375 N] Can not find NPC Scattered Stones at System.Func`1[Giga.Common.Vector3] -->
+		
+		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="1">
 		  <Area>
 			<Objects>
 			  <Object>Reliquary of Bahralt</Object>
@@ -231,24 +249,151 @@
 			  <Mob></Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
+				<Hotspot X="6279.939" Y="820.6118" Z="3740.049" />
+				<Hotspot X="6286.425" Y="820.5268" Z="3739.669" />
+				<Hotspot X="6264.49" Y="821.8066" Z="3802.338" />
+				<Hotspot X="6237.458" Y="826.0478" Z="3819.406" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
 	
-	<!-- Reward="1" 
+	<TurnInQuest Name="Out of the Hands of Evil" Reward="1" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/> <!-- 1 = HP Potion, 2 = Mana Potion -->
+    <TurnInQuest Name="Help From Above" Reward="1" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" /> <!-- 1 = warrior 2h, 2 = warrior rogue 1h axe, 3 = caster dagger, 4 = Cleric Mage Staff -->
+    <PickUpQuest Name="Carrying the Light" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+	<TurnInQuest Name="Wanton Flame" Npc="Spirit of Carwin" X="6244.929" Y="835.0805" Z="3876.081" /> <!-- We learned Planar Lure -->
+		<!-- Ignoring A Tear in Telara - Collect 5 Planarite from rifts / invasions (Legate Nathen Creen -->
+	<!-- <TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" -->
+		<!-- End of Divine Landing Quests -->
+		
+		<!-- Sterling Hills Quests -->
+	<TurnInQuest Name="Carrying the Light" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" /> <!-- Belt - 1 = cleric, 2 = cloth, 3 = leather, 4 = warrior -->
+	<PickUpQuest Name="Singed Hives"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+	<PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+		<!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 	
-	<TurnInQuest Name="Out of the Hands of Evil" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
-    <TurnInQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
-    <TurnInQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't  kill Vespid Hives nor UseObject and kill it and collect loot.  It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<!-- Singed Hives.  Also, it wants to go up hillsides but can't.  I did add some mesh, but I intentionally went down a path and not down the hillside
+		<UseObjectsObjective Quest="Singed Hives" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Vespid Hive</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
+				<Hotspot X="6036.996" Y="862.3669" Z="3551.998" />
+				<Hotspot X="6044.503" Y="855.6222" Z="3518.456" />
+				<Hotspot X="6044.372" Y="868.109" Z="3602.385" />
+				<Hotspot X="6035.692" Y="880.0975" Z="3630.429" />
+				<Hotspot X="6084.559" Y="858.394" Z="3681.094" />
+				<Hotspot X="6103.256" Y="852.9949" Z="3668.9" />
+				<Hotspot X="6122.411" Y="847.8923" Z="3664.37" />
+				<Hotspot X="6164.755" Y="821.483" Z="3628.92" />
+				<Hotspot X="6185.304" Y="820.8764" Z="3594.803" />
+				<Hotspot X="6145.962" Y="819.0128" Z="3528.959" />
+				<Hotspot X="6195.617" Y="817.778" Z="3508.694" />
+				<Hotspot X="6229.127" Y="813.7997" Z="3497.651" />
+				<Hotspot X="6271.873" Y="813.703" Z="3498.73" />
+				<Hotspot X="6304.201" Y="815.7911" Z="3521.635" />
+				<Hotspot X="6254.079" Y="824.9425" Z="3607.674" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Singed Hives" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Vespid Hive</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
+				<Hotspot X="6036.996" Y="862.3669" Z="3551.998" />
+				<Hotspot X="6044.503" Y="855.6222" Z="3518.456" />
+				<Hotspot X="6044.372" Y="868.109" Z="3602.385" />
+				<Hotspot X="6035.692" Y="880.0975" Z="3630.429" />
+				<Hotspot X="6084.559" Y="858.394" Z="3681.094" />
+				<Hotspot X="6103.256" Y="852.9949" Z="3668.9" />
+				<Hotspot X="6122.411" Y="847.8923" Z="3664.37" />
+				<Hotspot X="6164.755" Y="821.483" Z="3628.92" />
+				<Hotspot X="6185.304" Y="820.8764" Z="3594.803" />
+				<Hotspot X="6145.962" Y="819.0128" Z="3528.959" />
+				<Hotspot X="6195.617" Y="817.778" Z="3508.694" />
+				<Hotspot X="6229.127" Y="813.7997" Z="3497.651" />
+				<Hotspot X="6271.873" Y="813.703" Z="3498.73" />
+				<Hotspot X="6304.201" Y="815.7911" Z="3521.635" />
+				<Hotspot X="6254.079" Y="824.9425" Z="3607.674" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		-->
+
+		<KillMobsObjective Quest="Agitated Wildlife" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Vespid Hiveward</Mob>
+			  <Mob>Vespid Darter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
+				<Hotspot X="6036.996" Y="862.3669" Z="3551.998" />
+				<Hotspot X="6044.503" Y="855.6222" Z="3518.456" />
+				<Hotspot X="6044.372" Y="868.109" Z="3602.385" />
+				<Hotspot X="6035.692" Y="880.0975" Z="3630.429" />
+				<Hotspot X="6084.559" Y="858.394" Z="3681.094" />
+				<Hotspot X="6103.256" Y="852.9949" Z="3668.9" />
+				<Hotspot X="6122.411" Y="847.8923" Z="3664.37" />
+				<Hotspot X="6164.755" Y="821.483" Z="3628.92" />
+				<Hotspot X="6185.304" Y="820.8764" Z="3594.803" />
+				<Hotspot X="6145.962" Y="819.0128" Z="3528.959" />
+				<Hotspot X="6195.617" Y="817.778" Z="3508.694" />
+				<Hotspot X="6229.127" Y="813.7997" Z="3497.651" />
+				<Hotspot X="6271.873" Y="813.703" Z="3498.73" />
+				<Hotspot X="6304.201" Y="815.7911" Z="3521.635" />
+				<Hotspot X="6254.079" Y="824.9425" Z="3607.674" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Agitated Wildlife" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Vespid Darter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
+				<Hotspot X="6036.996" Y="862.3669" Z="3551.998" />
+				<Hotspot X="6044.503" Y="855.6222" Z="3518.456" />
+				<Hotspot X="6044.372" Y="868.109" Z="3602.385" />
+				<Hotspot X="6035.692" Y="880.0975" Z="3630.429" />
+				<Hotspot X="6084.559" Y="858.394" Z="3681.094" />
+				<Hotspot X="6103.256" Y="852.9949" Z="3668.9" />
+				<Hotspot X="6122.411" Y="847.8923" Z="3664.37" />
+				<Hotspot X="6164.755" Y="821.483" Z="3628.92" />
+				<Hotspot X="6185.304" Y="820.8764" Z="3594.803" />
+				<Hotspot X="6145.962" Y="819.0128" Z="3528.959" />
+				<Hotspot X="6195.617" Y="817.778" Z="3508.694" />
+				<Hotspot X="6229.127" Y="813.7997" Z="3497.651" />
+				<Hotspot X="6271.873" Y="813.703" Z="3498.73" />
+				<Hotspot X="6304.201" Y="815.7911" Z="3521.635" />
+				<Hotspot X="6254.079" Y="824.9425" Z="3607.674" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 	
-	<TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen"  <!-- a rock - turns in to Legate Nathen Creen -->
-	-->
-	
-	
-	
-	
+	<TurnInQuest Name="Agitated Wildlife" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+	<TurnInQuest Name="Singed Hives" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" /> <!-- 1 = warrior / rogue gun, 2 = +3 int wand, 3 = warrior rogue bow, 4 = +1 int / +3 wisdom wand -->
+	<PickUpQuest Name="Seek Out Argent Glade" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+		<!-- if con hasquest Seek Out Argent Glade - force train -->
+		<!-- End of Sterling Hills Quests -->
+		
+		<!-- Argent Glade Quests -->
+	<TurnInQuest Name="Seek Out Argent Glade" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+	<PickUpQuest Name="Shrines of Tavril" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+	<PickUpQuest Name="On the Verge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
 	
 	
 	
