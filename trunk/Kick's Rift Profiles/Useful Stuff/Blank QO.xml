@@ -32,17 +32,6 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<UseItemOnMobsObjective Quest="" Item="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob></Mob>
-			</Mobs>
-			<Hotspots>
-				
-			</Hotspots>
-		  </Area>
-		</UseItemOnMobsObjective>
-
 		<KillMobsObjective Quest="" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -53,6 +42,17 @@
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
+
+		<UseItemOnMobsObjective Quest="" Item="" CastTime="" Cooldown="" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 
 
 		<If Condition="HasQuest(&quot;&quot;)">

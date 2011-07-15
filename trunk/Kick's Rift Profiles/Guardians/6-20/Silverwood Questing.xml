@@ -268,41 +268,16 @@
 		<!-- End of Divine Landing Quests -->
 		
 		<!-- Sterling Hills Quests -->
-	<TurnInQuest Name="Carrying the Light" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" /> <!-- Belt - 1 = cleric, 2 = cloth, 3 = leather, 4 = warrior -->
+	<TurnInQuest Name="Carrying the Light" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" /> <!-- Belt -->
 	<PickUpQuest Name="Singed Hives"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
 	<PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
 		<!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 	
 		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
-			<Python Statement="Logging.Write(&quot;Bot doesn't  kill Vespid Hives nor UseObject and kill it and collect loot.  It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
+			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		<!-- Singed Hives.  Also, it wants to go up hillsides but can't.  I did add some mesh, but I intentionally went down a path and not down the hillside
-		<UseObjectsObjective Quest="Singed Hives" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Vespid Hive</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="6139.002" Y="821.1508" Z="3573.095" />
-				<Hotspot X="6036.996" Y="862.3669" Z="3551.998" />
-				<Hotspot X="6044.503" Y="855.6222" Z="3518.456" />
-				<Hotspot X="6044.372" Y="868.109" Z="3602.385" />
-				<Hotspot X="6035.692" Y="880.0975" Z="3630.429" />
-				<Hotspot X="6084.559" Y="858.394" Z="3681.094" />
-				<Hotspot X="6103.256" Y="852.9949" Z="3668.9" />
-				<Hotspot X="6122.411" Y="847.8923" Z="3664.37" />
-				<Hotspot X="6164.755" Y="821.483" Z="3628.92" />
-				<Hotspot X="6185.304" Y="820.8764" Z="3594.803" />
-				<Hotspot X="6145.962" Y="819.0128" Z="3528.959" />
-				<Hotspot X="6195.617" Y="817.778" Z="3508.694" />
-				<Hotspot X="6229.127" Y="813.7997" Z="3497.651" />
-				<Hotspot X="6271.873" Y="813.703" Z="3498.73" />
-				<Hotspot X="6304.201" Y="815.7911" Z="3521.635" />
-				<Hotspot X="6254.079" Y="824.9425" Z="3607.674" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
 
 		<KillMobsObjective Quest="Singed Hives" Tracking="1">
 		  <Area>
@@ -395,9 +370,150 @@
 	<PickUpQuest Name="Shrines of Tavril" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
 	<PickUpQuest Name="On the Verge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
 	
+		<!-- before root
+		<Hotspot X="6108.263" Y="822.1027" Z="3426.995" />
+		<Hotspot X="6114.767" Y="823.9813" Z="3429.408" /> on root -->
+		<UseObjectsObjective Quest="Shrines of Tavril" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Tribute of Wood</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6108.263" Y="822.1027" Z="3426.995" />
+				<Hotspot X="6114.767" Y="823.9813" Z="3429.408" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Shrines of Tavril" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Tribute of Soil</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6049.068" Y="824.07" Z="3398.321" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Shrines of Tavril" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Tribute of Stone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5929.806" Y="839.9083" Z="3228.896" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="On the Verge" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Goblin Escort</Mob>
+			  <Mob>Goblin Scout</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6050.136" Y="823.9583" Z="3385.891" />
+				<Hotspot X="6089.692" Y="824.1184" Z="3421.277" />
+				<Hotspot X="6051.687" Y="822.5679" Z="3358.005" />
+				<Hotspot X="5975.057" Y="817.2563" Z="3237.985" />
+				<Hotspot X="5967.333" Y="829.1058" Z="3291.881" />
+				<Hotspot X="5988.318" Y="843.0703" Z="3361.004" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="On the Verge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Goblin Scout</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6050.136" Y="823.9583" Z="3385.891" />
+				<Hotspot X="6089.692" Y="824.1184" Z="3421.277" />
+				<Hotspot X="6051.687" Y="822.5679" Z="3358.005" />
+				<Hotspot X="5975.057" Y="817.2563" Z="3237.985" />
+				<Hotspot X="5967.333" Y="829.1058" Z="3291.881" />
+				<Hotspot X="5988.318" Y="843.0703" Z="3361.004" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- 2 quests to turn in, but the bot doesn't want to click either one.  works fine if i manually click 1 quest... it then turns in both -->
+	<TurnInQuest Name="Shrines of Tavril" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" /> <!-- boots -->
+	<TurnInQuest Name="On the Verge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+	<PickUpQuest Name="Minions of Maelforge" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+	<PickUpQuest Name="Immolation Avenged" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
 	
-	
-	
+		<UseObjectsObjective Quest="Immolation Avenged" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bile's Victim</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6166.474" Y="811.2951" Z="3353.653" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Immolation Avenged" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Scald's Victim</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6230.836" Y="820.2367" Z="3330.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Immolation Avenged" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Seethe's Victim</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6248.792" Y="817.8835" Z="3406.038" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Immolation Avenged" Tracking="4">
+		  <Area>
+			<Objects>
+			  <Object>Welt's Victim</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6190.941" Y="819.7271" Z="3460.97" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Minions of Maelforge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Goblin Flameweaver</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6166.474" Y="811.2951" Z="3353.653" />
+				<Hotspot X="6230.836" Y="820.2367" Z="3330.517" />
+				<Hotspot X="6248.792" Y="817.8835" Z="3406.038" />
+				<Hotspot X="6190.941" Y="819.7271" Z="3460.97" />
+				<Hotspot X="6195.453" Y="808.6226" Z="3374.167" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Minions of Maelforge" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" /> <!-- Chest -->
+	<TurnInQuest Name="Immolation Avenged" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" /> <!-- Gloves -->
+	<PickUpQuest Name="Brougan Grote" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+		<!-- End of South Argent Glade Quests -->
+		
+		<!-- Central Argent Glade Quests -->
+		<!-- if con hasquest - forcetrain -->
+	<TurnInQuest Name="Brougan Grote" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+	<PickUpQuest Name="Border Town" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
 	
 	
 	
