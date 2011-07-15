@@ -25,18 +25,19 @@
     <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
 
     <If Condition="HasQuest(&quot;The Return&quot;)">
-		<!-- click gossip 1, 2 times per npc -->
+		<!-- click gossip 1, 2 times per npc
       <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="What happened" />
       <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="I am here" />
       <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="What happened" />
       <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="We will" />
-    </If>
+    --> 
+	</If>
 
     <TurnInQuest Name="The Return" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
     <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
 
     <If Condition="HasQuest(&quot;Last Breath&quot;)">
-		<!-- click gossip 1, 2 times per npc -->
+		<!-- click gossip 1, 2 times per npc 
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="Wake Up" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Text="With the" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Text="The Guardian" />
@@ -45,7 +46,8 @@
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Text="We will" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Text="We will" />
       <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="We will" />
-    </If>
+    -->
+	</If>
 
     <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
 	<PickUpQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
@@ -519,7 +521,7 @@
 	<PickUpQuest Name="The Planar Porticulum" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" /> <!-- Turnin later -->
 	<PickUpQuest Name="Midterm Mayhem" Npc="Alan Paton" X="5958.44" Y="812.1588" Z="3061.015" />
 	<PickUpQuest Name="Required Reading" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
-	<PickUpQuest Name="Teachers Pet" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<PickUpQuest Name="Teacher's Pet" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	
 		<UseItemOnMobsObjective Quest="Midterm Mayhem" Item="Alan's Polymorph Wand" CastTime="3" Cooldown="3" WhenDead="False" Tracking="1">
 		  <Area>
@@ -533,16 +535,351 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		
+		<!-- various mesh issues - i tried to fix a lot of the issues - but the bot keeps wanting to walk up buildings and stuff -->
+		<UseObjectsObjective Quest="Midterm Mayhem" Tracking="4">
+		  <Area>
+			<Objects>
+			  <Object>Fire Magic Cauldron</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5926.199" Y="818.9073" Z="3124.467" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<UseObjectsObjective Quest="Midterm Mayhem" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Death Magic Cauldron</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5945.875" Y="818.9052" Z="3139.314" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Required Reading" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Tome of the Vigil</Object>
+			  <Object>Tome of Fire</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5943.059" Y="812.254" Z="3031.028" />
+				<Hotspot X="5943.059" Y="812.254" Z="3031.028" />
+				<Hotspot X="5896.416" Y="817.9238" Z="3038.629" />
+				<Hotspot X="5891.653" Y="821.6604" Z="3005.519" />
+				<Hotspot X="5887.306" Y="821.6503" Z="3064.058" />
+				<Hotspot X="5926.475" Y="812.1942" Z="3105.136" />
+				<Hotspot X="5934.98" Y="815.0585" Z="3126.293" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Required Reading" Tracking="2"> <!-- I need a 3-4 second delay after using this object -->
+		  <Area>
+			<Objects>
+			  <Object>Tome of Fire</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5943.059" Y="812.254" Z="3031.028" />
+				<Hotspot X="5943.059" Y="812.254" Z="3031.028" />
+				<Hotspot X="5896.416" Y="817.9238" Z="3038.629" />
+				<Hotspot X="5891.653" Y="821.6604" Z="3005.519" />
+				<Hotspot X="5887.306" Y="821.6503" Z="3064.058" />
+				<Hotspot X="5926.475" Y="812.1942" Z="3105.136" />
+				<Hotspot X="5934.98" Y="815.0585" Z="3126.293" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Midterm Mayhem" Tracking="3"> <!-- there are some 'floating in the sky' mesh points here -->
+		  <Area>
+			<Objects>
+			  <Object>Life Magic Cauldron</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5876.403" Y="818.056" Z="3171.244" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Required Reading" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="Barrel Full of Goblins" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<TurnInQuest Name="Midterm Mayhem" Npc="Alan Paton" X="5958.44" Y="812.1588" Z="3061.015" />
+	<PickUpQuest Name="Big Brother Hazer" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+
+		<UseItemOnMobsObjective Quest="Big Brother Hazer" Item="Planar Antithesis Device" CastTime="4" Cooldown="2" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bound Water</Mob>
+			  <Mob>Bound Flame</Mob>
+			  <Mob>Bound Wind</Mob>
+			  <Mob>Bound Dark Golem</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5959.688" Y="812.186" Z="3003.867" />
+				<Hotspot X="5965.115" Y="812.1888" Z="3101.032" />
+				<Hotspot X="5953.139" Y="818.9057" Z="3130.579" />
+				<Hotspot X="5918.749" Y="818.9139" Z="3129.477" />
+				<Hotspot X="5887.219" Y="815.0547" Z="3112.542" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseItemOnMobsObjective Quest="Big Brother Hazer" Item="Planar Antithesis Device" CastTime="4" Cooldown="2" WhenDead="False" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Bound Water</Mob>
+			  <Mob>Bound Flame</Mob>
+			  <Mob>Bound Wind</Mob>
+			  <Mob>Bound Dark Golem</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5959.688" Y="812.186" Z="3003.867" />
+				<Hotspot X="5965.115" Y="812.1888" Z="3101.032" />
+				<Hotspot X="5953.139" Y="818.9057" Z="3130.579" />
+				<Hotspot X="5918.749" Y="818.9139" Z="3129.477" />
+				<Hotspot X="5887.219" Y="815.0547" Z="3112.542" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseItemOnMobsObjective Quest="Big Brother Hazer" Item="Planar Antithesis Device" CastTime="4" Cooldown="2" WhenDead="False" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Bound Water</Mob>
+			  <Mob>Bound Flame</Mob>
+			  <Mob>Bound Wind</Mob>
+			  <Mob>Bound Dark Golem</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5959.688" Y="812.186" Z="3003.867" />
+				<Hotspot X="5965.115" Y="812.1888" Z="3101.032" />
+				<Hotspot X="5953.139" Y="818.9057" Z="3130.579" />
+				<Hotspot X="5918.749" Y="818.9139" Z="3129.477" />
+				<Hotspot X="5887.219" Y="815.0547" Z="3112.542" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<UseObjectsObjective Quest="Barrel Full of Goblins" Tracking="1"> <!-- Wait 2 secs after using -->
+		  <Area>
+			<Objects>
+			  <Object>Battered Barrel</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5890.179" Y="815.0547" Z="3091.667" />
+				<Hotspot X="5919.717" Y="812.1972" Z="3105.008" />
+				<Hotspot X="5980.793" Y="812.2125" Z="3095.293" />
+				<Hotspot X="5976.603" Y="815.062" Z="3133.414" />
+				<Hotspot X="5954.957" Y="818.9205" Z="3130.537" />
+				<Hotspot X="5918.627" Y="818.9177" Z="3131.846" />
+				<Hotspot X="5883.885" Y="815.0569" Z="3146.664" />
+				<Hotspot X="5872.755" Y="815.8807" Z="3125.137" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Barrel Full of Goblins" Tracking="2"> <!-- Wait 2 secs after using -->
+		  <Area>
+			<Objects>
+			  <Object>Isolated Materials</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5888.596" Y="821.6491" Z="3001.252" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Barrel Full of Goblins" Reward="2" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" /> <!-- WPN - 1=1h str mace, 2=2h caster staff, 3=1h caster mace, 4=1h dex dagger -->
+	<TurnInQuest Name="Big Brother Hazer" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+	<PickUpQuest Name="Trial of the Three Elements" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+	
+		<UseObjectsObjective Quest="Trial of the Three Elements" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Fire Ward</Object>
+			  <Object>Fear Ward</Object>
+			  <Object>Knockback Ward</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5974.738" Y="812.1942" Z="3063.525" />
+				<Hotspot X="5975.263" Y="812.1942" Z="3057.232" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Trial of the Three Elements" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+	<PickUpQuest Name="March Out to the Marsh" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" /> <!-- Sunken Marsh Quest Line -->
+	
+		<UseObjectsObjective Quest="Border Town" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Steel Beacon</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6114.632" Y="814.2214" Z="2972.668" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Border Town" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bronze Beacon</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6135.195" Y="821.4148" Z="3085.723" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Border Town" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Gold Beacon</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6165.717" Y="827.0958" Z="3151.74" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Teacher's Pet" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Capsicum Mushroom</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6130.443" Y="820.6225" Z="3075.605" />
+				<Hotspot X="6130.724" Y="816.0385" Z="3054.09" />
+				<Hotspot X="6140.415" Y="813.2544" Z="3024.352" />
+				<Hotspot X="6124.355" Y="814.9576" Z="2992.667" />
+				<Hotspot X="6112.55" Y="823.2121" Z="2921.84" />
+				<Hotspot X="6106.511" Y="824.5167" Z="2904.378" />
+				<Hotspot X="6141.305" Y="813.2111" Z="3023.124" />
+				<Hotspot X="6132.616" Y="815.1976" Z="3051.898" />
+				<Hotspot X="6168.962" Y="813.506" Z="3066.904" />
+				<Hotspot X="6181.823" Y="813.499" Z="3098.225" />
+				<Hotspot X="6155.449" Y="825.6257" Z="3135.955" />
+				<Hotspot X="6155.847" Y="826.978" Z="3157.204" />
+				<Hotspot X="6219.697" Y="833.2093" Z="3167.086" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Teacher's Pet" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Dissolvent Crawler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6130.443" Y="820.6225" Z="3075.605" />
+				<Hotspot X="6130.724" Y="816.0385" Z="3054.09" />
+				<Hotspot X="6140.415" Y="813.2544" Z="3024.352" />
+				<Hotspot X="6124.355" Y="814.9576" Z="2992.667" />
+				<Hotspot X="6112.55" Y="823.2121" Z="2921.84" />
+				<Hotspot X="6106.511" Y="824.5167" Z="2904.378" />
+				<Hotspot X="6141.305" Y="813.2111" Z="3023.124" />
+				<Hotspot X="6132.616" Y="815.1976" Z="3051.898" />
+				<Hotspot X="6168.962" Y="813.506" Z="3066.904" />
+				<Hotspot X="6181.823" Y="813.499" Z="3098.225" />
+				<Hotspot X="6155.449" Y="825.6257" Z="3135.955" />
+				<Hotspot X="6155.847" Y="826.978" Z="3157.204" />
+				<Hotspot X="6219.697" Y="833.2093" Z="3167.086" />
+				<Hotspot X="6387.086" Y="820.4865" Z="3328.627" />
+				<Hotspot X="6384.679" Y="820.9108" Z="3342.362" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Border Town" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+	<PickUpQuest Name="Theoretical Absolution" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+	
+		<UseObjectsObjective Quest="Theoretical Absolution" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Thontic's Silver Warden</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5953.05" Y="811.3178" Z="3055.094" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Theoretical Absolution" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Thontic's Argent Warden</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5952.123" Y="811.3101" Z="3021.434" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Theoretical Absolution" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<TurnInQuest Name="Teacher's Pet" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" /> <!-- 1=warrior shield, 2=rogue warrior Dex sword, 3=offhand caster, 4=cleric shield -->
+	<PickUpQuest Name="Bug Off" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+		<!-- End of Central Argent Glade Quests -->
+	
+		<UseObjectsObjective Quest="Bug Off" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Spider Egg Sac</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6196.661" Y="804.9913" Z="3102.677" />
+				<Hotspot X="6213.961" Y="782.1312" Z="3137.363" />
+				<Hotspot X="6217.509" Y="793.2874" Z="3116.137" />
+				<Hotspot X="6195.62" Y="785.2959" Z="3113.248" />
+				<Hotspot X="6192.644" Y="782.4017" Z="3123.802" />
+				<Hotspot X="6204.209" Y="781.7175" Z="3135.59" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Bug Off" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Goblin Ember</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6198.421" Y="821.013" Z="3294.253" />
+				<Hotspot X="6255.147" Y="823.4105" Z="3302.942" />
+				<Hotspot X="6275.616" Y="820.8875" Z="3319.614" />
+				<Hotspot X="6296.921" Y="819.4583" Z="3352.534" />
+				<Hotspot X="6351.853" Y="814.6465" Z="3349.744" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- Sunken Marsh Quests -->
+	<TurnInQuest Name="Bug Off" Reward="1" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" /> <!-- Belt -->
+	<!-- since there was an invasion here - this bugged out a little and killed bot.  the npc was in combat and had the ! but wasn't offering a window -->
+	<PickUpQuest Name="Ritual Reappropriation" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+	<PickUpQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+	<PickUpQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+	<PickUpQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+	<TurnInQuest Name="March Out to the Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<!--
 	<PickUpQuest Name="" 
-	<PickUpQuest Name="" 
-	<PickUpQuest Name="" 
-	<PickUpQuest Name="" 
-	<PickUpQuest Name="" 
-	<PickUpQuest Name="" 
 	-->
-	
 	
 	
 	
