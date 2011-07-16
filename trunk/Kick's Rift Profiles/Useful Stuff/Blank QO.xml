@@ -6,7 +6,7 @@
 	<TurnInQuest Name="" Reward="1" 
 
 
-		<If Condition="HasQuest(&quot;&quot;)">
+		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestCompleted(&quot;&quot;)))">
 		</If>
 		
 		<!-- Npc Name -->
@@ -15,7 +15,7 @@
 
 
 
-			<MoveTo  />
+			<MoveTo 
 			<Wait Seconds="" />
 
 			<Wait Seconds="1" />
@@ -70,7 +70,7 @@
 
 
 		<If Condition="HasQuest(&quot;&quot;)">
-		  <MoveTo  />
+		  <MoveTo 
 		  <Wait Seconds="2" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use itemnamehere&quot;)" />
 		  <Wait Seconds="5" />

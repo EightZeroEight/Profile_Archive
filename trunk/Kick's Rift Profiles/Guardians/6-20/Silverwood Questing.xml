@@ -99,7 +99,7 @@
 			</UseObjectsObjective>
 
 			<!-- Toon falls into water and off of bridge here
-		<UseItemOnMobsObjective Quest="Moral Chasm" Item="Harrowing Talisman" CastTime="1000" Cooldown="5000" WhenDead="False" Tracking="2">
+		<UseItemOnMobsObjective Quest="Moral Chasm" Item="Harrowing Talisman" CastTime="1" Cooldown="5" WhenDead="False" Tracking="2">
 		  <Area>
 			<Mobs>
 			  <Mob>Centurion Osteneer</Mob>
@@ -864,28 +864,246 @@
 	<PickUpQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
 	<PickUpQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
 	<TurnInQuest Name="March Out to the Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
+	<PickUpQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" /> <!-- If someone is currently Escorting Scotty, he won't be avail to escort and keeps clicking the window open and closed -->
+		<If Condition="HasQuest(&quot;Dirty Stinking Marsh&quot;)">
+			<Escort Npc="Scotty" Quest="Dirty Stinking Marsh" Tracking="1" /> <!-- This Escort currently has issues targetting and attacking what Scotty is being attacked by.  It keeps blacklisting the spawns -->
+		</If>
+	<TurnInQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
 	
+		<UseObjectsObjective Quest="Stolen Implements" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Professor Nora Glen's Journal</Object>
+			  <Object>Stolen Dissection Tools</Object>
+			  <Object>Crude Idol</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6583.833" Y="819.5355" Z="3425.867" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Ritual Reappropriation" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Heart of Worship</Object>
+			  <Object>Crude Idol</Object>
+			  <Object>Stolen Dissection Tools</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6435.741" Y="841.2182" Z="3522.613" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
+		<UseObjectsObjective Quest="Ritual Reappropriation" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Sacrificial Implement</Object>
+			  <Object>Crude Idol</Object>
+			  <Object>Stolen Dissection Tools</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6449.001" Y="824.1514" Z="3612.912" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
+		<UseObjectsObjective Quest="Ritual Reappropriation" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Crude Idol</Object>
+			  <Object>Stolen Dissection Tools</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6513.901" Y="821.5573" Z="3458.619" />
+				<Hotspot X="6541.134" Y="822.8514" Z="3437.615" />
+				<Hotspot X="6556.85" Y="822.6683" Z="3423.756" />
+				<Hotspot X="6567.424" Y="819.812" Z="3397.237" />
+				<Hotspot X="6570.263" Y="823.4812" Z="3447.899" />
+				<Hotspot X="6576.72" Y="821.2546" Z="3491.288" />
+				<Hotspot X="6603.429" Y="820.1387" Z="3498.027" />
+				<Hotspot X="6426.453" Y="841.4506" Z="3532.767" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
+		<UseObjectsObjective Quest="Stolen Implements" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Stolen Dissection Tools</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6513.901" Y="821.5573" Z="3458.619" />
+				<Hotspot X="6529.669" Y="821.3674" Z="3489.521" />
+				<Hotspot X="6556.85" Y="822.6683" Z="3423.756" />
+				<Hotspot X="6570.263" Y="823.4812" Z="3447.899" />
+				<Hotspot X="6576.72" Y="821.2546" Z="3491.288" />
+				<Hotspot X="6603.429" Y="820.1387" Z="3498.027" />
+				<Hotspot X="6449.001" Y="824.1514" Z="3612.912" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
+		<KillMobsObjective Quest="An Oppressive Odor" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bogling Thief</Mob>
+			  <Mob>Bogling Mimic</Mob>
+			  <Mob>Bogling Stickler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6513.901" Y="821.5573" Z="3458.619" />
+				<Hotspot X="6529.669" Y="821.3674" Z="3489.521" />
+				<Hotspot X="6556.85" Y="822.6683" Z="3423.756" />
+				<Hotspot X="6570.263" Y="823.4812" Z="3447.899" />
+				<Hotspot X="6576.72" Y="821.2546" Z="3491.288" />
+				<Hotspot X="6603.429" Y="820.1387" Z="3498.027" />
+				<Hotspot X="6449.001" Y="824.1514" Z="3612.912" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Unusual Belongings" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bogling Thief</Mob>
+			  <Mob>Bogling Mimic</Mob>
+			  <Mob>Bogling Stickler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6513.901" Y="821.5573" Z="3458.619" />
+				<Hotspot X="6529.669" Y="821.3674" Z="3489.521" />
+				<Hotspot X="6556.85" Y="822.6683" Z="3423.756" />
+				<Hotspot X="6570.263" Y="823.4812" Z="3447.899" />
+				<Hotspot X="6576.72" Y="821.2546" Z="3491.288" />
+				<Hotspot X="6603.429" Y="820.1387" Z="3498.027" />
+				<Hotspot X="6449.001" Y="824.1514" Z="3612.912" />
+				<Hotspot X="6585.512" Y="820.6208" Z="3517.957" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Ritual Reappropriation" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+	<PickUpQuest Name="Saving the Spirit Guide" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+	<TurnInQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+	<TurnInQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+	<TurnInQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+	<PickUpQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+	<PickUpQuest Name="The Perfect Specimen" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
 	
+		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1"> <!-- Range 20-30 needs to be added.  This can be used in combat if we need to temp disable it -->
+		  <Area>
+			<Mobs>
+			  <Mob>Bogling Thief</Mob>
+			  <Mob>Bogling Mimic</Mob>
+			  <Mob>Bogling Stickler</Mob>
+			  <Mob>Bogling Scrounger</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6513.901" Y="821.5573" Z="3458.619" />
+				<Hotspot X="6529.669" Y="821.3674" Z="3489.521" />
+				<Hotspot X="6556.85" Y="822.6683" Z="3423.756" />
+				<Hotspot X="6570.263" Y="823.4812" Z="3447.899" />
+				<Hotspot X="6576.72" Y="821.2546" Z="3491.288" />
+				<Hotspot X="6603.429" Y="820.1387" Z="3498.027" />
+				<Hotspot X="6449.001" Y="824.1514" Z="3612.912" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<!-- This Quest Doesn't work properly.  Use the objects x2, then interactwith (no gossip needed) the spirit guide ('save the spirit guide' is the tracking) -->
+		<UseObjectsObjective Quest="Saving the Spirit Guide" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Binding Point</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6583.324" Y="820.7825" Z="3630.43" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))"> <!-- and is not completed doesn't work properly.  When it does, move quest before spirit guide -->
+		  <MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
+		  <Wait Seconds="1" />
+		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Fused Faetouched Splinters&quot;)" />
+		  <Wait Seconds="6" />
+		</If>
+		
+	<TurnInQuest Name="Saving the Spirit Guide" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+	<PickUpQuest Name="The Altar of Reflection" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+	<TurnInQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+	<TurnInQuest Name="The Perfect Specimen" Reward="1" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" /> <!-- 1=dex end bow, 2=int wis wand, 3=int wis end wand, 4=str dex gun -->
+	<PickUpQuest Name="Further Exploration" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" /> <!-- To Silver Landing Quest -->
 	
+		<!-- another 'use gameobject and gossip with npc' quest.  the usegameobject doesn't go to next tracking -->
+		<UseObjectsObjective Quest="The Altar of Reflection" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Altar of Reflection</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6530.395" Y="830.6285" Z="3255.836" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<!-- Gossip with Npc="Spirit Guide" X="6527.509" Y="830.4241" Z="3255.887" to complete Quest -->
+
+		<!-- for some reason when you turn in this quest, you spin in circles -->
+	<TurnInQuest Name="The Altar of Reflection" Reward="1" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" /> <!-- Pants -->
+		<!-- End of Sunken Marsh Quests -->
 	
+		<KillMobsObjective Quest="Further Exploration" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Scout</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7049.902" Y="824.8639" Z="3347.792" />
+				<Hotspot X="7070.504" Y="820.5632" Z="3331.488" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<!-- Silver Landing Quests -->
+	<TurnInQuest Name="Further Exploration" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	<PickUpQuest Name="Shipwrecked Guardians" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 	
-	
+		<UseObjectsObjective Quest="Shipwrecked Guardians" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Indra Grenwode's Corpse</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7013.889" Y="821.9371" Z="3561.436" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Shipwrecked Guardians" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Galena Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7013.889" Y="821.9371" Z="3561.436" />
+				<Hotspot X="7015.924" Y="820.0836" Z="3584.961" />
+				<Hotspot X="7005.75" Y="818.575" Z="3580.651" />
+				<Hotspot X="6987.27" Y="821.017" Z="3547.409" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Shipwrecked Guardians" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	<PickUpQuest Name="The Aelfwar Threat" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	<PickUpQuest Name="Digging Up Weeds" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 	
 	
 	
 	<!--
 	<PickUpQuest Name="" 
 	-->
-	
-	
-	
-	
-	
-	
 	
 	
 	
