@@ -115,6 +115,7 @@
 		  <MoveTo  X="6135.959" Y="866.2277" Z="4067.066" />
 		  <Wait Seconds="1" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Centurion Osteneer&quot;)" />
+		  <Wait Seconds="1" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Harrowing Talisman&quot;)" />
 		  <Wait Seconds="5" />
 		
@@ -822,8 +823,8 @@
 
 	<TurnInQuest Name="Theoretical Absolution" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
 	<TurnInQuest Name="Teacher's Pet" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" /> <!-- 1=warrior shield, 2=rogue warrior Dex sword, 3=offhand caster, 4=cleric shield -->
-	<PickUpQuest Name="Bug Off" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 		<!-- End of Central Argent Glade Quests -->
+	<PickUpQuest Name="Bug Off" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	
 		<UseObjectsObjective Quest="Bug Off" Tracking="1">
 		  <Area>
@@ -1098,6 +1099,503 @@
 	<TurnInQuest Name="Shipwrecked Guardians" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 	<PickUpQuest Name="The Aelfwar Threat" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
 	<PickUpQuest Name="Digging Up Weeds" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	
+		<UseObjectsObjective Quest="Digging Up Weeds" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Angered Root</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6940.933" Y="848.5331" Z="3344.42" />
+				<Hotspot X="6957.512" Y="845.1213" Z="3390.729" />
+				<Hotspot X="6922.808" Y="846.4653" Z="3386.811" />
+				<Hotspot X="6908.386" Y="840.4421" Z="3412.763" />
+				<Hotspot X="6893.614" Y="842.5994" Z="3385.929" />
+				<Hotspot X="6921.342" Y="847.6098" Z="3366.028" />
+				<Hotspot X="6921.571" Y="846.4376" Z="3349.344" />
+				<Hotspot X="6863.99" Y="867.202" Z="3305.21" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Digging Up Weeds" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Coastal Rover</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6892.062" Y="869.5153" Z="3276.477" />
+				<Hotspot X="6851.209" Y="865.9536" Z="3258.891" />
+				<Hotspot X="6863.99" Y="867.202" Z="3305.21" />
+				<Hotspot X="6864.629" Y="868.0773" Z="3337.722" />
+				<Hotspot X="6823.939" Y="860.7615" Z="3337.112" />
+				<Hotspot X="6885.794" Y="869.1569" Z="3269.25" />
+				<Hotspot X="6858.52" Y="867.1825" Z="3258.936" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Aelfwar Threat" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Conjurer</Mob>
+			  <Mob>Aelfwar Spotter</Mob>
+			  <Mob>Aelfwar Scout</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6940.933" Y="848.5331" Z="3344.42" />
+				<Hotspot X="6957.512" Y="845.1213" Z="3390.729" />
+				<Hotspot X="6922.808" Y="846.4653" Z="3386.811" />
+				<Hotspot X="6908.386" Y="840.4421" Z="3412.763" />
+				<Hotspot X="6893.614" Y="842.5994" Z="3385.929" />
+				<Hotspot X="6921.342" Y="847.6098" Z="3366.028" />
+				<Hotspot X="6921.571" Y="846.4376" Z="3349.344" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Digging Up Weeds" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	<TurnInQuest Name="The Aelfwar Threat" Reward="1" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" /> <!-- 1=2h cleric mace, 2=1h caster sword, 3=1dex dagger, 4=1h str sword -->
+	<PickUpQuest Name="Thorn in the Side" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+	
+		<KillMobsObjective Quest="Thorn in the Side" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Commander Falem</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7073.661" Y="820.4274" Z="3321.624" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Thorn in the Side" Reward="1" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" /> <!-- Shoulder -->
+	<PickUpQuest Name="The Priestess of Sanctum Watch" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+		<!-- End of Silver Landing Quests -->
+		
+		<!-- Sanctum Watch Quests -->
+	<TurnInQuest Name="The Priestess of Sanctum Watch" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+	<PickUpQuest Name="High Priestess of the Vigil" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- To Sanctum -->
+	<PickUpQuest Name="The Awakened Grove" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- To Treant's Grove -->
+	<PickUpQuest Name="Unruly Faerfolk" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+	<PickUpQuest Name="A Secret Pact" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+	
+		<!-- Sanctum Quests -->
+		<!-- Ignoring - Gossip x4 quest 
+	<PickUpQuest Name="The Abbots of Sanctum" Npc="Lila Medows" X="7349.656" Y="871.7161" Z="3051.482" />  -->
+		<!-- Ignoring UseGameObject quest - bot doesn't want to loot Artifacts (useobjectsobjective doesn't work for this) 
+	<PickUpQuest Name="Secrets and Artifacts" Npc="Teldre" X="7345.757" Y="871.7161" Z="3053.39" /> -->
+	<TurnInQuest Name="The Planar Porticulum" Npc="Cabalist Elsu" X="7450.593" Y="886.3292" Z="3047.125" /> <!-- To Sanctum -->
+	<PickUpQuest Name="Thontic's Blessing" Npc="Cabalist Elsu" X="7450.593" Y="886.3292" Z="3047.125" /> <!-- To Argent Glade -->
+		<!-- Ignoring 'Sentinel' and other tree specs quest line -->
+		<!-- if con has quest HPotV - forcetrain at sanctum -->
+	<TurnInQuest Name="High Priestess of the Vigil" Npc="Shyla Starhearth" X="7515.803" Y="888.6716" Z="3052.197" />
+		<!-- Ignoring The Crown of Twyl (dungeon quest) -->
+		<!-- Ignoring Secrets and Artifacts - bot doesn't want to loot Artifacts (useobjectsobjective doesn't work for this)
+		<UseObjectsObjective Quest="Secrets and Artifacts" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Artifact</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7473.121" Y="887.1852" Z="3007.015" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<UseObjectsObjective Quest="Secrets and Artifacts" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Artifact</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7532.223" Y="873.0055" Z="3116.115" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Secrets and Artifacts" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Artifact</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7514.25" Y="865.5991" Z="2968.577" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		-->
+		<!-- interactwith npc, no gossip
+    <If Condition="HasQuest(&quot;The Abbots of Sanctum&quot;)">
+      <TalkToNpcObjective Npc="Eldain Diomid" X="7403.336" Y="863.5261" Z="2991.475" /> #1
+      <TalkToNpcObjective Npc="Olaf Bladstrom" X="7431.399" Y="863.526" Z="2938.194" /> #2
+      <TalkToNpcObjective Npc="Onida Windkeiss" X="7545.6" Y="863.5133" Z="3022.22" /> #3
+      <TalkToNpcObjective Npc="Howakan Farlight" X="7440.765" Y="863.4569" Z="3133.175" /> #4
+	</If>
+	<TurnInQuest Name="The Abbots of Sanctum" Npc="Cyril Kalmar" X="7513.488" Y="888.6716" Z="3049.805" />
+    --> 
+		<!-- End of Sanctum Quests -->
+	
+		<KillMobsObjective Quest="A Secret Pact" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Faerie Conniver</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7017.131" Y="887.0068" Z="3092.71" />
+				<Hotspot X="6983.793" Y="885.3686" Z="3093.631" />
+				<Hotspot X="6945.596" Y="901.9861" Z="3156.683" />
+				<Hotspot X="6903" Y="885.4681" Z="3101.596" />	
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Secret Pact" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Faerie Deviant</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7017.131" Y="887.0068" Z="3092.71" />
+				<Hotspot X="6898.224" Y="901.0453" Z="3171.435" />
+				<Hotspot X="6903" Y="885.4681" Z="3101.596" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="A Secret Pact" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Faerie Trickster</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6962.145" Y="885.5518" Z="3099.281" />
+				<Hotspot X="6985.705" Y="894.8957" Z="3127.712" />
+				<Hotspot X="6903" Y="885.4681" Z="3101.596" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Unruly Faerfolk" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Satyr Carouser</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7017.131" Y="887.0068" Z="3092.71" />
+				<Hotspot X="6977.991" Y="898.9684" Z="3152.096" />
+				<Hotspot X="6945.596" Y="901.9861" Z="3156.683" />
+				<Hotspot X="6898.224" Y="901.0453" Z="3171.435" />
+				<Hotspot X="6903" Y="885.4681" Z="3101.596" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Unruly Faerfolk" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+	<TurnInQuest Name="A Secret Pact" Reward="1" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" /> <!-- Boots -->
+		<!-- End of Sanctum Watch Quests -->
+		
+		<!-- Treant's Grove Quests -->
+			<!-- interactwith gameobject Altar of Reflection to summon the Spirit Guide for each turnin (and it should be avail at pickups) - Hawker / Main / etc, have fun fixing this chain -->
+		<If Condition="HasQuest(&quot;The Awakened Grove&quot;)">
+			<!-- interactwith object -->
+	<TurnInQuest Name="The Awakened Grove" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+		</If>
+	<PickUpQuest Name="The Angered Wood" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+	
+		<UseObjectsObjective Quest="Clearing the Forest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Imbued Sliver</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6811.967" Y="843.8129" Z="3160.744" />
+				<Hotspot X="6705.536" Y="832.9569" Z="3177.301" />
+				<Hotspot X="6730.391" Y="830.3587" Z="3135.694" />
+				<Hotspot X="6705.917" Y="832.038" Z="3138.336" />
+				<Hotspot X="6781.303" Y="842.4848" Z="3047.35" />
+				<Hotspot X="6765.626" Y="842.4253" Z="3026.561" />
+				<Hotspot X="6735.903" Y="842.2319" Z="2945.793" />
+				<Hotspot X="6710.264" Y="835.1313" Z="2928.286" />
+				<Hotspot X="6733.621" Y="842.5159" Z="2900.195" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<!-- there's a gameobject pickup somewhere in this forest.  I was running away from Invasion at the time and didn't look into it -->
+		<KillMobsObjective Quest="The Angered Wood" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Baelthorn Earthshaker</Mob>
+			  <Mob>Baelthorn Crusher</Mob>
+			  <Mob>Baelthorn Windshaper</Mob>
+			  <Mob>Baelthorn Aberration</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6798.036" Y="841.3658" Z="3129.373" />
+				<Hotspot X="6811.967" Y="843.8129" Z="3160.744" />
+				<Hotspot X="6730.391" Y="830.3587" Z="3135.694" />
+				<Hotspot X="6705.917" Y="832.038" Z="3138.336" />
+				<Hotspot X="6781.303" Y="842.4848" Z="3047.35" />
+				<Hotspot X="6765.626" Y="842.4253" Z="3026.561" />
+				<Hotspot X="6758.856" Y="842.2338" Z="2978.367" />
+				<Hotspot X="6735.903" Y="842.2319" Z="2945.793" />
+				<Hotspot X="6733.621" Y="842.5159" Z="2900.195" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+			<!-- interactwith object -->
+	<TurnInQuest Name="The Angered Wood" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+	<TurnInQuest Name="Clearing the Forest" Reward="1" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" /> <!-- Chest -->
+	<PickUpQuest Name="Twisted Horticulture" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+	
+		<UseObjectsObjective Quest="Twisted Horticulture" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Elderwood Ritual</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6652.87" Y="842.5403" Z="3140.719" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Twisted Horticulture" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Deeproot Ritual</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6712.156" Y="832.0229" Z="3055.472" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Twisted Horticulture" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Wildthorn Ritual</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6536.299" Y="843.3093" Z="2910.847" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Twisted Horticulture" Reward="1" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- Turn in at Sanctum Watch - WPN - 1=1h caster mace, 2=2 caster staff, 3=dex sword, 4=str dex 2h axe -->
+		<!-- End of Treant's Grove Quests -->
+	<PickUpQuest Name="Fateful Vision" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- To Wayward Thicket -->
+	
+		<!-- Wayward Thicket Quests -->
+	<TurnInQuest Name="Fateful Vision" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+	<PickUpQuest Name="The Mind's Eyes" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+	<PickUpQuest Name="Feeding the Mind" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+		<!-- dead faerie corpse offers quest - <PickUpQuest Name="Mischief Un-makers" Npc="Dead Faerie" X="7001.565" Y="866.7018" Z="2885.866" /> - dumb quest, ignore it -->
+
+		<UseObjectsObjective Quest="Feeding the Mind" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Lockflower Sprig</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="7067.155" Y="821.5015" Z="2785.825" />
+				<Hotspot X="7096.299" Y="821.3769" Z="2773.683" />
+				<Hotspot X="7104.305" Y="821.0846" Z="2754.072" />
+				<Hotspot X="7121.531" Y="820.3824" Z="2695.6" />
+				<Hotspot X="7117.295" Y="820.6127" Z="2655.558" />
+				<Hotspot X="7165.883" Y="818.575" Z="2670.03" />
+				<Hotspot X="7159.77" Y="818.575" Z="2689.26" />
+				<Hotspot X="7167.998" Y="812.4298" Z="2705.374" />
+				<Hotspot X="7151.317" Y="813.6095" Z="2721.339" />
+				<Hotspot X="7179.566" Y="805.7901" Z="2742.411" />
+				<Hotspot X="7174.538" Y="816.3441" Z="2769.581" />
+				<Hotspot X="7170.794" Y="812.0591" Z="2798.697" />
+				<Hotspot X="7150.017" Y="814.749" Z="2786.398" />
+				<Hotspot X="7178.053" Y="818.575" Z="2823.721" />
+				<Hotspot X="7220.874" Y="818.575" Z="2861.085" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Feeding the Mind" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gritshell Snapper</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7078.743" Y="821.4241" Z="2818.685" />
+				<Hotspot X="7059.208" Y="823.7691" Z="2803.756" />
+				<Hotspot X="7067.155" Y="821.5015" Z="2785.825" />
+				<Hotspot X="7096.299" Y="821.3769" Z="2773.683" />
+				<Hotspot X="7104.305" Y="821.0846" Z="2754.072" />
+				<Hotspot X="7121.531" Y="820.3824" Z="2695.6" />
+				<Hotspot X="7117.295" Y="820.6127" Z="2655.558" />				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="The Mind's Eyes" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mossback Lasher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="7165.883" Y="818.575" Z="2670.03" />
+				<Hotspot X="7159.77" Y="818.575" Z="2689.26" />
+				<Hotspot X="7167.998" Y="812.4298" Z="2705.374" />
+				<Hotspot X="7181.778" Y="816.6004" Z="2722.284" />
+				<Hotspot X="7151.317" Y="813.6095" Z="2721.339" />
+				<Hotspot X="7174.538" Y="816.3441" Z="2769.581" />
+				<Hotspot X="7170.794" Y="812.0591" Z="2798.697" />
+				<Hotspot X="7150.017" Y="814.749" Z="2786.398" />
+				<Hotspot X="7178.053" Y="818.575" Z="2823.721" />
+				<Hotspot X="7220.874" Y="818.575" Z="2861.085" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Feeding the Mind" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+	<TurnInQuest Name="The Mind's Eyes" Reward="1" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" /> <!-- WPN - 1=dex dagger, 2=warrior shield, 3=cleric shield, 4=caster OH -->
+	<PickUpQuest Name="Tonic of Meditation" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+	<TurnInQuest Name="Tonic of Meditation" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+		<!-- End of Wayward Thicket Quests -->
+
+		<!-- Point Solitude Quest -->
+	<PickUpQuest Name="Lost in Solitude" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+		<!-- Here's that interactwith object (Altar of Insight), then turnin quest type again! -->
+	<TurnInQuest Name="Lost in Solitude" Npc="Spirit Guide" X="7179.341" Y="885.3551" Z="2944.73" />
+	<PickUpQuest Name="Vision of Danger" Npc="Spirit Guide" X="7179.341" Y="885.3551" Z="2944.73" />
+		<Escort Npc="Shyla Starhearth" Quest="Vision of Danger" Tracking="1" />
+	<TurnInQuest Name="Vision of Danger" Reward="1" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- Legs -->
+		<!-- End of Point Solitude Quest -->
+		
+		<!-- Highglades Lookout Quests -->
+	<PickUpQuest Name="The Prince's Betrayal" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" /> <!-- To Highglades Lookout -->
+	<TurnInQuest Name="The Prince's Betrayal" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+	<PickUpQuest Name="Aelfwar Conspirators" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+	<PickUpQuest Name="Rescuing Foresters" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" />
+	<PickUpQuest Name="Shining Pests" Npc="Arolis Niara" X="6561.982" Y="838.3854" Z="2806.569" />
+	<PickUpQuest Name="Fae Invaders" Npc="Arolis Niara" X="6561.982" Y="838.3854" Z="2806.569" />
+
+		<UseObjectsObjective Quest="Rescuing Foresters" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Faerie Cage</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6675.339" Y="837.2122" Z="2611.282" />
+				<Hotspot X="6637.366" Y="836.5459" Z="2555.475" />
+				<Hotspot X="6571.112" Y="836.54" Z="2531.686" />
+				<Hotspot X="6554.068" Y="845.6756" Z="2690.379" />
+				<Hotspot X="6508.458" Y="857.8299" Z="2699.217" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Aelfwar Conspirators" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Conspirator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6586.219" Y="841.0967" Z="2729.57" />
+				<Hotspot X="6604.415" Y="841.7646" Z="2707.18" />
+				<Hotspot X="6679.263" Y="837.4005" Z="2673.505" />
+				<Hotspot X="6667.115" Y="836.7827" Z="2601.87" />
+				<Hotspot X="6671.714" Y="836.6292" Z="2575.1" />
+				<Hotspot X="6637.366" Y="836.5459" Z="2555.475" />
+				<Hotspot X="6647.182" Y="836.9988" Z="2505.472" />
+				<Hotspot X="6611.402" Y="836.5685" Z="2508.828" />
+				<Hotspot X="6571.112" Y="836.54" Z="2531.686" />
+				<Hotspot X="6563.896" Y="836.5418" Z="2553.198" />
+				<Hotspot X="6589.247" Y="836.5301" Z="2622.94" />
+				<Hotspot X="6542.692" Y="836.5533" Z="2625.622" />
+				<Hotspot X="6508.458" Y="857.8299" Z="2699.217" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Shining Pests" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Glowing Wisp</Mob>
+			  <Mob>Aurora Dekirna</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6586.219" Y="841.0967" Z="2729.57" />
+				<Hotspot X="6604.415" Y="841.7646" Z="2707.18" />
+				<Hotspot X="6679.263" Y="837.4005" Z="2673.505" />
+				<Hotspot X="6667.115" Y="836.7827" Z="2601.87" />
+				<Hotspot X="6671.714" Y="836.6292" Z="2575.1" />
+				<Hotspot X="6637.366" Y="836.5459" Z="2555.475" />
+				<Hotspot X="6647.182" Y="836.9988" Z="2505.472" />
+				<Hotspot X="6611.402" Y="836.5685" Z="2508.828" />
+				<Hotspot X="6571.112" Y="836.54" Z="2531.686" />
+				<Hotspot X="6563.896" Y="836.5418" Z="2553.198" />
+				<Hotspot X="6589.247" Y="836.5301" Z="2622.94" />
+				<Hotspot X="6542.692" Y="836.5533" Z="2625.622" />
+				<Hotspot X="6508.458" Y="857.8299" Z="2699.217" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Fae Invaders" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Weird Nisse</Mob>
+			  <Mob>Weird Pixie</Mob>
+			  <Mob>Weird Mab</Mob>
+			  <Mob>Weird Tombte</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6586.219" Y="841.0967" Z="2729.57" />
+				<Hotspot X="6604.415" Y="841.7646" Z="2707.18" />
+				<Hotspot X="6679.263" Y="837.4005" Z="2673.505" />
+				<Hotspot X="6667.115" Y="836.7827" Z="2601.87" />
+				<Hotspot X="6671.714" Y="836.6292" Z="2575.1" />
+				<Hotspot X="6637.366" Y="836.5459" Z="2555.475" />
+				<Hotspot X="6647.182" Y="836.9988" Z="2505.472" />
+				<Hotspot X="6611.402" Y="836.5685" Z="2508.828" />
+				<Hotspot X="6571.112" Y="836.54" Z="2531.686" />
+				<Hotspot X="6563.896" Y="836.5418" Z="2553.198" />
+				<Hotspot X="6589.247" Y="836.5301" Z="2622.94" />
+				<Hotspot X="6542.692" Y="836.5533" Z="2625.622" />
+				<Hotspot X="6508.458" Y="857.8299" Z="2699.217" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- Ignoring Escort quest in middle of Labrinth - Deilvering the Hostage Npc="Eukar Heln" X="6643.608" Y="836.48" Z="2519.057" -->
+
+	<TurnInQuest Name="Shining Pests" Npc="Arolis Niara" X="6561.982" Y="838.3854" Z="2806.569" />
+	<TurnInQuest Name="Fae Invaders" Npc="Arolis Niara" X="6561.982" Y="838.3854" Z="2806.569" />
+	<TurnInQuest Name="Rescuing Foresters" Reward="1" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" /> <!-- Belt -->
+	<TurnInQuest Name="Aelfwar Conspirators" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+	<PickUpQuest Name="Lord of the Fae" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+	
+		<KillMobsObjective Quest="Lord of the Fae" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Makirn</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6579.956" Y="854.9753" Z="2483.954" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Lord of the Fae" Reward="1" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" /> <!-- Shoulders -->
+	<PickUpQuest Name="Back to Argent Glade" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+		<!-- End of Highglades Lookout Quests -->
+		
+		<!-- To Argent Glade -->
+	<TurnInQuest Name="Back to Argent Glade" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+		<!-- if con hasquest thontics blessing - force train at argent glade -->
+	<TurnInQuest Name="Thontic's Blessing" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" />
+	
+	
+	
 	
 	
 	

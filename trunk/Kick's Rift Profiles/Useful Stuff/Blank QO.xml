@@ -8,6 +8,8 @@
 
 		<If Condition="((HasQuest(&quot;&quot;)) and (not IsQuestCompleted(&quot;&quot;)))">
 		</If>
+		<If Condition="HasQuest(&quot;&quot;)">
+		</If>
 		
 		<!-- Npc Name -->
 		<If Condition="HasQuestAvailable(&quot;&quot;)">
@@ -76,7 +78,7 @@
 		  <Wait Seconds="5" />
 		</If>
 
-		<Escort Npc="" Quest=""Tracking="2" />
+		<Escort Npc="" Quest="" Tracking="2" />
 
 		<KillMobsObjective Quest="" Tracking="2">
 		  <Area>
