@@ -1600,13 +1600,309 @@
 		<!-- if con hasquest thontics blessing - force train at argent glade -->
 	<TurnInQuest Name="Thontic's Blessing" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" />
 	
-	<PickUpQuest Name="Skull and Bones" Npc="Fiona Lechtum" X="5962.077" Y="812.1246" Z="3060.189" /> <!-- escort scotty at shrine -->
+	<PickUpQuest Name="Skull and Bones" Npc="Fiona Lechtum" X="5962.077" Y="812.1246" Z="3060.189" />
 		<!-- To Snarebrush Grot Quests -->
 	<PickUpQuest Name="Bless the Fallen" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	<PickUpQuest Name="Power of the Vigil" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	<PickUpQuest Name="Crash Course in Blood Magic" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
 	<PickUpQuest Name="The Snarebrush Talon" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
 	<PickUpQuest Name="Rusty War Machines" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+	
+		<!-- Ignoring quests at Overwatch keep (S/SE from Argent Glade - Level 18) for right now -->
+		<If Condition="HasQuest(&quot;Skull and Bones&quot;)">
+			<MoveTo X="6162.367" Y="808.0113" Z="3259.527" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Scotty's Friendship Bracelet&quot;)" />
+			<Wait Seconds="5" />
+			<Escort Npc="Scotty" Quest="Skull and Bones" Tracking="1" />
+		</If>
+	<TurnInQuest Name="Skull and Bones" Npc="Fiona Lechtum" X="5962.077" Y="812.1246" Z="3060.189" />
+	
+	<!-- I can't do this quest yet, but i'll attempt to script it - Hazers to Hazees
+	<PickUpQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+		<If Condition="HasQuest(&quot;Hazers to Hazees&quot;)">
+			Objective 1:
+			interactwith Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908" 
+			Gossip: Do you have a Wand of Empowerment?
+			Gossip: Take the wand.
+			<Loot the popup window>
+			
+			Objective 2:
+			<UseObjectsObjective Quest="Hazers to Hazees" Tracking="2">
+			  <Area>
+				<Objects>
+				  <Object>Scattered Rocks</Object>
+				</Objects>
+				<Hotspots>
+					<Hotspot X="6062.839" Y="813.5165" Z="2926.692" />
+				</Hotspots>
+			  </Area>
+			</UseObjectsObjective>
+			
+			Objective 3:
+			<UseItemOnMobsObjective Quest="Hazers to Hazees" Item="Wand of Empowerment" CastTime="3" Cooldown="2" WhenDead="False" Tracking="3">
+			  <Area>
+				<Mobs>
+				  <Mob>Scotty</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="6058.771" Y="813.3331" Z="2930.852" />
+				</Hotspots>
+			  </Area>
+			</UseItemOnMobsObjective>
+		</If>
+	<TurnInQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
+			-->
+	
+		<!-- Mirror of Ages Quests -->
+		<!-- RunTo Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" and use gameobject Tavra Altar and then turn in quest, get next quest -->
+	<TurnInQuest Name="Ask the Elders" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
+	<PickUpQuest Name="Beckoning of the Blessing" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
+
+		<UseObjectsObjective Quest="Fall of the Aelfwar" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Altar to Tavril</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5782.422" Y="867.6894" Z="2845.467" />
+				<Hotspot X="5707.485" Y="869.7722" Z="2876.412" />
+				<Hotspot X="5669.093" Y="876.4666" Z="2849.715" />
+				<Hotspot X="5715.325" Y="870.7411" Z="2840.391" />
+				<Hotspot X="5740.943" Y="869.0065" Z="2829.591" />
+				<Hotspot X="5782.837" Y="867.5165" Z="2821.952" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<KillMobsObjective Quest="Beckoning of the Blessing" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mirror Defiler</Mob>
+			  <Mob>Mirror Conspirator</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5782.422" Y="867.6894" Z="2845.467" />
+				<Hotspot X="5707.485" Y="869.7722" Z="2876.412" />
+				<Hotspot X="5669.093" Y="876.4666" Z="2849.715" />
+				<Hotspot X="5715.325" Y="870.7411" Z="2840.391" />
+				<Hotspot X="5740.943" Y="869.0065" Z="2829.591" />
+				<Hotspot X="5782.837" Y="867.5165" Z="2821.952" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<!-- RunTo Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" and use gameobject Tavra Altar and then turn in quest, get next quest -->
+	<TurnInQuest Name="Beckoning of the Blessing" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
+	<PickUpQuest Name="Hope and Fear" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
+		
+		<KillMobsObjective Quest="Scouts on the Ridge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Agent</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5893.516" Y="856.5786" Z="2821.608" />
+				<Hotspot X="5789.114" Y="867.6049" Z="2821.345" />
+				<Hotspot X="5796.849" Y="867.513" Z="2817.993" />
+				<Hotspot X="5849.706" Y="869.4131" Z="2833.738" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Fall of the Aelfwar" Npc="Markus Walkerwind" X="6038.924" Y="817.3642" Z="3020.481" />
+	<TurnInQuest Name="Hope and Fear" Reward="1" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" /> <!-- Gloves -->
+	<TurnInQuest Name="Scouts on the Ridge" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+		<!-- End of Mirror of Ages Quests -->
+	
+		<!-- Untamed Copse Quests -->
+	<PickUpQuest Name="Surrounded by Hostilities" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+	<PickUpQuest Name="Top Shelf Retrieval" Npc="Barkeep Davek Anders" X="6087.183" Y="818.2" Z="3045.212" />
+	<TurnInQuest Name="Surrounded by Hostilities" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+	<PickUpQuest Name="Twisted Truth Revealed" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+	<PickUpQuest Name="Black Eyes and Bloody Claws" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+
+		<UseObjectsObjective Quest="Twisted Truth Revealed" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Guardian Remains</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6141.22" Y="843.7978" Z="2772.479" />
+				<Hotspot X="6157.246" Y="845.7484" Z="2818.71" />
+				<Hotspot X="6148.006" Y="846.5953" Z="2850.06" />
+				<Hotspot X="6135.887" Y="844.9219" Z="2860.906" />
+				<Hotspot X="6160.197" Y="847.3451" Z="2864.814" />
+				<Hotspot X="6174.11" Y="850.0729" Z="2889.468" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Top Shelf Retrieval" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfar Aide</Mob>
+			  <Mob>Aelfar Servant</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6171.176" Y="842.5285" Z="2777.521" />
+				<Hotspot X="6157.246" Y="845.7484" Z="2818.71" />
+				<Hotspot X="6148.006" Y="846.5953" Z="2850.06" />
+				<Hotspot X="6135.887" Y="844.9219" Z="2860.906" />
+				<Hotspot X="6160.197" Y="847.3451" Z="2864.814" />
+				<Hotspot X="6174.11" Y="850.0729" Z="2889.468" />
+				<Hotspot X="6261.299" Y="849.0363" Z="2866.409" />
+				<Hotspot X="6300.252" Y="852.3513" Z="2882.028" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+		<KillMobsObjective Quest="Black Eyes and Bloody Claws" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bloodhavoc Rioter</Mob>
+			  <Mob>Bloodhavoc Ambusher</Mob>
+			  <Mob>Bloodhavoc Spellslinger</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6039.065" Y="840.0098" Z="2794.062" />
+				<Hotspot X="6045.109" Y="840.0574" Z="2771.107" />
+				<Hotspot X="6076.955" Y="839.0412" Z="2777.012" />
+				<Hotspot X="6122.289" Y="841.9985" Z="2754.003" />
+				<Hotspot X="6169.645" Y="843.3176" Z="2780.201" />
+				<Hotspot X="6137.354" Y="842.5773" Z="2809.001" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Twisted Truth Revealed" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+	<TurnInQuest Name="Black Eyes and Bloody Claws" Reward="1" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" /> <!-- WPN - 1=2h axe, 2=1h caster mace, 3=str dex 1h mace, 4=caster staff -->
+	<PickUpQuest Name="Researching Wretched Weeds" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+	
+		<UseObjectsObjective Quest="Researching Wretched Weeds" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Wrath Weed</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6269.156" Y="852.4931" Z="2883.027" />
+				<Hotspot X="6272.631" Y="848.3889" Z="2845.523" />
+				<Hotspot X="6293.791" Y="843.5157" Z="2806.098" />
+				<Hotspot X="6311.964" Y="856.7643" Z="2909.579" />
+				<Hotspot X="6246.895" Y="856.6672" Z="2944.206" />
+				<Hotspot X="6231.114" Y="863.3502" Z="2975.541" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- End of Untamed Copse Quests -->
+	<TurnInQuest Name="Researching Wretched Weeds" Reward="1" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" /> <!-- Pants -->
+	<PickUpQuest Name="Professor for a Reason" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+	<TurnInQuest Name="Top Shelf Retrieval" Npc="Barkeep Davek Anders" X="6087.183" Y="818.2" Z="3045.212" />
+	<TurnInQuest Name="Professor for a Reason" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	
+		<!-- Snarebrush Grot Quests -->
+		<UseObjectsObjective Quest="Power of the Vigil" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Sacred Mark</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6007.654" Y="845.0357" Z="2741.854" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Crash Course in Blood Magic" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Goblin Dragon Idol</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5910.529" Y="854.8479" Z="2622.798" />
+				<Hotspot X="5904.392" Y="854.9238" Z="2601.029" />
+				<Hotspot X="5933.238" Y="855.0711" Z="2631.518" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="The Snarebrush Talon" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gutter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5872.754" Y="824.02" Z="2591.597" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Rusty War Machines" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Goblin Catapult</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6000.046" Y="854.8412" Z="2616.633" />
+				<Hotspot X="5987.686" Y="854.8451" Z="2617.123" />
+				<Hotspot X="5989.551" Y="855.1422" Z="2628.812" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- This one is haywirey - you have to use the Wand of Grace at the location of a 'Fallen Citizen - but you can't target them.  The bot will path to them on it's own, but then nothin. 
+		I could temp fix it and moveto, useitem, wait 4 sec ... but that's ugly. Maybe UseItemAtNpc/Object Objective  where the bot locates something and then uses the item w/in a range of it -->
+		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" WhenDead="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fallen Citizen</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5912.623" Y="854.845" Z="2608.618" />
+				<Hotspot X="5932.339" Y="855.1109" Z="2633.826" />
+				<Hotspot X="5912.624" Y="854.8494" Z="2608.781" />
+				<Hotspot X="5992.974" Y="854.7604" Z="2679.256" />
+				<Hotspot X="5979.774" Y="855.4684" Z="2639.802" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<!-- This Quest bugs out if you die (ie: you lose the buff and you have to go and get it again.  if condition !me.hasaura(Blessing of the Vigil) - then interact with Sacred Mark (from up above - tracking 1) -->
+		<KillMobsObjective Quest="Power of the Vigil" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Mudborne Savage</Mob>
+			  <Mob>Mudborne Witch</Mob>
+			  <Mob>Mudborne Ifrit</Mob>
+			  <Mob>Mudborne Assaulter</Mob>
+			  <Mob>Mudborne Overlord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5912.623" Y="854.845" Z="2608.618" />
+				<Hotspot X="5932.339" Y="855.1109" Z="2633.826" />
+				<Hotspot X="5912.624" Y="854.8494" Z="2608.781" />
+				<Hotspot X="5992.974" Y="854.7604" Z="2679.256" />
+				<Hotspot X="5979.774" Y="855.4684" Z="2639.802" />
+				<Hotspot X="6040.389" Y="853.8083" Z="2671.375" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+	<TurnInQuest Name="Bless the Fallen" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<TurnInQuest Name="Power of the Vigil" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" /> <!-- Ranged - 1=str dex bow, 2=str end gun, 3= int wis end wand, 4=int wis wand -->
+	<TurnInQuest Name="Crash Course in Blood Magic" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<TurnInQuest Name="The Snarebrush Talon" Reward="1" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" /> <!-- Belt -->
+	<TurnInQuest Name="Rusty War Machines" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+		<!-- End of Snarebrush Grot Quests -->
+	
+		<!-- Palisade Quests -->
+	<PickUpQuest Name="For Sanity's Sake" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+	<PickUpQuest Name="Experimental Destruction" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="Severing the Tether" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="The Power of Life" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<PickUpQuest Name="To Understand One's Foe" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	
+	
 	
 	
 	
