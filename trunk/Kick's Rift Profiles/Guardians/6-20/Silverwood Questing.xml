@@ -280,7 +280,7 @@
 			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-		<!-- Singed Hives.  Also, it wants to go up hillsides but can't.  I did add some mesh, but I intentionally went down a path and not down the hillside
+		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives!
 
 		<KillMobsObjective Quest="Singed Hives" Tracking="1">
 		  <Area>
@@ -1902,9 +1902,140 @@
 	<PickUpQuest Name="The Power of Life" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	<PickUpQuest Name="To Understand One's Foe" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
 	
+		<!-- Very, very high agro / death area -->
+		<KillMobsObjective Quest="The Power of Life" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Marshal Rowan</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6120.813" Y="963.8514" Z="2471.797" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Experimental Destruction" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Faetouched Sapling</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6258.147" Y="881.5648" Z="2539.361" />
+				<Hotspot X="6210.893" Y="877.8478" Z="2533.385" />
+				<Hotspot X="6103.403" Y="877.5293" Z="2615.932" />
+				<Hotspot X="6120.591" Y="861.4618" Z="2602.156" />
+				<Hotspot X="6146.782" Y="945.7664" Z="2475.133" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="To Understand One's Foe" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Palisade Piece</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6258.147" Y="881.5648" Z="2539.361" />
+				<Hotspot X="6232.477" Y="877.9769" Z="2546.309" />
+				<Hotspot X="6241.406" Y="877.8434" Z="2539.447" />
+				<Hotspot X="6143.333" Y="861.4654" Z="2642.233" />
+				<Hotspot X="6131.501" Y="861.4656" Z="2627.407" />
+				<Hotspot X="6120.591" Y="861.4618" Z="2602.156" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseItemOnMobsObjective Quest="Severing the Tether" Item="Talisman of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Invoker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6185.358" Y="936.1494" Z="2469.828" />
+				<Hotspot X="6224.957" Y="920.4053" Z="2469.559" />
+				<Hotspot X="6270.146" Y="900.5122" Z="2483.717" />
+				<Hotspot X="6260.885" Y="883.2015" Z="2513.948" />
+				<Hotspot X="6236.295" Y="877.8618" Z="2536.302" />
+				<Hotspot X="6203.911" Y="877.8482" Z="2550.134" />	
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 	
-	
-	
+		<KillMobsObjective Quest="For Sanity's Sake" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Exemplar</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6153" Y="861.549" Z="2633.433" />
+				<Hotspot X="6103.403" Y="877.5293" Z="2615.932" />
+				<Hotspot X="6120.591" Y="861.4618" Z="2602.156" />
+				<Hotspot X="6185.358" Y="936.1494" Z="2469.828" />
+				<Hotspot X="6224.957" Y="920.4053" Z="2469.559" />
+				<Hotspot X="6270.146" Y="900.5122" Z="2483.717" />
+				<Hotspot X="6260.885" Y="883.2015" Z="2513.948" />
+				<Hotspot X="6236.295" Y="877.8618" Z="2536.302" />
+				<Hotspot X="6203.911" Y="877.8482" Z="2550.134" />	
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="For Sanity's Sake" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Adherent</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6160.202" Y="861.9801" Z="2636.782" />
+				<Hotspot X="6153" Y="861.549" Z="2633.433" />
+				<Hotspot X="6120.591" Y="861.4618" Z="2602.156" />
+				<Hotspot X="6185.358" Y="936.1494" Z="2469.828" />
+				<Hotspot X="6224.957" Y="920.4053" Z="2469.559" />
+				<Hotspot X="6270.146" Y="900.5122" Z="2483.717" />
+				<Hotspot X="6260.885" Y="883.2015" Z="2513.948" />
+				<Hotspot X="6236.295" Y="877.8618" Z="2536.302" />
+				<Hotspot X="6203.911" Y="877.8482" Z="2550.134" />	
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Power of Life" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Exemplar</Mob>
+			  <Mob>Aelfwar Adherent</Mob>
+			  <Mob>Aelfwar Invoker</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6103.403" Y="877.5293" Z="2615.932" />
+				<Hotspot X="6120.591" Y="861.4618" Z="2602.156" />
+				<Hotspot X="6146.782" Y="945.7664" Z="2475.133" />
+				<Hotspot X="6185.358" Y="936.1494" Z="2469.828" />
+				<Hotspot X="6224.957" Y="920.4053" Z="2469.559" />
+				<Hotspot X="6270.146" Y="900.5122" Z="2483.717" />
+				<Hotspot X="6260.885" Y="883.2015" Z="2513.948" />
+				<Hotspot X="6236.295" Y="877.8618" Z="2536.302" />
+				<Hotspot X="6203.911" Y="877.8482" Z="2550.134" />	
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="For Sanity's Sake" Reward="1" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" /> <!-- Helm -->
+	<TurnInQuest Name="Experimental Destruction" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<TurnInQuest Name="Severing the Tether" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<TurnInQuest Name="To Understand One's Foe" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<TurnInQuest Name="The Power of Life" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" /> <!-- Chest -->
+		<!-- End of Palisade Quests -->
+		
+		<!-- Overwatch Keep Quests -->
+	<PickUpQuest Name="The Overwatch Beckons" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+		<!-- if con hasquest forcetrain in Argent Glade -->
+	<TurnInQuest Name="The Overwatch Beckons" Npc="Brougan Grote" X="6025.305" Y="827.7359" Z="3079.123" />
+	<PickUpQuest Name="Overwatch Infiltration" Npc="Brougan Grote" X="6025.305" Y="827.7359" Z="3079.123" />
+	<TurnInQuest Name="Overwatch Infiltration" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+	<PickUpQuest Name="A Violent Peace Offering" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+	<PickUpQuest Name="Aelfwar Monstrosities" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+	<PickUpQuest Name="Remembrance of Things Past" Npc="Cailin Imora" X="6267.363" Y="838.1353" Z="3242.942" />
 	
 	
 	
