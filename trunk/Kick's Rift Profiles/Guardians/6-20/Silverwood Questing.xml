@@ -1591,8 +1591,22 @@
 		
 		<!-- To Argent Glade -->
 	<TurnInQuest Name="Back to Argent Glade" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+	<PickUpQuest Name="Ancient Reflections" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+		<!-- Ignoring quest from barkeep (go to sanctum and get a horse -->
+	<TurnInQuest Name="Ancient Reflections" Npc="Markus Walkerwind" X="6038.924" Y="817.3642" Z="3020.481" />
+	<PickUpQuest Name="Fall of the Aelfwar" Npc="Markus Walkerwind" X="6038.924" Y="817.3642" Z="3020.481" />
+	<PickUpQuest Name="Ask the Elders" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+	<PickUpQuest Name="Scouts on the Ridge" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
 		<!-- if con hasquest thontics blessing - force train at argent glade -->
 	<TurnInQuest Name="Thontic's Blessing" Npc="Annette Kostral" X="6021.845" Y="832.9453" Z="3122.545" />
+	
+	<PickUpQuest Name="Skull and Bones" Npc="Fiona Lechtum" X="5962.077" Y="812.1246" Z="3060.189" /> <!-- escort scotty at shrine -->
+		<!-- To Snarebrush Grot Quests -->
+	<PickUpQuest Name="Bless the Fallen" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<PickUpQuest Name="Power of the Vigil" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+	<PickUpQuest Name="Crash Course in Blood Magic" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="The Snarebrush Talon" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+	<PickUpQuest Name="Rusty War Machines" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
 	
 	
 	
