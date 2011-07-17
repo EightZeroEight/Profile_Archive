@@ -1,6 +1,35 @@
 ﻿<Profile>
   <Tasks>
     <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<!-- add gnarlwood post -->
+			<Healer X="5107.612" Y="979.0462" Z="3136.782" /> <!-- Gloamwood Pines -->
+			<Healer X="5900.885" Y="935.6766" Z="3814.422" /> <!-- Silkweb Pass (SE Gloamwood) -->
+			<Healer X="5683.191" Y="981.4459" Z="3443.343" /> <!-- Silkweb Outpost -->
+			<Healer X="5115.105" Y="998.688" Z="2419.498" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
+			
+			
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<!-- add gnarlwood post -->
+			<Vendor X="5183.262" Y="944.0398" Z="3143.093" /> <!-- Gloamwood Pines -->
+			<Vendor X="5906.394" Y="934.9724" Z="3810.537" /> <!-- Silkweb Pass (SE Gloamwood) -->
+			<Vendor X="5686.646" Y="982.5747" Z="3426.33" /> <!-- Silkweb Outpost -->
+			<Vendor X="5134.506" Y="999.2761" Z="2427.437" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
+			
+			
+			
+			
+			
+        </Vendors>
+      </Vendor>
+    </AddJob>
     <LoadMesh Name="Gloamwood" />
 
 		<!-- Gloamwood Post Quests (Entrance to Gloamwood) -->
@@ -44,20 +73,379 @@
 				if con hasquest asotp - interactwith porticulum master Npc="Suze Vega" X="5123.377" Y="947.6406" Z="3226.685"
 		-->
 	<TurnInQuest Name="A Shadow on the Path" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
-	<PickUpQuest Name="Marshal the Troops" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<!-- Ignoring Dungeon Quest 
 	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
+	<PickUpQuest Name="Marshal the Troops" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<PickUpQuest Name="A Dangerous Trade" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<PickUpQuest Name="Reclaim Silkweb Pass" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+	
+		<!-- Silkweb Pass Quests -->
+	
+		<UseObjectsObjective Quest="A Dangerous Trade" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Web-Wrapped Crate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+				<Hotspot X="5653.988" Y="985.0587" Z="3375.897" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Kill for a Cure" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Bileshot</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Kill for a Cure" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Venom</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reclaim Silkweb Pass" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Bileshot</Mob>
+			  <Mob>Gloamsilk Venom</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- if con hasitem Venemous Fang - accept quest from item and turn into Wrangler Dein in Gloamwood Pines, Else, use the hotspots above and farm for it -->
+		
+		<!-- Silkweb Outpost Quests -->
+	<TurnInQuest Name="Reclaim Silkweb Pass" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+	<PickUpQuest Name="Into the Nest" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+	<TurnInQuest Name="Kill for a Cure" Npc="Caleb Matson" X="5681.929" Y="982.6494" Z="3422.709" />
+	<PickUpQuest Name="Creeping Paralysis" Npc="Caleb Matson" X="5681.929" Y="982.6494" Z="3422.709" />
+	
+		<UseObjectsObjective Quest="Creeping Paralysis" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Cocooned Civilian</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5824.362" Y="973.0728" Z="3576.74" />
+				<Hotspot X="5874.527" Y="942.4702" Z="3611.665" />
+				<Hotspot X="5941.694" Y="942.6699" Z="3616.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Into the Nest" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Broodmother</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5924.532" Y="937.7648" Z="3610.255" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Marshal the Troops" Npc="Sergeant Faid" X="5903.724" Y="934.9285" Z="3798.382" />
+	<PickUpQuest Name="March of the Defenders" Npc="Sergeant Faid" X="5903.724" Y="934.9285" Z="3798.382" />
+		<Escort Npc="8th Guard Recruit" Quest="March of the Defenders" Tracking="1" />
+	<TurnInQuest Name="March of the Defenders" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> <!-- You will probably die here after the recruits die -->
+	<!-- I didn't get any agro here - but I don't know if the bot is going to use the road or pull mobs. IE: i haven't tested this quest, only did it by hand -->
+	<PickUpQuest Name="Havoc Trail" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> 
+		<!-- <Escort Npc="Injured Recruit" Quest="Havoc Trail" Tracking="1" /> -->
+		<If Condition="HasQuest(&quot;Injured Recruit&quot;)">
+			<MoveTo X="5686.117" Y="982.5849" Z="3425.082" />
+			<Wait Seconds="5" />
+		</If>
+	<TurnInQuest Name="Havoc Trail" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
+		<!-- End of Silkweb Outpost Quests -->
+		
+		<!-- Gloamwood Pines Turnin / Pickups -->
+	<PickUpQuest Name="Ill Tidings" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
+	<TurnInQuest Name="Into the Nest" Reward="1" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" /> <!-- Gloves -->
+	<PickUpQuest Name="A Solemn Solution" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+	<TurnInQuest Name="A Dangerous Trade" Reward="1" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" /> <!-- Helmet -->
+	<PickUpQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<TurnInQuest Name="Ill Tidings" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
+	<!-- Ignoring Dungeon Quest
+	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
+	<PickUpQuest Name="Green Eyed Monster" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
+	<TurnInQuest Name="Creeping Paralysis" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	<PickUpQuest Name="The Seed of History" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	
+		<!-- Solemn Outlook Quests -->
+	<TurnInQuest Name="A Solemn Solution" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" />
+		<!-- I cannot do this quest.  I need to collect Dust 3x Potent Essence from Restless Spirit 's and then I need to wake the dead from the graves and kill them.  the only objective that is tracked is the 'awaken and destroy ghosts' 
+			now, if it's 'night time' in gloamwood, the ghosts will be hostile.  if it's not nighttime, they will be neutral (i was there when they changed)
+			
+	<PickUpQuest Name="Answers of the Dead" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" />
+
+		// kill ghosts w/in these hotspots and get the Potent Essence's
+		<Hotspot X="5436.515" Y="1030.589" Z="2859.623" />
+		<Hotspot X="5416.856" Y="1026.345" Z="2848.641" />
+		<Hotspot X="5395.2" Y="1018.221" Z="2858.922" />
+		\\
+	
+		<UseObjectsObjective Quest="Answers of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Solemn Grave</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5429.746" Y="1030.839" Z="2877.378" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Answers of the Dead" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" /> // Legs \\
+	
+		// no chain quest
+	-->
+	<PickUpQuest Name="May It Serve You Better" Npc="Nigel Solemn" X="5448.421" Y="1030.687" Z="2855.515" />
+
+		<!-- To Gnarlwood Post  -->
+	<TurnInQuest Name="Green Eyed Monster" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Bleeding Green" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+		<!-- RunTo <Hotspot X="5409.1" Y="959.9289" Z="2647.35" /> and interactwith gameobject Forest Altar to summon Laria -->
+	<TurnInQuest Name="The Seed of History" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	
 	
+		<UseObjectsObjective Quest="A Dangerous Harvest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Amorian Root</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Blood of the Ancients" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Bleeding Green" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			  <Mob>Barkeater Vileshot</Mob>
+			  <Mob>Barkeater Bonemender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackroot Warden</Mob>
+			  <Mob>Blackroot Guardian</Mob>
+			  <Mob>Blackroot Grovekeeper</Mob>
+			  <Mob>Blackroot Blightleaf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Blood on the Roots" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackroot Warden</Mob>
+			  <Mob>Blackroot Guardian</Mob>
+			  <Mob>Blackroot Grovekeeper</Mob>
+			  <Mob>Blackroot Blightleaf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> <!-- standing stones -->
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Pried From Their Dead Hands" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Bleeding Green" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- Goblin Necklace offers a Quest, dropped from the Nightrock Goblins -->
 	
-	
+		<!-- runto the Forest Altar and use the gameobject -->
+	<TurnInQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<TurnInQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="Shade of the Family" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<TurnInQuest Name="Bleeding Green" Reward="1" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" /> <!-- Ranged WPN - 1=str dex bow, 2=dex end bow, 3=int wis end wand, 4=int wis end wand. -->
+	<TurnInQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<TurnInQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+
+		<!-- Use Item at Range 20-30 yards, or combat useitemon.  I had to do this quest manually -->
+		<UseItemOnMobsObjective Quest="Field Tested, Goblin Approved" Item="Goblin Venom" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			  <Mob>Barkeater Vileshot</Mob>
+			  <Mob>Barkeater Bonemender</Mob>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+				
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Into the Deeps" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="To Keep Them Fighting" Npc="Waykeeper Brion" X="5380.985" Y="954.042" Z="2706.418" />
+	<!-- Daily Available - No Bark, All Bite - from Waykeeper Ienja.  (kill 16 trees).  Ignoring for now -->
+	<TurnInQuest Name="Into the Deeps" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<TurnInQuest Name="To Keep Them Fighting" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
+	<PickUpQuest Name="The Waykeeper's Keeper" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
+	<PickUpQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<PickUpQuest Name="Heirlooms of the Dead" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 	
 	
 	
 	
 	<!--
 	<PickUpQuest Name="" 
+	<Hotspot X="5133.319" Y="999.2713" Z="2423.875" /> 
+	darkening deeps / narrowing road
+	
+	<Hotspot X="5057.897" Y="972.0157" Z="2686.802" /> // drix in darkrock caverns
 	-->
 	
 	

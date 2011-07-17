@@ -78,7 +78,7 @@
 			<Wait Seconds="5" />
 		</If>
 
-		<Escort Npc="" Quest="" Tracking="2" />
+		<Escort Npc="" Quest="" Tracking="1" />
 
 		<KillMobsObjective Quest="" Tracking="2">
 		  <Area>
