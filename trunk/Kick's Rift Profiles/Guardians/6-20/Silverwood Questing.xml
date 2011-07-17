@@ -2333,8 +2333,12 @@
 		<!-- if con hasquest runto argent glade and force train -->
 	<TurnInQuest Name="Dormant Power" Reward="1" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" /> <!-- Boots -->
 		<!-- End of Overwatch Keep Quests -->
+		
+		<!-- Go To Gloamwood Quests (Gnarlwood Post) -->
 	<PickUpQuest Name="An Age of Darkness" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
 	<PickUpQuest Name="Gloamwood Beasts" Npc="Ralph Bonser" X="6037.717" Y="832.3002" Z="3123.418" />
+	<TurnInQuest Name="An Age of Darkness" Npc="Laenaya Niro" X="5395.653" Y="953.5158" Z="2718.086" />
+	<TurnInQuest Name="Gloamwood Beasts" Npc="Waykeeper Brion" X="5380.467" Y="954.0422" Z="2706.434" />
 
 
 
