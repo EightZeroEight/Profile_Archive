@@ -1,0 +1,109 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <LoadMesh Name="Gloamwood" />
+
+		<!-- Gloamwood Post Quests (Entrance to Gloamwood) -->
+	<PickUpQuest Name="The Apothecary" Npc="Waykeeper Thil" X="5384.748" Y="954.0096" Z="2705.682" />
+	<PickUpQuest Name="A Shadow on the Path" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> <!-- To Gloamwood Pines -->
+	
+		<KillMobsObjective Quest="The Apothecary" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloam Bat</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5321.525" Y="948.8476" Z="2941.173" />
+				<Hotspot X="5317.413" Y="931.8384" Z="3001.162" />
+				<Hotspot X="5354.085" Y="929.8093" Z="3044.153" />
+				<Hotspot X="5384.986" Y="929.6329" Z="3069.159" />
+				<Hotspot X="5389.186" Y="929.8" Z="3033.113" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Apothecary" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Darkpaw Prowler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5321.525" Y="948.8476" Z="2941.173" />
+				<Hotspot X="5317.413" Y="931.8384" Z="3001.162" />
+				<Hotspot X="5354.085" Y="929.8093" Z="3044.153" />
+				<Hotspot X="5384.986" Y="929.6329" Z="3069.159" />
+				<Hotspot X="5389.186" Y="929.8" Z="3033.113" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- End of Gloamwood Post Quests -->
+	<TurnInQuest Name="The Apothecary" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	<PickUpQuest Name="Kill for a Cure" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+		<!-- if con hasquest A Shadow on the Path forcetrain gloamwood pines
+				if con hasquest asotp - interactwith porticulum master Npc="Suze Vega" X="5123.377" Y="947.6406" Z="3226.685"
+		-->
+	<TurnInQuest Name="A Shadow on the Path" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<PickUpQuest Name="Marshal the Troops" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<!-- Ignoring Dungeon Quest 
+	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
+	<PickUpQuest Name="A Dangerous Trade" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--
+	<PickUpQuest Name="" 
+	-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    <Loop />
+  </Tasks>
+</Profile>
