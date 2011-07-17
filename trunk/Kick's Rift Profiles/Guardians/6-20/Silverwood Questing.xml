@@ -2037,8 +2037,307 @@
 	<PickUpQuest Name="Aelfwar Monstrosities" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
 	<PickUpQuest Name="Remembrance of Things Past" Npc="Cailin Imora" X="6267.363" Y="838.1353" Z="3242.942" />
 	
+		<KillMobsObjective Quest="A Violent Peace Offering" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Tongue Chewer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6374.547" Y="847.5352" Z="3169.085" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="A Violent Peace Offering" Npc="Vigoth Phar" X="6392.898" Y="901.652" Z="3169.513" />
+	<PickUpQuest Name="Tete-a-Tete" Npc="Vigoth Phar" X="6392.898" Y="901.652" Z="3169.513" />
+		<If Condition="HasQuest(&quot;&quot;)">
+			<!-- i might need a hasquest, waittime 4-5 sec, then escort 
+			<Wait Seconds="4" />
+			-->
+			<Escort Npc="Aelfwar Honor Guard" Quest="Tete-a-Tete" Tracking="1" /> <!-- Temporary friendly faction -->
+			<!-- <Interactwith Prince Hylas 1 time> Tracking 2 and then quest completes - Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" -->
+			<Python Statement="Logging.Write(&quot;Write code: Interactwith Prince Hylas&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 	
+		<UseObjectsObjective Quest="Remembrance of Things Past" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Overwatch Artifact</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6270.875" Y="879.2263" Z="3029.193" />
+				<Hotspot X="6279.364" Y="879.2234" Z="3040.441" />
+				<Hotspot X="6369.726" Y="895.1133" Z="3211.073" />
+				<Hotspot X="6335.889" Y="905.095" Z="3227.279" />
+				<Hotspot X="6418.837" Y="909.702" Z="3139.833" />
+				<Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
+				
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Stoneroot</Mob>
+			  <Mob>Aelfwar Mystic</Mob>
+			  <Mob>Aelfwar Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
+				<Hotspot X="6418.837" Y="909.702" Z="3139.833" />
+				<Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Mystic</Mob>
+			  <Mob>Aelfwar Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6372.208" Y="887.3596" Z="3007.645" />
+				<Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
+				<Hotspot X="6418.837" Y="909.702" Z="3139.833" />
+				<Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Defender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6290.473" Y="867.1844" Z="3144.907" />
+				<Hotspot X="6279.364" Y="879.2234" Z="3040.441" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Remembrance of Things Past" Npc="Cailin Imora" X="6267.363" Y="838.1353" Z="3242.942" />
+	<TurnInQuest Name="Tete-a-Tete" Reward="1" Npc="Loras Tivan" X="6262.305" Y="838.3229" Z="3242.823" /> <!-- WPN - 1=2h caster staff, 2=1h caster sword, 3=str dex dagger, 4=1h str dex sword -->
+	<TurnInQuest Name="Aelfwar Monstrosities" Reward="1" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" /> <!-- Necklace - 1= int wis end, 2=int end, 3=dex end, 4=str end -->
+		<!-- You'll want to force sell while you're here -->
+	<PickUpQuest Name="A Spiritual Calling" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+		<!-- Npc's inside Keep -->
+	<TurnInQuest Name="A Spiritual Calling" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+	<PickUpQuest Name="Clouded Contemplation" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+	<PickUpQuest Name="Discordant Spirits" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+	<PickUpQuest Name="Servants of Twyl" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+	<PickUpQuest Name="Remember the Chosen" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
 	
+		 <!-- there are teleporters here that teleport us to the other towers! too cool! (bot can't use them i don't think). They're called "Faetouched Translocator" and you have to interactwith gameobject them -->
+		 <!-- The order of things is done as if I were doing them manually.  If the bot can't interact with the porter after the UseGameObject, then re-arrangement is needed -->
+		 <!-- The mesh in the towers may need to be tweaked -->
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="2"> <!-- E? -->
+		  <Area>
+			<Objects>
+			  <Object>Mariel-Taun's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6569.25" Y="927.1528" Z="3043.729" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="1"> <!-- North -->
+		  <Area>
+			<Objects>
+			  <Object>Bahrlat's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6492.187" Y="927.0859" Z="2969.544" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="6"> <!-- NW -->
+		  <Area>
+			<Objects>
+			  <Object>Vigil's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6424.586" Y="944.774" Z="3035.864" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Discordant Spirits" Tracking="1"> <!-- N/NW --> <!-- this is assuming we can't tower hop.  if we can, move this below the remember the chosen quest chain -->
+		  <Area>
+			<Objects>
+			  <Object>Dehrnal's Table</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6470.812" Y="908.4207" Z="2999.938" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="5"> <!-- West -->
+		  <Area>
+			<Objects>
+			  <Object>Thontic's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6406.396" Y="944.7219" Z="3106.686" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="4"> <!-- SW -->
+		  <Area>
+			<Objects>
+			  <Object>Thedeor's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6455.444" Y="944.5909" Z="3152.162" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Remember the Chosen" Tracking="3"> <!-- S -->
+		  <Area>
+			<Objects>
+			  <Object>Tavril's Reliquary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6531.084" Y="944.5756" Z="3132.054" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Discordant Spirits" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Onnep's Fish</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6447.94" Y="847.2006" Z="3171.358" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Remember the Chosen" Reward="1" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" /> <!-- Belt -->
+
+		<UseObjectsObjective Quest="Discordant Spirits" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Eogan's Altar</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6309.371" Y="877.4548" Z="3018.638" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	
+		<KillMobsObjective Quest="Clouded Contemplation" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Greenscale Zealot</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6576.89" Y="906.4457" Z="3048.568" />
+				<Hotspot X="6570.668" Y="927.1541" Z="3040.611" />
+				<Hotspot X="6492.187" Y="927.0859" Z="2969.544" />
+				<Hotspot X="6424.586" Y="944.774" Z="3035.864" />
+				<Hotspot X="6406.396" Y="944.7219" Z="3106.686" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+		<KillMobsObjective Quest="Servants of Twyl" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Defender of Twyl</Mob>
+			  <Mob>Envoy of Twyl</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6405.119" Y="895.1077" Z="3186.659" />
+				<Hotspot X="6480.372" Y="879.0002" Z="3202.762" />
+				<Hotspot X="6429.103" Y="924.055" Z="3044.904" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Servants of Twyl" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+	<TurnInQuest Name="Clouded Contemplation" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+	<TurnInQuest Name="Discordant Spirits" Reward="1" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" /> <!-- WPN - 1=str/dex dagger, 2=caster staff, 3=OH caster, 4=Cleric Shield -->
+	<PickUpQuest Name="The Vigil's Shield" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+	
+		<!-- Actually we use the shield at locations of the green floating balls in the air -->
+		<UseItemOnMobsObjective Quest="The Vigil's Shield" Item="Aegis of the Vigil" CastTime="1" Cooldown="0" WhenDead="True" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fae Energy</Mob>
+			  <Mob>1st Order Ranger</Mob>
+			  <Mob>1st Order Druid</Mob>
+			  <Mob>1st Order Champion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6514.05" Y="914.7204" Z="3042.215" />
+				<Hotspot X="6470.752" Y="908.4168" Z="3044.56" />
+				<Hotspot X="6502.58" Y="910.5151" Z="3050.363" />
+				<Hotspot X="6469.278" Y="908.4169" Z="3008.116" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+		<!-- Use Altar of Balance <Hotspot X="6555.708" Y="908.4183" Z="3075.654" /> produces Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" -->
+	<TurnInQuest Name="The Vigil's Shield" Reward="1" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" /> <!-- Helm -->
+	<PickUpQuest Name="Kongeegon, the Glory of the Aelfwar" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" />
+	
+		<UseObjectsObjective Quest="Kongeegon, the Glory of the Aelfwar" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Seed of Destruction</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6449.262" Y="908.5035" Z="3108.169" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- This one is weird - you have to kil the Greenscale Priests that spawn at about 1/2 HP of Kongeegon (they make him untargettable) ... even the combat bot doesn't want to kill them -->
+		<KillMobsObjective Quest="Kongeegon, the Glory of the Aelfwar" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Greenscale Priest</Mob>
+			  <Mob>Kongeegon</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="6445.421" Y="909.2953" Z="3106.985" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Kongeegon, the Glory of the Aelfwar" Reward="1" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" /> <!-- Gloves -->
+	<PickUpQuest Name="Dormant Power" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+		
+		<UseObjectsObjective Quest="Dormant Power" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Neutralizing Cauldron</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6419.341" Y="895.1077" Z="3171.551" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- if con hasquest runto argent glade and force train -->
+	<TurnInQuest Name="Dormant Power" Reward="1" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" /> <!-- Boots -->
+		<!-- End of Overwatch Keep Quests -->
+	<PickUpQuest Name="An Age of Darkness" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+	<PickUpQuest Name="Gloamwood Beasts" Npc="Ralph Bonser" X="6037.717" Y="832.3002" Z="3123.418" />
+
+
+
 	
 	<!--
 	<PickUpQuest Name="" 
