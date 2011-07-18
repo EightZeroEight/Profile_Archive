@@ -1,9 +1,0 @@
-<Profile>
-  <Tasks>
-    <AddJob>
-      <HandleCombat />
-	  <HandleRest />
-    </AddJob>
-    <Loop />
-  </Tasks>
-</Profile>

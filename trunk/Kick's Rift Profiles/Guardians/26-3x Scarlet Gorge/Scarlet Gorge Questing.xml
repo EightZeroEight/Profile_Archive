@@ -1,0 +1,79 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="4325.261" Y="1104.862" Z="2360.802" /> <!-- Loggerman's Lift -->
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Scarlet Gorge" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+    <Loop />
+  </Tasks>
+</Profile>
