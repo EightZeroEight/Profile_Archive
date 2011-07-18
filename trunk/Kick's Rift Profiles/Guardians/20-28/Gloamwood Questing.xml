@@ -248,7 +248,7 @@
 	<PickUpQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	
-	
+		<!-- Darkening Deeps / Narrowing Road Quests -->
 		<UseObjectsObjective Quest="A Dangerous Harvest" Tracking="1">
 		  <Area>
 			<Objects>
@@ -430,20 +430,162 @@
 	<TurnInQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Into the Deeps" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="To Keep Them Fighting" Npc="Waykeeper Brion" X="5380.985" Y="954.042" Z="2706.418" />
-	<!-- Daily Available - No Bark, All Bite - from Waykeeper Ienja.  (kill 16 trees).  Ignoring for now -->
+		<!-- Daily Available - No Bark, All Bite - from Waykeeper Ienja.  (kill 16 trees).  Ignoring for now -->
 	<TurnInQuest Name="Into the Deeps" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 	<TurnInQuest Name="To Keep Them Fighting" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
 	<PickUpQuest Name="The Waykeeper's Keeper" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
 	<PickUpQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 	<PickUpQuest Name="Heirlooms of the Dead" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 	
+		<!-- Darkening Deeps Quests -->
+	<TurnInQuest Name="The Waykeeper's Keeper" Npc="Waykeeper Darion" X="4862.439" Y="943.6407" Z="2320.632" />
+	<PickUpQuest Name="Removing the Head" Npc="Waykeeper Darion" X="4862.439" Y="943.6407" Z="2320.632" />
 	
+		<UseObjectsObjective Quest="Heirlooms of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Unidentifiable Corpse</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4919.553" Y="923.9849" Z="2240.673" />
+				<Hotspot X="4965.6" Y="922.5564" Z="2296.083" />
+				<Hotspot X="4987.799" Y="928.4041" Z="2418.651" />
+				<Hotspot X="4904.979" Y="928.3809" Z="2393.611" />
+				<Hotspot X="4882.483" Y="937.1125" Z="2303.403" />
+				<Hotspot X="4904.087" Y="976.293" Z="2178.88" />
+				<Hotspot X="5004.549" Y="982.0694" Z="2225.129" />
+				<Hotspot X="4916.158" Y="928.3635" Z="2417.971" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<!-- Fire and Venom /use Waykeeper's Bomb at these hotspots:
+	<Hotspot X="4993.25" Y="982.0694" Z="2237.763" /> // at the goblin camps (tracking 1) - north
+	<Hotspot X="4976.418" Y="928.4117" Z="2374.091" />  // near cauldron (tracking 2) - central / south
+	<Hotspot X="4916.158" Y="928.3635" Z="2417.971" /> // near the ruins (tracking 3) - S / SW (pair with Graul's head - north)
+	-->
+	<!-- do goblin camps (1), turn in The Waykeeper's Keeper and then 3 / Graul (head 2), then 2, then removing head 3 (cave), then 1 / nizak (head 1) -->
 	
+		<KillMobsObjective Quest="Removing the Head" Tracking="2"> <!-- S / SW -->
+		  <Area>
+			<Mobs>
+			  <Mob>Graul</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4993.25" Y="982.0694" Z="2237.763" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Removing the Head" Tracking="3"> <!-- Cave, Central -->
+		  <Area>
+			<Mobs>
+			  <Mob>Buguk</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Darkblood Basher</Mob>
+			  <Mob>Darkblood Witchdoctor</Mob>
+			  <Mob>Darkblood Bilehex</Mob>
+			  <Mob>Darkblood Vileshot</Mob>
+			  <Mob>Darkblood Bonemender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4919.553" Y="923.9849" Z="2240.673" />
+				<Hotspot X="4965.6" Y="922.5564" Z="2296.083" />
+				<Hotspot X="4987.799" Y="928.4041" Z="2418.651" />
+				<Hotspot X="4904.979" Y="928.3809" Z="2393.611" />
+				<Hotspot X="4882.483" Y="937.1125" Z="2303.403" />
+				<Hotspot X="4904.087" Y="976.293" Z="2178.88" />
+				<Hotspot X="5004.549" Y="982.0694" Z="2225.129" />
+				<Hotspot X="4916.158" Y="928.3635" Z="2417.971" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Removing the Head" Tracking="1"> <!-- North -->
+		  <Area>
+			<Mobs>
+			  <Mob>Nizak</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5006.846" Y="928.4081" Z="2411.685" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		<!-- Venom-Stained Key offers a Quest! - this has you give the key to a captured civilian -->
+	
+		<!-- if con hasquest Venom-Stained Key - turnin at Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" (right beside Graul's Area), then escort him out of the area.  Bot has trouble interacting w/ him because he's in a cage
+	<TurnInQuest Name="Venom-Stained Key" Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" />
+	<PickUpQuest Name="Out of Harm's Way" Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" />
+		<Escort Npc="Captured Civilian" Quest="Out of Harm's Way" Tracking="1" /> 
+	<TurnInQuest Name="Out of Harm's Way" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+		 If there's an invasion, you fail this escort (there was an invasion QQ) -->
+	<TurnInQuest Name="Removing the Head" Reward="1" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" /> <!-- Shoulders -->
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="1" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> <!-- Ring - 1=int wis end, 2=int end, 3=str dex, 4=str end -->
+	<TurnInQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<PickUpQuest Name="The Light in the Gloam" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+		<!-- End of Darkening Deeps Quests -->
+		
+		<!-- Gloamwood Pines Turnin / Pickups -->
+	<TurnInQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<TurnInQuest Name="May It Serve You Better" Npc="Janina Solemn" X="5157.782" Y="946.6281" Z="3131.544" />
+	<PickUpQuest Name="Janina's Revenge" Npc="Janina Solemn" X="5157.782" Y="946.6281" Z="3131.544" />
+	<TurnInQuest Name="Shade of the Family" Npc="Gwyddon Duskenleaf" X="5175.719" Y="952.1046" Z="3218.956" />
+	<PickUpQuest Name="Planting Hope" Npc="Gwyddon Duskenleaf" X="5175.719" Y="952.1046" Z="3218.956" /> <!-- To Tearfall Run -->
+	<TurnInQuest Name="The Light in the Gloam" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<PickUpQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+		<If Condition="HasQuest(&quot;The Goblin Bane&quot;)">
+			<MoveTo X="5242.908" Y="987.0568" Z="3080.501" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
+			<Wait Seconds="3" />
+		</If>
+	<TurnInQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<PickUpQuest Name="In Recognition of Valor" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<TurnInQuest Name="In Recognition of Valor" Reward="1" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" /> <!-- Chest -->
+	<PickUpQuest Name="Aiding the Waykeepers" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+	<PickUpQuest Name="Marching Onward" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+	<TurnInQuest Name="Marching Onward" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<PickUpQuest Name="What Goes Bump in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<TurnInQuest Name="What Goes Bump in the Wood" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	<PickUpQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	
+		<!-- Solemn's Outlook again - would this be better up top w/ the first one? -->
+		<KillMobsObjective Quest="Janina's Revenge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Restless Spirit</Mob>
+			  <Mob>Anguished Specter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5428.227" Y="1030.203" Z="2863.988" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	<TurnInQuest Name="Janina's Revenge" Npc="Nigel Solemn" X="5448.421" Y="1030.687" Z="2855.515" />
+		
+		<!-- To Silkweb Pass Again -->
+	<TurnInQuest Name="Aiding the Waykeepers" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+		<!-- Think of the Children - Daily available.  kill 8 spiders, free 3 victims.  Ignoring for now -->
+
+		<!-- To Tearfall Run -->
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+
+
+
 	
 	<!--
 	<PickUpQuest Name="" 
-	<Hotspot X="5133.319" Y="999.2713" Z="2423.875" /> 
-	darkening deeps / narrowing road
 	
 	<Hotspot X="5057.897" Y="972.0157" Z="2686.802" /> // drix in darkrock caverns
 	-->
