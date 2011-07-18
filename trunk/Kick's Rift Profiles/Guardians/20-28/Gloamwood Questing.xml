@@ -11,9 +11,6 @@
 			<Healer X="5115.105" Y="998.688" Z="2419.498" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
 			<Healer X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
 			<Healer X="4325.261" Y="1104.862" Z="2360.802" /> <!-- Loggerman's Lift -->
-			
-			
-			
         </Healers>
       </MendSoul>
     </AddJob>
@@ -27,10 +24,6 @@
 			<Vendor X="5134.506" Y="999.2761" Z="2427.437" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
 			<Vendor X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
 			<Vendor X="4325.261" Y="1104.862" Z="2360.802" /> <!-- Loggerman's Lift -->
-			
-			
-			
-			
         </Vendors>
       </Vendor>
     </AddJob>
@@ -1327,59 +1320,9 @@
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
 	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
 	
-	
-	
-	
-	
-	<!--
-	<PickUpQuest Name="" 
-	-->
-	
-	
-	
-	
-	
-	
-		<!-- 
-		-->
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
 	
 
     <Loop />

@@ -61,18 +61,14 @@
 			<Python Statement="Logging.Write(&quot;Bot doesn't  &quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
-		
 
-
-
-
-
-
+        <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(, , )) &lt; 10*10">
+          <UseObject Name="" 
+        </If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
 			<TalkToNpcObjective Npc=""   Text="" />
 		</If>
-
 
 		<If Condition="HasQuest(&quot;&quot;)">
 			<MoveTo 
