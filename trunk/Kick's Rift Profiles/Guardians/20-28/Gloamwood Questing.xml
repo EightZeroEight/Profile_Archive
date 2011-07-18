@@ -9,7 +9,7 @@
 			<Healer X="5900.885" Y="935.6766" Z="3814.422" /> <!-- Silkweb Pass (SE Gloamwood) -->
 			<Healer X="5683.191" Y="981.4459" Z="3443.343" /> <!-- Silkweb Outpost -->
 			<Healer X="5115.105" Y="998.688" Z="2419.498" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
-			
+			<Healer X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
 			
         </Healers>
       </MendSoul>
@@ -22,7 +22,7 @@
 			<Vendor X="5906.394" Y="934.9724" Z="3810.537" /> <!-- Silkweb Pass (SE Gloamwood) -->
 			<Vendor X="5686.646" Y="982.5747" Z="3426.33" /> <!-- Silkweb Outpost -->
 			<Vendor X="5134.506" Y="999.2761" Z="2427.437" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
-			
+			<Vendor X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
 			
 			
 			
@@ -581,13 +581,141 @@
 	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 
+		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+			<MoveTo X="4320.372" Y="1100.515" Z="2766.465" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		<UseObjectsObjective Quest="Dead Water" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Athana's Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4297.844" Y="1058.055" Z="2670.777" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Wait Seconds="5" />
+		</If>
 
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 
+		<KillMobsObjective Quest="The Beast of Greybriar Hollow" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>The Hollow's Beast</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Beast of Greybriar Hollow" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Greybriar Prowler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
+				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- 
+		<Hotspot X="4300.552" Y="1116.924" Z="2588.966" />
+		Fractured Rib offers a Quest! (from guys at Mathosian Mill - where Bloody Jack is)
+	<PickUpQuest Name="Slim Pickings" Item />
+	<TurnInQuest Name="Slim Pickings" Npc="Wrangler Dein" X="5146.571" Y="946.6281" Z="3135.745" />
+		-->
+		
+		<KillMobsObjective Quest="In Death as in Life" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bloody Jack</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4391.538" Y="1140.579" Z="2596.118" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" /> <!-- No Chain -->
+	<TurnInQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	<PickUpQuest Name="Quieting the Beast" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
+			<Python Statement="GigaBot.Stop()" />
+		<!--
+			<MoveTo X="5256.864" Y="987.1636" Z="3074.8" />
+			interactwith (tracking 2)
+			Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+			gossip: Quieting the Beast
+
+			<MoveTo X="5142.6" Y="946.6837" Z="3129.284" />
+			Useitem (tracking 3)
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Medal of Valor&quot;)" />
+
+			<MoveTo X="5190.124" Y="951.0361" Z="3100.165" />
+			interactwith (tracking 1)
+			Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165"
+			gossip: Quieting the Beast
+		-->
+		</If>
+	<PickUpQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+		<!-- if con hasquest Quieting the beast - forcetrain -->
+	<TurnInQuest Name="Quieting the Beast" Reward="1" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> <!-- WPN - 1=1h str end axe, 2=caster staff, 3=1h str dex end sword, 4=2h caster hammer -->
+	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+
+		<UseObjectsObjective Quest="Where the Moon Blossoms" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Moon Blossom</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
+				<Hotspot X="4780.575" Y="1100.106" Z="2877.354" />
+				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
+				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" />
+	
+	<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
+		<UseObjectsObjective Quest="Mysterious Messages" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Standing Stones</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" />
+				<Hotspot X="4989.724" Y="1077.033" Z="2754.507" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		huge fire invasion atm so i can't do anything
+	-->
+
+	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	
+	
+	
 	
 	<!--
 	<PickUpQuest Name="" 
-	
-	<Hotspot X="5057.897" Y="972.0157" Z="2686.802" /> // drix in darkrock caverns
 	-->
 	
 	
