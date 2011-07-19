@@ -18,9 +18,6 @@
     </AddJob>
     <LoadMesh Name="Scarlet Gorge" />
 
-		<!--
-	<PickUpQuest Name="Spreading the Word" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-		-->
 	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
 		<If Condition="HasQuest(&quot;A Hero's Duty&quot;)">
 	<TurnInQuest Name="A Hero's Duty" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
@@ -40,6 +37,10 @@
 	<PickUpQuest Name="Into Scarlet Gorge" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
 	
 		<!-- Somehow use the Elevator to get down to Scarlet Gorge -->
+		<If Condition="HasQuest(&quot;&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't use elevators - so use it and then turn in 'into scarlet gorge' &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 	<TurnInQuest Name="Into Scarlet Gorge" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 		<If Condition="HasQuest(&quot;Spreading the Word&quot;)">
 	<TurnInQuest Name="Spreading the Word" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
@@ -178,13 +179,119 @@
 	<PickUpQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 	<PickUpQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bootlegged Hooch</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3903.098" Y="976.941" Z="3234.865" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Serelda's Documents</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4008.908" Y="970.2376" Z="3236.948" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Jewelry Case</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4022.909" Y="973.9146" Z="3282.963" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
+		<!-- Combat Use Item Target Location of Lost Soul 's, then interactwith, gossip 2 times, and loot the popup window - You'll have to do this quest manually until the code is written as it is required to unlock the other chains!
+				Gossip1: Ensaring Anima
+				Gossip2: Gather Lost Soul
+				loot window
+		-->
+		<If Condition="HasQuest(&quot;Ensnaring Anima&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't do this quest - read the xml&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+	 
+		<KillMobsObjective Quest="The Darkest Magic" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Wizard</Mob>
+			  <Mob>Corrupt Mercenary</Mob>
+			  <Mob>Vile Mercenary</Mob>
+			  <Mob>Wicked Mercenary</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3956.918" Y="972.9211" Z="3257.811" />
+				<Hotspot X="4018.182" Y="972.496" Z="3270.655" />
+				<Hotspot X="4075.958" Y="963.8197" Z="3267.55" />
+				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />				
+				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
+				<Hotspot X="3914.706" Y="970.9369" Z="3347.411" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="The Darkest Magic" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupt Mercenary</Mob>
+			  <Mob>Vile Mercenary</Mob>
+			  <Mob>Wicked Mercenary</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3903.098" Y="976.941" Z="3234.865" />
+				<Hotspot X="3956.918" Y="972.9211" Z="3257.811" />
+				<Hotspot X="4018.182" Y="972.496" Z="3270.655" />
+				<Hotspot X="4075.958" Y="963.8197" Z="3267.55" />	
+				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />		
+				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- not hasquest Something's Afoot 
+		<If Condition="not HasQuest(&quot;&quot;)"> and not questcompleted
+			<MoveTo X="3904.573" Y="971.3445" Z="3360.878" />
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
+			<MoveTo X="3902.979" Y="971.5938" Z="3394.602" />
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+			<UseObject Name="Pickaxe" X="3902.979" Y="971.5938" Z="3394.602" />
+			<Wait Seconds="5" />
+			<PickUpQuest Name="Something's Afoot" Npc="Alfred Mannew" X="3903.206" Y="971.4769" Z="3396.728" />
+		</If>
+		-->
+		<If Condition="HasQuest(&quot;Something's Afoot&quot;)">
+	<TurnInQuest Name="Something's Afoot" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+		</If>
+	<TurnInQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<TurnInQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<TurnInQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Ranged - 1=int wis end wand, 2=str dex gun, 3=str dex end gun, 4= int wis end wand -->
+
+	
+	
+	
+	
+	
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
+	
+	
+	<Hotspot X="3902.851" Y="971.5574" Z="3394.934" /> // alfred mannew
 		-->
 
 
