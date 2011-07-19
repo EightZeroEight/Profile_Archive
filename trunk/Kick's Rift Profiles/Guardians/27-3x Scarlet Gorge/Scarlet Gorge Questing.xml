@@ -237,6 +237,7 @@
 				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />				
 				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
 				<Hotspot X="3914.706" Y="970.9369" Z="3347.411" />
+				<Hotspot X="4081.939" Y="964.5016" Z="3299.652" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -255,6 +256,7 @@
 				<Hotspot X="4075.958" Y="963.8197" Z="3267.55" />	
 				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />		
 				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
+				<Hotspot X="4081.939" Y="964.5016" Z="3299.652" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -279,11 +281,74 @@
 		</If>
 	<TurnInQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 	<TurnInQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
-	<TurnInQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Ranged - 1=int wis end wand, 2=str dex gun, 3=str dex end gun, 4= int wis end wand -->
+	<TurnInQuest Name="Ensnaring Anima" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Ranged - 1=int wis end wand, 2=str dex gun, 3=str dex end gun, 4= int wis end wand -->
+	<PickUpQuest Name="Words with the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 
+		<UseObjectsObjective Quest="Words with the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Soul Crucible</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3837.567" Y="971.5426" Z="3002.812" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Words with the Dead&quot;)">
+			<Wait Seconds="12" />
+			<!--
+			<TalkToNpcObjective Npc="Pacified Spirit" X="3843.141" Y="970.6825" Z="3000.198" />
+			-->
+		</If>
+
+	<TurnInQuest Name="Words with the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Free Souls" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Let Them Go" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
 	
+		<If Condition="HasQuest(&quot;Free Souls&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!-- UseItemAtLocation Tracking 1 - for Free Souls - 3 sec cast.  Soul Chime is the itemname
+				<Hotspot X="4065.323" Y="968.1088" Z="3233.459" />
+				<Hotspot X="4087.631" Y="967.5104" Z="3213.21" />
+				<Hotspot X="4048.573" Y="965.2663" Z="3169.849" />
+				<Hotspot X="4023.71" Y="966.218" Z="3221.895" />
+				<Hotspot X="4023.563" Y="971.5172" Z="3256.355" />
+				<Hotspot X="4008.479" Y="970.1602" Z="3323.226" />
+				<Hotspot X="3921.992" Y="968.2139" Z="3306.408" />
+				<Hotspot X="3899.666" Y="975.7885" Z="3254.68" />
+			-->
+		</If>
 	
-	
+		<KillMobsObjective Quest="Let Them Go" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Enslaved Corpse</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4060.15" Y="965.1263" Z="3215.652" />
+				<Hotspot X="4093.923" Y="965.9996" Z="3215.787" />
+				<Hotspot X="4081.924" Y="967.873" Z="3239.541" />
+				<Hotspot X="4065.323" Y="968.1088" Z="3233.459" />
+				<Hotspot X="4087.631" Y="967.5104" Z="3213.21" />
+				<Hotspot X="4048.573" Y="965.2663" Z="3169.849" />
+				<Hotspot X="4023.71" Y="966.218" Z="3221.895" />
+				<Hotspot X="4023.563" Y="971.5172" Z="3256.355" />
+				<Hotspot X="4008.479" Y="970.1602" Z="3323.226" />
+				<Hotspot X="3921.992" Y="968.2139" Z="3306.408" />
+				<Hotspot X="3899.666" Y="975.7885" Z="3254.68" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Free Souls" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Army of the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<TurnInQuest Name="Let Them Go" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Reporting Losses" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+	<PickUpQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<PickUpQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
 	
 	
 		<!-- 

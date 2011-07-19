@@ -58,7 +58,7 @@
 
 
 		<If Condition="HasQuest(&quot;&quot;)">
-			<Python Statement="Logging.Write(&quot;Bot doesn't  &quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 
@@ -67,7 +67,7 @@
         </If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
-			<TalkToNpcObjective Npc=""   Text="" />
+			<TalkToNpcObjective Npc=""  Text="" />
 		</If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
@@ -91,7 +91,7 @@
 
 
 		<Else>
-			<Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct soul!&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</Else>
 
