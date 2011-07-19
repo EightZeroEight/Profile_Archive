@@ -96,6 +96,15 @@
 		</Else>
 
 
+		<RemoveJob>
+			<Job Name="HandleCombat" />
+		</RemoveJob>
+
+		<MoveTo 
+
+		<AddJob>
+			<HandleCombat />
+		</AddJob>
 
 
 
