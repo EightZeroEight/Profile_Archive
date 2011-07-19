@@ -1,0 +1,230 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="3837.347" Y="984.7518" Z="3074.589" /> <!-- Crimson Wash -->
+			<Healer X="4162.334" Y="969.2657" Z="3282.168" /> <!-- Granitedust Gulch -->
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="3960.191" Y="1079.244" Z="3030.326" /> <!-- Overwatch -->
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Scarlet Gorge" />
+
+		<!--
+	<PickUpQuest Name="Spreading the Word" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+		-->
+	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
+		<If Condition="HasQuest(&quot;A Hero's Duty&quot;)">
+	<TurnInQuest Name="A Hero's Duty" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
+		</If>
+	<TurnInQuest Name="The Ancient Ward" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" /> <!-- Activate Ancient Wardstone Spell -->
+	<PickUpQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />
+		<If Condition="HasQuest(&quot;By the Power of the Vigil&quot;)">
+			<MoveTo X="3975.19" Y="1079.238" Z="3045.252" />
+			<!-- Rift is wanting to target a wardstone that is at crimson instead of right in front of us -->
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Ancient Wardstone&quot;)" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;cast Activate Ancient Wardstone&quot;)" />
+			<Wait Seconds="10" />
+		</If>
+	<TurnInQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />
+		<!-- Ignoring Tracking the Endless Court (Dungeon Quest) from Professor Whent -->
+	<PickUpQuest Name="Into Scarlet Gorge" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
+	
+		<!-- Somehow use the Elevator to get down to Scarlet Gorge -->
+	<TurnInQuest Name="Into Scarlet Gorge" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		<If Condition="HasQuest(&quot;Spreading the Word&quot;)">
+	<TurnInQuest Name="Spreading the Word" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		</If>
+	<PickUpQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	
+		<!-- Riverfell Quests - Ignoring Dailies at the N Wardstone -->
+	<PickUpQuest Name="Foul Patrols" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+	<PickUpQuest Name="Going Up" Npc="Cheev Nash" X="3833.206" Y="979.4971" Z="2914.862" />
+		<If Condition="HasQuest(&quot;Stone Cold Survivors&quot;)">
+			<!--
+			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="You'll be safe - I cleared the way." />
+			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="Head to Crimson Wash. They can help you there." />
+			-->
+		</If>
+		
+		<UseObjectsObjective Quest="Going Up" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Brad Suleri</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Going Up" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Marcus Vinnian</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3723.243" Y="1082.755" Z="2726.814" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Foul Patrols" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Regulator</Mob>
+			  <Mob>Endless Despoiler</Mob>
+			  <Mob>Endless Shadowblade</Mob>
+			  <Mob>Risen Hewer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3895.85" Y="987.4538" Z="2744.929" />
+				<Hotspot X="4003.823" Y="980.5402" Z="2705.437" />
+				<Hotspot X="3835.481" Y="989.903" Z="2783.913" />
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Foul Patrols" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Risen Hewer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3895.85" Y="987.4538" Z="2744.929" />
+				<Hotspot X="4003.823" Y="980.5402" Z="2705.437" />
+				<Hotspot X="3835.481" Y="989.903" Z="2783.913" />
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Going Up" Reward="1" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" /> <!-- Shoulders -->
+	<PickUpQuest Name="Nesting Instinct" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="It Stings Because It's Working" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="For the Birds" Npc="Ward Graves" X="3937.135" Y="1134.713" Z="2676.887" />
+
+		<UseObjectsObjective Quest="Nesting Instinct" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Contaminated Sourcestone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3578.552" Y="1208.596" Z="2643.378" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="For the Birds" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Foul Huntress</Mob>
+			  <Mob>Foul Talon</Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3663.98" Y="1180.77" Z="2605.198" />
+				<Hotspot X="3673.4" Y="1182.502" Z="2661.646" />
+				<Hotspot X="3543.998" Y="1179.567" Z="2696.141" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="For the Birds" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Foul Talon</Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3663.98" Y="1180.77" Z="2605.198" />
+				<Hotspot X="3673.4" Y="1182.502" Z="2661.646" />
+				<Hotspot X="3543.998" Y="1179.567" Z="2696.141" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="It Stings Because It's Working" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Rockchew Breaker</Mob>
+			  <Mob>Rockchew Biter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3915.089" Y="1132.772" Z="2653.607" />
+				<Hotspot X="3787.51" Y="1172.633" Z="2577.533" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="For the Birds" Npc="Ward Graves" X="3937.135" Y="1134.713" Z="2676.887" />
+	<TurnInQuest Name="Nesting Instinct" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<TurnInQuest Name="It Stings Because It's Working" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="Free and Clear" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<TurnInQuest Name="Foul Patrols" Reward="1" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" /> <!-- Legs -->
+	<TurnInQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<TurnInQuest Name="Free and Clear" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+
+
+
+
+
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+    <Loop />
+  </Tasks>
+</Profile>

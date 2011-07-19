@@ -1,0 +1,1332 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<!-- add gnarlwood post -->
+			<Healer X="5107.612" Y="979.0462" Z="3136.782" /> <!-- Gloamwood Pines -->
+			<Healer X="5900.885" Y="935.6766" Z="3814.422" /> <!-- Silkweb Pass (SE Gloamwood) -->
+			<Healer X="5683.191" Y="981.4459" Z="3443.343" /> <!-- Silkweb Outpost -->
+			<Healer X="5115.105" Y="998.688" Z="2419.498" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
+			<Healer X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
+			<Healer X="4325.261" Y="1104.862" Z="2360.802" /> <!-- Loggerman's Lift -->
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<!-- add gnarlwood post -->
+			<Vendor X="5183.262" Y="944.0398" Z="3143.093" /> <!-- Gloamwood Pines -->
+			<Vendor X="5906.394" Y="934.9724" Z="3810.537" /> <!-- Silkweb Pass (SE Gloamwood) -->
+			<Vendor X="5686.646" Y="982.5747" Z="3426.33" /> <!-- Silkweb Outpost -->
+			<Vendor X="5134.506" Y="999.2761" Z="2427.437" /> <!-- Narrowing Trail / Darkening Deeps (N/NE) -->
+			<Vendor X="4609.916" Y="1106.651" Z="2750.802" /> <!-- Tearfall Run -->
+			<Vendor X="4325.261" Y="1104.862" Z="2360.802" /> <!-- Loggerman's Lift -->
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Gloamwood" />
+
+		<!-- Gloamwood Post Quests (Entrance to Gloamwood) -->
+	<PickUpQuest Name="The Apothecary" Npc="Waykeeper Thil" X="5384.748" Y="954.0096" Z="2705.682" />
+	<PickUpQuest Name="A Shadow on the Path" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> <!-- To Gloamwood Pines -->
+	
+		<KillMobsObjective Quest="The Apothecary" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloam Bat</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5321.525" Y="948.8476" Z="2941.173" />
+				<Hotspot X="5317.413" Y="931.8384" Z="3001.162" />
+				<Hotspot X="5354.085" Y="929.8093" Z="3044.153" />
+				<Hotspot X="5384.986" Y="929.6329" Z="3069.159" />
+				<Hotspot X="5389.186" Y="929.8" Z="3033.113" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Apothecary" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Darkpaw Prowler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5321.525" Y="948.8476" Z="2941.173" />
+				<Hotspot X="5317.413" Y="931.8384" Z="3001.162" />
+				<Hotspot X="5354.085" Y="929.8093" Z="3044.153" />
+				<Hotspot X="5384.986" Y="929.6329" Z="3069.159" />
+				<Hotspot X="5389.186" Y="929.8" Z="3033.113" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- End of Gloamwood Post Quests -->
+	<TurnInQuest Name="The Apothecary" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	<PickUpQuest Name="Kill for a Cure" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+		<!-- if con hasquest A Shadow on the Path forcetrain gloamwood pines
+				if con hasquest asotp - interactwith porticulum master Npc="Suze Vega" X="5123.377" Y="947.6406" Z="3226.685"
+		-->
+	<TurnInQuest Name="A Shadow on the Path" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<!-- Ignoring Dungeon Quest 
+	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
+	<PickUpQuest Name="Marshal the Troops" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<PickUpQuest Name="A Dangerous Trade" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<PickUpQuest Name="Reclaim Silkweb Pass" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+	
+		<!-- Silkweb Pass Quests -->
+	
+		<UseObjectsObjective Quest="A Dangerous Trade" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Web-Wrapped Crate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+				<Hotspot X="5653.988" Y="985.0587" Z="3375.897" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Kill for a Cure" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Bileshot</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Kill for a Cure" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Venom</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reclaim Silkweb Pass" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Gloamsilk Bileshot</Mob>
+			  <Mob>Gloamsilk Venom</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5517.796" Y="990.6457" Z="3320.521" />
+				<Hotspot X="5516.685" Y="1000.502" Z="3360.584" />
+				<Hotspot X="5560.242" Y="991.0895" Z="3374.291" />
+				<Hotspot X="5576.727" Y="991.0838" Z="3350.182" />
+				<Hotspot X="5541.446" Y="991.0209" Z="3336.717" />
+				<Hotspot X="5605.287" Y="975.3068" Z="3444.91" />
+				<Hotspot X="5607.55" Y="987.2988" Z="3371.853" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- if con hasitem Venemous Fang - accept quest from item and turn into Wrangler Dein in Gloamwood Pines, Else, use the hotspots above and farm for it -->
+		
+		<!-- Silkweb Outpost Quests -->
+	<TurnInQuest Name="Reclaim Silkweb Pass" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+	<PickUpQuest Name="Into the Nest" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+	<TurnInQuest Name="Kill for a Cure" Npc="Caleb Matson" X="5681.929" Y="982.6494" Z="3422.709" />
+	<PickUpQuest Name="Creeping Paralysis" Npc="Caleb Matson" X="5681.929" Y="982.6494" Z="3422.709" />
+	
+		<UseObjectsObjective Quest="Creeping Paralysis" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Cocooned Civilian</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5824.362" Y="973.0728" Z="3576.74" />
+				<Hotspot X="5874.527" Y="942.4702" Z="3611.665" />
+				<Hotspot X="5941.694" Y="942.6699" Z="3616.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Into the Nest" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Broodmother</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5924.532" Y="937.7648" Z="3610.255" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Marshal the Troops" Npc="Sergeant Faid" X="5903.724" Y="934.9285" Z="3798.382" />
+	<PickUpQuest Name="March of the Defenders" Npc="Sergeant Faid" X="5903.724" Y="934.9285" Z="3798.382" />
+		<Escort Npc="8th Guard Recruit" Quest="March of the Defenders" Tracking="1" />
+	<TurnInQuest Name="March of the Defenders" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> <!-- You will probably die here after the recruits die -->
+	<!-- I didn't get any agro here - but I don't know if the bot is going to use the road or pull mobs. IE: i haven't tested this quest, only did it by hand -->
+	<PickUpQuest Name="Havoc Trail" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> 
+		<!-- <Escort Npc="Injured Recruit" Quest="Havoc Trail" Tracking="1" /> -->
+		<If Condition="HasQuest(&quot;Injured Recruit&quot;)">
+			<MoveTo X="5686.117" Y="982.5849" Z="3425.082" />
+			<Wait Seconds="5" />
+		</If>
+	<TurnInQuest Name="Havoc Trail" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
+		<!-- End of Silkweb Outpost Quests -->
+		
+		<!-- Gloamwood Pines Turnin / Pickups -->
+	<PickUpQuest Name="Ill Tidings" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
+	<TurnInQuest Name="Into the Nest" Reward="1" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" /> <!-- Gloves -->
+	<PickUpQuest Name="A Solemn Solution" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+	<TurnInQuest Name="A Dangerous Trade" Reward="1" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" /> <!-- Helmet -->
+	<PickUpQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<TurnInQuest Name="Ill Tidings" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
+	<!-- Ignoring Dungeon Quest
+	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
+	<PickUpQuest Name="Green Eyed Monster" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
+	<TurnInQuest Name="Creeping Paralysis" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	<PickUpQuest Name="The Seed of History" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	
+		<!-- Solemn Outlook Quests -->
+	<TurnInQuest Name="A Solemn Solution" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" />
+		<!-- I cannot do this quest.  I need to collect Dust 3x Potent Essence from Restless Spirit 's and then I need to wake the dead from the graves and kill them.  the only objective that is tracked is the 'awaken and destroy ghosts' 
+			now, if it's 'night time' in gloamwood, the ghosts will be hostile.  if it's not nighttime, they will be neutral (i was there when they changed)
+			
+	<PickUpQuest Name="Answers of the Dead" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" />
+
+		// kill ghosts w/in these hotspots and get the Potent Essence's
+		<Hotspot X="5436.515" Y="1030.589" Z="2859.623" />
+		<Hotspot X="5416.856" Y="1026.345" Z="2848.641" />
+		<Hotspot X="5395.2" Y="1018.221" Z="2858.922" />
+		\\
+	
+		<UseObjectsObjective Quest="Answers of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Solemn Grave</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5429.746" Y="1030.839" Z="2877.378" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Answers of the Dead" Npc="Alistair Solemn" X="5430.758" Y="1030.8" Z="2884.206" /> // Legs \\
+	
+		// no chain quest
+	-->
+	<PickUpQuest Name="May It Serve You Better" Npc="Nigel Solemn" X="5448.421" Y="1030.687" Z="2855.515" />
+
+		<!-- To Gnarlwood Post  -->
+	<TurnInQuest Name="Green Eyed Monster" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Bleeding Green" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+		<!-- RunTo <Hotspot X="5409.1" Y="959.9289" Z="2647.35" /> and interactwith gameobject Forest Altar to summon Laria -->
+	<TurnInQuest Name="The Seed of History" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	
+		<!-- Darkening Deeps / Narrowing Road Quests -->
+		<UseObjectsObjective Quest="A Dangerous Harvest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Amorian Root</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Blood of the Ancients" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Bleeding Green" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			  <Mob>Barkeater Vileshot</Mob>
+			  <Mob>Barkeater Bonemender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackroot Warden</Mob>
+			  <Mob>Blackroot Guardian</Mob>
+			  <Mob>Blackroot Grovekeeper</Mob>
+			  <Mob>Blackroot Blightleaf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Blood on the Roots" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blackroot Warden</Mob>
+			  <Mob>Blackroot Guardian</Mob>
+			  <Mob>Blackroot Grovekeeper</Mob>
+			  <Mob>Blackroot Blightleaf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> <!-- standing stones -->
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Pried From Their Dead Hands" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="Bleeding Green" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- Goblin Necklace offers a Quest, dropped from the Nightrock Goblins -->
+	
+		<!-- runto the Forest Altar and use the gameobject -->
+	<TurnInQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<TurnInQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<PickUpQuest Name="Shade of the Family" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
+	<TurnInQuest Name="Bleeding Green" Reward="1" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" /> <!-- Ranged WPN - 1=str dex bow, 2=dex end bow, 3=int wis end wand, 4=int wis end wand. -->
+	<TurnInQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<TurnInQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+
+		<!-- Use Item at Range 20-30 yards, or combat useitemon.  I had to do this quest manually -->
+		<UseItemOnMobsObjective Quest="Field Tested, Goblin Approved" Item="Goblin Venom" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Barkeater Basher</Mob>
+			  <Mob>Barkeater Vileshot</Mob>
+			  <Mob>Barkeater Bonemender</Mob>
+			  <Mob>Nightrock Bilehex</Mob>
+			  <Mob>Nightrock Witchdoctor</Mob>
+			  <Mob>Nightrock Bonemender</Mob>
+			  <Mob>Nightrock Basher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5352.568" Y="970.3442" Z="2518.744" />
+				<Hotspot X="5332.379" Y="994.9086" Z="2428.953" />
+				<Hotspot X="5200.676" Y="996.876" Z="2435.319" />
+				<Hotspot X="5203.822" Y="983.3952" Z="2528.296" />
+				<Hotspot X="5232.74" Y="982.8796" Z="2532.355" />
+				<Hotspot X="5328.527" Y="962.6163" Z="2560.333" />
+				<Hotspot X="5250.438" Y="979.2471" Z="2595.369" />
+				
+				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
+				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> 
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="Into the Deeps" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
+	<PickUpQuest Name="To Keep Them Fighting" Npc="Waykeeper Brion" X="5380.985" Y="954.042" Z="2706.418" />
+		<!-- Daily Available - No Bark, All Bite - from Waykeeper Ienja.  (kill 16 trees).  Ignoring for now -->
+	<TurnInQuest Name="Into the Deeps" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<TurnInQuest Name="To Keep Them Fighting" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
+	<PickUpQuest Name="The Waykeeper's Keeper" Npc="Waykeeper Sera" X="5133.356" Y="999.216" Z="2424.298" />
+	<PickUpQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<PickUpQuest Name="Heirlooms of the Dead" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	
+		<!-- Darkening Deeps Quests -->
+	<TurnInQuest Name="The Waykeeper's Keeper" Npc="Waykeeper Darion" X="4862.439" Y="943.6407" Z="2320.632" />
+	<PickUpQuest Name="Removing the Head" Npc="Waykeeper Darion" X="4862.439" Y="943.6407" Z="2320.632" />
+	
+		<UseObjectsObjective Quest="Heirlooms of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Unidentifiable Corpse</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4919.553" Y="923.9849" Z="2240.673" />
+				<Hotspot X="4965.6" Y="922.5564" Z="2296.083" />
+				<Hotspot X="4987.799" Y="928.4041" Z="2418.651" />
+				<Hotspot X="4904.979" Y="928.3809" Z="2393.611" />
+				<Hotspot X="4882.483" Y="937.1125" Z="2303.403" />
+				<Hotspot X="4904.087" Y="976.293" Z="2178.88" />
+				<Hotspot X="5004.549" Y="982.0694" Z="2225.129" />
+				<Hotspot X="4916.158" Y="928.3635" Z="2417.971" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<!-- Fire and Venom /use Waykeeper's Bomb at these hotspots:
+	<Hotspot X="4993.25" Y="982.0694" Z="2237.763" /> // at the goblin camps (tracking 1) - north
+	<Hotspot X="4976.418" Y="928.4117" Z="2374.091" />  // near cauldron (tracking 2) - central / south
+	<Hotspot X="4916.158" Y="928.3635" Z="2417.971" /> // near the ruins (tracking 3) - S / SW (pair with Graul's head - north)
+	-->
+	<!-- do goblin camps (1), turn in The Waykeeper's Keeper and then 3 / Graul (head 2), then 2, then removing head 3 (cave), then 1 / nizak (head 1) -->
+	
+		<KillMobsObjective Quest="Removing the Head" Tracking="2"> <!-- S / SW -->
+		  <Area>
+			<Mobs>
+			  <Mob>Graul</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4993.25" Y="982.0694" Z="2237.763" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Removing the Head" Tracking="3"> <!-- Cave, Central -->
+		  <Area>
+			<Mobs>
+			  <Mob>Buguk</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Good Luck Charms" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Darkblood Basher</Mob>
+			  <Mob>Darkblood Witchdoctor</Mob>
+			  <Mob>Darkblood Bilehex</Mob>
+			  <Mob>Darkblood Vileshot</Mob>
+			  <Mob>Darkblood Bonemender</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4919.553" Y="923.9849" Z="2240.673" />
+				<Hotspot X="4965.6" Y="922.5564" Z="2296.083" />
+				<Hotspot X="4987.799" Y="928.4041" Z="2418.651" />
+				<Hotspot X="4904.979" Y="928.3809" Z="2393.611" />
+				<Hotspot X="4882.483" Y="937.1125" Z="2303.403" />
+				<Hotspot X="4904.087" Y="976.293" Z="2178.88" />
+				<Hotspot X="5004.549" Y="982.0694" Z="2225.129" />
+				<Hotspot X="4916.158" Y="928.3635" Z="2417.971" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Removing the Head" Tracking="1"> <!-- North -->
+		  <Area>
+			<Mobs>
+			  <Mob>Nizak</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5006.846" Y="928.4081" Z="2411.685" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		<!-- Venom-Stained Key offers a Quest! - this has you give the key to a captured civilian -->
+	
+		<!-- if con hasquest Venom-Stained Key - turnin at Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" (right beside Graul's Area), then escort him out of the area.  Bot has trouble interacting w/ him because he's in a cage
+	<TurnInQuest Name="Venom-Stained Key" Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" />
+	<PickUpQuest Name="Out of Harm's Way" Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" />
+		<Escort Npc="Captured Civilian" Quest="Out of Harm's Way" Tracking="1" /> 
+	<TurnInQuest Name="Out of Harm's Way" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+		 If there's an invasion, you fail this escort (there was an invasion QQ) -->
+	<TurnInQuest Name="Removing the Head" Reward="1" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" /> <!-- Shoulders -->
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="1" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> <!-- Ring - 1=int wis end, 2=int end, 3=str dex, 4=str end -->
+	<TurnInQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+	<PickUpQuest Name="The Light in the Gloam" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
+		<!-- End of Darkening Deeps Quests -->
+		
+		<!-- Gloamwood Pines Turnin / Pickups -->
+	<TurnInQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+	<TurnInQuest Name="May It Serve You Better" Npc="Janina Solemn" X="5157.782" Y="946.6281" Z="3131.544" />
+	<PickUpQuest Name="Janina's Revenge" Npc="Janina Solemn" X="5157.782" Y="946.6281" Z="3131.544" />
+	<TurnInQuest Name="Shade of the Family" Npc="Gwyddon Duskenleaf" X="5175.719" Y="952.1046" Z="3218.956" />
+	<PickUpQuest Name="Planting Hope" Npc="Gwyddon Duskenleaf" X="5175.719" Y="952.1046" Z="3218.956" /> <!-- To Tearfall Run -->
+	<TurnInQuest Name="The Light in the Gloam" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<PickUpQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+		<If Condition="HasQuest(&quot;The Goblin Bane&quot;)">
+			<MoveTo X="5242.908" Y="987.0568" Z="3080.501" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
+			<Wait Seconds="3" />
+		</If>
+	<TurnInQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<PickUpQuest Name="In Recognition of Valor" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+	<TurnInQuest Name="In Recognition of Valor" Reward="1" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" /> <!-- Chest -->
+	<PickUpQuest Name="Aiding the Waykeepers" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+	<PickUpQuest Name="Marching Onward" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+	<TurnInQuest Name="Marching Onward" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<PickUpQuest Name="What Goes Bump in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<TurnInQuest Name="What Goes Bump in the Wood" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	<PickUpQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	
+		<!-- Solemn's Outlook again - would this be better up top w/ the first one? -->
+		<KillMobsObjective Quest="Janina's Revenge" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Restless Spirit</Mob>
+			  <Mob>Anguished Specter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5428.227" Y="1030.203" Z="2863.988" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	<TurnInQuest Name="Janina's Revenge" Npc="Nigel Solemn" X="5448.421" Y="1030.687" Z="2855.515" />
+		
+		<!-- To Silkweb Pass Again -->
+	<TurnInQuest Name="Aiding the Waykeepers" Npc="Waykeeper Valin" X="5676.083" Y="982.5817" Z="3421.829" />
+		<!-- Think of the Children - Daily available.  kill 8 spiders, free 3 victims.  Ignoring for now -->
+
+		<!-- To Tearfall Run -->
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+
+		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+			<MoveTo X="4320.372" Y="1100.515" Z="2766.465" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		<UseObjectsObjective Quest="Dead Water" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Athana's Chest</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4297.844" Y="1058.055" Z="2670.777" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Millrush Brew&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+
+		<KillMobsObjective Quest="The Beast of Greybriar Hollow" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>The Hollow's Beast</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Beast of Greybriar Hollow" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Greybriar Prowler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
+				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- 
+		<Hotspot X="4300.552" Y="1116.924" Z="2588.966" />
+		Fractured Rib offers a Quest! (from guys at Mathosian Mill - where Bloody Jack is)
+	<PickUpQuest Name="Slim Pickings" Item />
+	<TurnInQuest Name="Slim Pickings" Npc="Wrangler Dein" X="5146.571" Y="946.6281" Z="3135.745" />
+		-->
+		
+		<KillMobsObjective Quest="In Death as in Life" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Bloody Jack</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4391.538" Y="1140.579" Z="2596.118" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" /> <!-- No Chain -->
+	<TurnInQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	<PickUpQuest Name="Quieting the Beast" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
+			<Python Statement="GigaBot.Stop()" />
+		<!--
+			<MoveTo X="5256.864" Y="987.1636" Z="3074.8" />
+			interactwith (tracking 2)
+			Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+			gossip: Quieting the Beast
+
+			<MoveTo X="5142.6" Y="946.6837" Z="3129.284" />
+			Useitem (tracking 3)
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Medal of Valor&quot;)" />
+
+			<MoveTo X="5190.124" Y="951.0361" Z="3100.165" />
+			interactwith (tracking 1)
+			Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165"
+			gossip: Quieting the Beast
+		-->
+		</If>
+	<PickUpQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+		<!-- if con hasquest Quieting the beast - forcetrain -->
+	<TurnInQuest Name="Quieting the Beast" Reward="1" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> <!-- WPN - 1=1h str end axe, 2=caster staff, 3=1h str dex end sword, 4=2h caster hammer -->
+	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+
+		<UseObjectsObjective Quest="Where the Moon Blossoms" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Moon Blossom</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
+				<Hotspot X="4780.575" Y="1100.106" Z="2877.354" />
+				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
+				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" />
+	
+	<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
+		<UseObjectsObjective Quest="Mysterious Messages" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Standing Stones</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" />
+				<Hotspot X="4989.724" Y="1077.033" Z="2754.507" />
+				<Hotspot X="4947.258" Y="1076.341" Z="2744.43" />
+				<Hotspot X="4930.997" Y="1077.658" Z="2678.912" />
+				<Hotspot X="4969.146" Y="1082.05" Z="2667.395" />
+				<Hotspot X="4986.398" Y="1076.497" Z="2691.058" />
+				<Hotspot X="5011.002" Y="1078.198" Z="2684.25" />
+				<Hotspot X="5023.759" Y="1078.984" Z="2703.725" />
+				<Hotspot X="5020.727" Y="1077.304" Z="2721.085" />
+				<Hotspot X="5002.707" Y="1074.911" Z="2741.864" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		huge fire invasion atm so i can't do anything
+	-->
+
+	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<PickUpQuest Name="It Knows No Depths" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<PickUpQuest Name="Soul Echoes" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<PickUpQuest Name="Millrush Reclamation" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+	<!-- Ignoring 3 person group quest
+	<PickUpQuest Name="Felling an Ancient" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> 
+	If you kill him, it drops a 'heart of hte legend' dropquest
+	-->
+	
+		<KillMobsObjective Quest="It Knows No Depths" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Grimeskin Reaver</Mob>
+			</Mobs>
+			<Hotspots>
+				<!-- Sloptongue ? -->
+				<Hotspot X="4256.202" Y="1101.457" Z="2763.764" />
+				<Hotspot X="4313.851" Y="1100.374" Z="2767.115" />
+				<Hotspot X="4245.956" Y="1104.439" Z="2756.538" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+		<KillMobsObjective Quest="Soul Echoes" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Tormented Spirit</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4245.956" Y="1104.439" Z="2756.538" />
+				<Hotspot X="4296.824" Y="1105.994" Z="2834.355" />
+				<Hotspot X="4305.983" Y="1111.051" Z="2895.246" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Millrush Reclamation" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Risen Fisherman</Mob>
+			  <Mob>Risen Coxswain</Mob>
+			  <Mob>Risen Heroin</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4249.527" Y="1103.416" Z="2679.418" />	
+				<Hotspot X="4223.541" Y="1102.779" Z="2727.02" />
+				<Hotspot X="4370.72" Y="1106.347" Z="2663.674" />
+				<Hotspot X="4243.745" Y="1103.355" Z="2676.615" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="It Knows No Depths" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<PickUpQuest Name="Undying Shards" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<TurnInQuest Name="Soul Echoes" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<PickUpQuest Name="Mill Infestation" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<TurnInQuest Name="Millrush Reclamation" Reward="1" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> <!-- Helm -->
+		<If Condition="HasQuest(&quot;The End of a Legend&quot;)">
+	<TurnInQuest Name="The End of a Legend" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> 
+		</If>
+	<PickUpQuest Name="Mathosian Manifestations" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+	
+		<!-- Mathosian Mill Quests -->
+
+		<KillMobsObjective Quest="Mill Infestation" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Blight Fang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4371.171" Y="1108.265" Z="2522.292" />
+				<Hotspot X="4335.049" Y="1108.58" Z="2567.872" />
+				<Hotspot X="4397.547" Y="1107.53" Z="2590.323" />
+				<Hotspot X="4450.081" Y="1102.315" Z="2596.925" />
+				<Hotspot X="4471.806" Y="1109.67" Z="2567.754" />
+				<Hotspot X="4447.567" Y="1102.9" Z="2668.503" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Mathosian Manifestations" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Reanimated Lumberjack</Mob>
+			  <Mob>Reanimated Citizen</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4371.171" Y="1108.265" Z="2522.292" />
+				<Hotspot X="4335.049" Y="1108.58" Z="2567.872" />
+				<Hotspot X="4397.547" Y="1107.53" Z="2590.323" />
+				<Hotspot X="4450.081" Y="1102.315" Z="2596.925" />
+				<Hotspot X="4471.806" Y="1109.67" Z="2567.754" />
+				<Hotspot X="4447.567" Y="1102.9" Z="2668.503" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Undying Shards" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shademarked Soulweaver</Mob>
+			  <Mob>Shademarked Buccaneer</Mob>
+			  <Mob>Shademarked Lich</Mob>
+			  <Mob>Shademarked Journeyman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4372.738" Y="1106.233" Z="2655.543" />
+				<Hotspot X="4290.48" Y="1112.128" Z="2587.694" />
+				<Hotspot X="4300.552" Y="1116.924" Z="2588.966" />
+				<Hotspot X="4371.171" Y="1108.265" Z="2522.292" />
+				<Hotspot X="4335.049" Y="1108.58" Z="2567.872" />
+				<Hotspot X="4397.547" Y="1107.53" Z="2590.323" />
+				<Hotspot X="4450.081" Y="1102.315" Z="2596.925" />
+				<Hotspot X="4471.806" Y="1109.67" Z="2567.754" />
+				<Hotspot X="4447.567" Y="1102.9" Z="2668.503" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Undying Shards" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<PickUpQuest Name="Death's Defense" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+		<If Condition="HasQuest(&quot;Death's Defense&quot;)">
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Death Shield&quot;)" />
+			<Wait Seconds="2" />
+		<Escort Npc="Fiona Leone" Quest="Death's Defense" Tracking="1" />
+		</If>
+	<TurnInQuest Name="Death's Defense" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<TurnInQuest Name="Mathosian Manifestations" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+	<TurnInQuest Name="Mill Infestation" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" /> <!-- Boots -->
+		<!-- End of Mathosian Mill Quests -->
+	<PickUpQuest Name="Bite Marks" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	
+		<UseObjectsObjective Quest="Bite Marks" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Expensive Shelf</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="5188.875" Y="951.1003" Z="3097.662" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Bite Marks" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+	<PickUpQuest Name="A Burgher with Lies" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
+		<If Condition="HasQuest(&quot;A Burgher with Lies&quot;)">
+			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
+			<Wait Seconds="2" />
+			<Python Statement="Logging.Write(&quot;Bot needs to interactwith vault door and then interactwith npc &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!-- Interactwith door - Vault Door
+			<TalkToNpcObjective Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
+			<MoveTo X="5252.234" Y="987.0877" Z="3076.445" />
+			Interactwith door - Vault Door
+			-->
+		</If>
+	<TurnInQuest Name="A Burgher with Lies" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+	<PickUpQuest Name="Secret of the Pines" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
+
+		<!-- Tearfall Creek Quests -->
+	<PickUpQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+		<UseObjectsObjective Quest="Camping by the Creek" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Campfire</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4795.982" Y="1066.751" Z="2734.669" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	<TurnInQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+
+		<KillMobsObjective Quest="Blood on the Water" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Dusk Bat</Mob>
+			  <Mob>Rotshell Grumbler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
+				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
+				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
+				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
+				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
+				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
+				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
+				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
+				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Blood Flows Downhill" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Rotshell Grumbler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
+				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
+				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
+				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
+				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
+				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
+				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
+				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
+				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<TurnInQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+		
+		<UseObjectsObjective Quest="Final Rest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Lusa's Body</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4732.585" Y="1057.227" Z="2700.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	
+		<KillMobsObjective Quest="Up the Creek" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mudscale Viper</Mob>
+			  <Mob>Mudscale Bilefang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
+				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
+				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
+				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
+				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Up the Creek" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Mudscale Bilefang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
+				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
+				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
+				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
+				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<TurnInQuest Name="A Family Heirloom" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- Neck - 1=str dex end, 2=int wis, 3=str end, 4=int wis end -->
+	
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="Secret of the Pines" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+		<!-- Deepwood Cottage Quests -->
+	<PickUpQuest Name="Diary of a Hag" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="Infectious Hosts" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<PickUpQuest Name="Nuha the Wolf" Npc="Arthur Roames" X="4608.193" Y="1106.585" Z="2741.57" />
+	<PickUpQuest Name="Finishing Touches" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" />
+	
+		<KillMobsObjective Quest="Nuha the Wolf" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nuha the Wolf</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4191.063" Y="1100.989" Z="2934.348" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Diary of a Hag" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Hag's Diary</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4215.019" Y="1127.726" Z="2909.548" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Infectious Hosts" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Hagborn Countess</Mob>
+			  <Mob>Hagborn Betrothed</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4260.476" Y="1136.19" Z="2928.312" />
+				<Hotspot X="4211.637" Y="1139.329" Z="2905.509" />
+				<Hotspot X="4244.968" Y="1136.055" Z="2874.531" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Finishing Touches" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Hagborn Thrall</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4548.113" Y="1098.253" Z="2790.793" />
+				<Hotspot X="4420.524" Y="1151.338" Z="2895.786" />
+				<Hotspot X="4354.983" Y="1158.143" Z="2913.37" />
+				<Hotspot X="4260.476" Y="1136.19" Z="2928.312" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Diary of a Hag" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<TurnInQuest Name="Infectious Hosts" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<PickUpQuest Name="The Light of Jebiah" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+	<TurnInQuest Name="Nuha the Wolf" Npc="Arthur Roames" X="4608.193" Y="1106.585" Z="2741.57" />
+	<TurnInQuest Name="Finishing Touches" Reward="1" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" /> <!-- OH - 1=cleric shield, 2=caster OH, 3=1h str dex end sword, 4=warrior shield -->
+	
+		<!-- Tracking 1-->
+		<If Condition="HasQuest(&quot;The Light of Jebiah&quot;)"> 
+			<MoveTo X="4716.397" Y="1095.124" Z="2903.4" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Jebiah's Ring&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<!-- Tracking 2 - run to dirt piles and let Azeek (your summoned companion) dig them up
+			RunTo each hotspot, wait 5 sec, interactwith Wolf Fur 1 time.  4 sec cast
+			ATM we just wait at one spot for respawns
+		-->
+		
+		<UseObjectsObjective Quest="The Light of Jebiah" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Dirt Pile</Object>
+			  <Object>Wolf Fur</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4648.03" Y="1094.742" Z="2899.55" />
+				<!--
+				<Hotspot X="4624.829" Y="1090.203" Z="2903.598" />
+				<Hotspot X="4634.119" Y="1091.101" Z="2915.769" />
+				<Hotspot X="4611.22" Y="1094.633" Z="2942.047" />
+				<Hotspot X="4663.469" Y="1094.794" Z="2942.209" />
+				<Hotspot X="4676.081" Y="1094.629" Z="2924.825" />
+				<Hotspot X="4694.552" Y="1095.314" Z="2904.575" />
+				-->
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+	<TurnInQuest Name="The Light of Jebiah" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+	<PickUpQuest Name="Cleansing Fire" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+		
+		<!-- Might need some tweaking -->
+			<!--  Tracking 1 -->
+		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+			<MoveTo X="5237.996" Y="939.1862" Z="3175.519" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<Wait Seconds="2" />
+			<MoveTo X="5215.296" Y="943.7283" Z="3192.271" />
+			<Wait Seconds="60" />
+		</If>
+			
+			<!-- Tracking 2 -->
+		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+			<MoveTo X="5208.479" Y="955.5005" Z="3221.969" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<MoveTo X="5192.214" Y="958.3904" Z="3228.616" />
+			<Wait Seconds="60" />
+		</If>
+		
+			<!-- Tracking 3 -->
+		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
+			<MoveTo X="5214.01" Y="974.0383" Z="2939.08" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<MoveTo X="5231.413" Y="976.0449" Z="2926.729" />
+			<Wait Seconds="60" />
+		</If>
+		
+	<TurnInQuest Name="Cleansing Fire" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" /> <!-- Legs -->
+	<PickUpQuest Name="She's Lived Long Enough" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+		
+		<!-- Tracking 1 -->
+		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
+		<!--
+			<MoveTo X="4201.292" Y="1139.27" Z="2916.706" />
+			<Wait Seconds="2" />
+			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Confront the Hag" />
+			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Take your best shot, hag." />
+			<Wait Seconds="15" />
+		-->
+			<!-- Waiting for port -->
+		</If>
+		
+		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+	<TurnInQuest Name="She's Lived Long Enough" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="The Iron Pine Butcher" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+	<PickUpQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
+	<PickUpQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+		
+		<!-- -->
+		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)">
+			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Ancient Gloamseed&quot;)" />
+			<Wait Seconds="25" />
+		</If>
+			<!-- kill Malevolent Shade Well -->
+
+		<!-- East tower - tracking 1-->
+		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+			<MoveTo X="4708.716" Y="1147.294" Z="2604.068" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<!-- South tower - tracking 2-->
+		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+			<MoveTo X="4579.092" Y="1150.476" Z="2572.798" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+
+		<!-- West tower - trackng 3 -->
+		<If Condition="HasQuest(&quot;Purification Ritual&quot;)">
+			<MoveTo X="4483.123" Y="1156.93" Z="2477.797" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Shade Ward&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		
+		<KillMobsObjective Quest="The Iron Pine Butcher" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Iron Pine Butcher</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4485.294" Y="1157.107" Z="2479.977" />
+				<Hotspot X="4477.029" Y="1156.91" Z="2473.889" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Slaying the Shadebent" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Shadebent Slayer</Mob>
+			  <Mob>Shadebent Spirit</Mob>
+			  <Mob>Shadebent Deadshot</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4579.824" Y="1150.516" Z="2566.771" />
+				<Hotspot X="4708.716" Y="1147.294" Z="2604.068" />
+				<Hotspot X="4485.294" Y="1157.107" Z="2479.977" />
+				<Hotspot X="4477.029" Y="1156.91" Z="2473.889" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<PickUpQuest Name="A Woman Scorned" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<TurnInQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
+	<PickUpQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
+	<TurnInQuest Name="The Iron Pine Butcher" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" /> <!-- Belt -->
+	<PickUpQuest Name="An End to the Court" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+	<TurnInQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<PickUpQuest Name="Taking the Shadows" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+
+		<KillMobsObjective Quest="An End to the Court" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Tormentor Ustatia</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4613.138" Y="1181.539" Z="2556.855" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="An End to the Court" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Warlord Drylios</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4604.271" Y="1209.479" Z="2488.731" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="An End to the Court" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Assassin Loretia</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4582.083" Y="1182.534" Z="2434.49" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		
+		<KillMobsObjective Quest="An End to the Court" Tracking="4">
+		  <Area>
+			<Mobs>
+			  <Mob>Alhain Dreadscar</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4608.4" Y="1194.978" Z="2389.418" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Flickering Shadows" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Nightmist Terror</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4610.545" Y="1182.54" Z="2443.039" />
+				<Hotspot X="4608.4" Y="1194.978" Z="2389.418" />
+				<Hotspot X="4582.083" Y="1182.534" Z="2434.49" />
+				<Hotspot X="4604.271" Y="1209.479" Z="2488.731" />
+				<Hotspot X="4613.138" Y="1181.539" Z="2556.855" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Taking the Shadows" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fellshade Sentry</Mob>
+			  <Mob>Fellshade Darkflame</Mob>
+			  <Mob>Fellshade Enforcer</Mob>
+			  <Mob>Fellshade Marksman</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4610.545" Y="1182.54" Z="2443.039" />
+				<Hotspot X="4608.4" Y="1194.978" Z="2389.418" />
+				<Hotspot X="4582.083" Y="1182.534" Z="2434.49" />
+				<Hotspot X="4604.271" Y="1209.479" Z="2488.731" />
+				<Hotspot X="4613.138" Y="1181.539" Z="2556.855" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<If Condition="HasQuest(&quot;A Woman Scorned&quot;)">
+			<MoveTo X="4703.349" Y="1201.058" Z="2451.533" />
+			<Wait Seconds="2" />
+			<MoveTo X="4677.791" Y="1201.058" Z="2453.22" />
+			<Wait Seconds="5" />
+			
+			<!-- we have to complete a 2 tier 'rift' thing here, but they should agro us -->
+			<KillMobsObjective Quest="A Woman Scorned" Tracking="1">
+			  <Area>
+				<Mobs>
+				  <Mob>Hag</Mob>
+				</Mobs>
+				<Hotspots>
+					<Hotspot X="4677.791" Y="1201.058" Z="2453.22" />
+				</Hotspots>
+			  </Area>
+			</KillMobsObjective>
+			<!-- gossip with Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472"
+				Does the Vigil have need of me?
+				Yes, please.  I must tell the people of Gloamwood Pines the news.
+				<Wait Seconds="15" /> // waiting for port \\
+			-->
+		</If>
+		
+	<TurnInQuest Name="An End to the Court" Reward="1" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" /> <!-- Gloves -->
+	<TurnInQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
+	<TurnInQuest Name="Taking the Shadows" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- Helm -->
+		<!-- End of Deepwood Cottage Quests -->
+	<PickUpQuest Name="Spreading the Word" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- To Scarlet Gorge -->
+	<TurnInQuest Name="A Woman Scorned" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+	<PickUpQuest Name="Savior of Gloamwood" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)">
+			<MoveTo X="5242.353" Y="987.063" Z="3079.697" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
+		</If>
+	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- WPN - 1=1h, 2=2h -->
+	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
+	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
+	
+	<!-- Grind to 27 -->
+	
+			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		
+	
+
+    <Loop />
+  </Tasks>
+</Profile>

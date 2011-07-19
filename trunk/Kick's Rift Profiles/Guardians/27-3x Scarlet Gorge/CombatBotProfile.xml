@@ -1,0 +1,10 @@
+<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <HandleCombat />
+	  <HandleRest />
+    </AddJob>
+    <Loop />
+  </Tasks>
+</Profile>
