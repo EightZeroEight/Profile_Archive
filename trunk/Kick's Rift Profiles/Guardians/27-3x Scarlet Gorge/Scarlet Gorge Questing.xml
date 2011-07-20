@@ -563,7 +563,7 @@
 		</UseObjectsObjective>
 
 	<TurnInQuest Name="What's Become of Them?" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
-	<PickUpQuest Name="What's Become of Them?" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<PickUpQuest Name="Planar Invaders" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
 	<PickUpQuest Name="Get Thee Gone" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
 	<PickUpQuest Name="Into Scarwood Reach" Npc="Jarik Braun" X="4281.853" Y="953.5267" Z="3461.513" />
 
@@ -613,51 +613,200 @@
 	<TurnInQuest Name="The Banishing" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
 	<TurnInQuest Name="Colluding with Evil" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> <!-- OH WPN - 1=1h str dex end axe, 2=cleric shield, 3=warrior shield, 4=caster OH -->
 
+		<!-- check to see if Freeing x3 quests are avail now, or only after turning in the get thee gone / planar invaders -->
+	<PickUpQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
+	<PickUpQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
+	<PickUpQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
+		
+		<UseObjectsObjective Quest="Freeing Sedrick Finely" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Gwen Finely's Doll</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4470.09" Y="927.166" Z="3486.316" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Freeing Sandra Roe" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Portrait of Lidia Roe</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4441.478" Y="918.3105" Z="3630.391" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Freeing Nambus Parm" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Parm's Poesy</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4382.121" Y="921.2587" Z="3647.5" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
+	<TurnInQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
+	<TurnInQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
+	<PickUpQuest Name="Seeing Reason" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
 	
-		<!-- 
-	<PickUpQuest Name="" 
-	<TurnInQuest Name="" 
-	
-	
-	<Hotspot X="4188.749" Y="1033.395" Z="4159.974" /> // scarwood lift summit (top)
+		<!-- Combat UseItemTargetLocation, but it works if you simply kill them too, lol 
+		<UseItemOnMobsObjective Quest="Get Thee Gone" Item="Binding Chalk" CastTime="0" Cooldown="5" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fireborn Imp</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
 		-->
+		
+		<KillMobsObjective Quest="Get Thee Gone" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fireborn Imp</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4320.643" Y="937.286" Z="3512.247" />
+				<Hotspot X="4379.245" Y="920.9647" Z="3508.734" />
+				<Hotspot X="4352.108" Y="916.1263" Z="3540.749" />
+				<Hotspot X="4434.002" Y="916.1213" Z="3598.52" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4490.227" Y="916.2762" Z="3603.371" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Planar Invaders" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Planar Invaders" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
 
+		<KillMobsObjective Quest="Planar Invaders" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+	<TurnInQuest Name="Seeing Reason" Reward="3" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" /> <!-- Ring - 1=int end, 2=str dex end 3=int wis end 4=str dex -->
+	<TurnInQuest Name="Get Thee Gone" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+	<TurnInQuest Name="Planar Invaders" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> <!-- Boots -->
+	<!-- Ignoring Daily - but it's scripted b/c i picked it up
+	<PickUpQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> -->
+	<PickUpQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
+	
+		<!-- put freeing x3 here if they're not avail above -->
 
+		<!-- if con has quest and not hasitem x3 (Jade Key) - farm for 3 keys from smoldering reavers (which are beside cages) -->
+		<UseObjectsObjective Quest="Caged and Abused" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Crude Prison</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4471.756" Y="915.4981" Z="3650.656" />
+				<Hotspot X="4549.542" Y="918.4421" Z="3467.553" />
+				<Hotspot X="4457.613" Y="916.5106" Z="3495.036" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<If Condition="HasQuest(&quot;Rise Up&quot;)">
+		<KillMobsObjective Quest="Rise Up" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Tormentor</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4360.673" Y="916.6567" Z="3558.825" />
+				<Hotspot X="4365.809" Y="919.2304" Z="3643.344" />
+				<Hotspot X="4495.202" Y="916.135" Z="3623.376" />
+				<Hotspot X="4492.921" Y="916.2971" Z="3505.667" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		<KillMobsObjective Quest="Rise Up" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Tormentor</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4360.673" Y="916.6567" Z="3558.825" />
+				<Hotspot X="4365.809" Y="919.2304" Z="3643.344" />
+				<Hotspot X="4495.202" Y="916.135" Z="3623.376" />
+				<Hotspot X="4492.921" Y="916.2971" Z="3505.667" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		</If>
 
+		<If Condition="HasQuest(&quot;Rise Up&quot;)">
+	<TurnInQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+		</If>
+	<TurnInQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
+		<!-- ignoring Last Stand - 3 player group quest daily -->
+	<!-- Grind to level 30 -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
+	
+	
 	
 
     <Loop />
