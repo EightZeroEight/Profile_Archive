@@ -1,0 +1,814 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+			<Healer X="3837.347" Y="984.7518" Z="3074.589" /> <!-- Crimson Wash -->
+			<Healer X="4162.334" Y="969.2657" Z="3282.168" /> <!-- Granitedust Gulch -->
+ 			<Healer X="4277.38" Y="955.5984" Z="3475.183" /> <!-- Rock Ridge -->
+       </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+			<Vendor X="3960.191" Y="1079.244" Z="3030.326" /> <!-- Overwatch -->
+			<Vendor X="4277.38" Y="955.5984" Z="3475.183" /> <!-- Rock Ridge -->
+        </Vendors>
+      </Vendor>
+    </AddJob>
+    <LoadMesh Name="Scarlet Gorge" />
+
+	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
+		<If Condition="HasQuest(&quot;A Hero's Duty&quot;)">
+	<TurnInQuest Name="A Hero's Duty" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
+		</If>
+	<TurnInQuest Name="The Ancient Ward" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" /> <!-- Activate Ancient Wardstone Spell -->
+	<PickUpQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />
+		<If Condition="HasQuest(&quot;By the Power of the Vigil&quot;)">
+			<MoveTo X="3975.19" Y="1079.238" Z="3045.252" />
+			<!-- Rift is wanting to target a wardstone that is at crimson instead of right in front of us -->
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Ancient Wardstone&quot;)" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;cast Activate Ancient Wardstone&quot;)" />
+			<Wait Seconds="10" />
+		</If>
+	<TurnInQuest Name="By the Power of the Vigil" Npc="Olaf Sternbrew" X="3979.377" Y="1079.183" Z="3043.311" />
+		<!-- Ignoring Tracking the Endless Court (Dungeon Quest) from Professor Whent -->
+	<PickUpQuest Name="Into Scarlet Gorge" Npc="Fyvel Goodman" X="3962.215" Y="1079.18" Z="3028.994" />
+	
+		<!-- Somehow use the Elevator to get down to Scarlet Gorge -->
+		<If Condition="HasQuest(&quot;&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't use elevators - so use it and then turn in 'into scarlet gorge' &quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+	<TurnInQuest Name="Into Scarlet Gorge" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		<If Condition="HasQuest(&quot;Spreading the Word&quot;)">
+	<TurnInQuest Name="Spreading the Word" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		</If>
+	<PickUpQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	
+		<!-- Riverfell Quests - Ignoring Dailies at the N Wardstone -->
+	<PickUpQuest Name="Foul Patrols" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+	<PickUpQuest Name="Going Up" Npc="Cheev Nash" X="3833.206" Y="979.4971" Z="2914.862" />
+		<If Condition="HasQuest(&quot;Stone Cold Survivors&quot;)">
+			<!--
+			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="You'll be safe - I cleared the way." />
+			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="Head to Crimson Wash. They can help you there." />
+			-->
+		</If>
+		
+		<UseObjectsObjective Quest="Going Up" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Brad Suleri</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Going Up" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Marcus Vinnian</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3723.243" Y="1082.755" Z="2726.814" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Foul Patrols" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Regulator</Mob>
+			  <Mob>Endless Despoiler</Mob>
+			  <Mob>Endless Shadowblade</Mob>
+			  <Mob>Risen Hewer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3895.85" Y="987.4538" Z="2744.929" />
+				<Hotspot X="4003.823" Y="980.5402" Z="2705.437" />
+				<Hotspot X="3835.481" Y="989.903" Z="2783.913" />
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Foul Patrols" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Risen Hewer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3895.85" Y="987.4538" Z="2744.929" />
+				<Hotspot X="4003.823" Y="980.5402" Z="2705.437" />
+				<Hotspot X="3835.481" Y="989.903" Z="2783.913" />
+				<Hotspot X="3721.503" Y="986.6726" Z="2811.366" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Going Up" Reward="1" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" /> <!-- Shoulders -->
+	<PickUpQuest Name="Nesting Instinct" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="It Stings Because It's Working" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="For the Birds" Npc="Ward Graves" X="3937.135" Y="1134.713" Z="2676.887" />
+
+		<UseObjectsObjective Quest="Nesting Instinct" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Contaminated Sourcestone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3578.552" Y="1208.596" Z="2643.378" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="For the Birds" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Foul Huntress</Mob>
+			  <Mob>Foul Talon</Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3663.98" Y="1180.77" Z="2605.198" />
+				<Hotspot X="3673.4" Y="1182.502" Z="2661.646" />
+				<Hotspot X="3543.998" Y="1179.567" Z="2696.141" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="For the Birds" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Foul Talon</Mob>
+			  <Mob></Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3663.98" Y="1180.77" Z="2605.198" />
+				<Hotspot X="3673.4" Y="1182.502" Z="2661.646" />
+				<Hotspot X="3543.998" Y="1179.567" Z="2696.141" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="It Stings Because It's Working" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Rockchew Breaker</Mob>
+			  <Mob>Rockchew Biter</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3915.089" Y="1132.772" Z="2653.607" />
+				<Hotspot X="3787.51" Y="1172.633" Z="2577.533" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- End of Riverfell Quests -->
+	<TurnInQuest Name="For the Birds" Npc="Ward Graves" X="3937.135" Y="1134.713" Z="2676.887" />
+	<TurnInQuest Name="Nesting Instinct" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<TurnInQuest Name="It Stings Because It's Working" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<PickUpQuest Name="Free and Clear" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+	<TurnInQuest Name="Foul Patrols" Reward="1" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" /> <!-- Legs -->
+	<TurnInQuest Name="Stone Cold Survivors" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<TurnInQuest Name="Free and Clear" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+		<!-- Crimson Watch Quests -->
+
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Bootlegged Hooch</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3903.098" Y="976.941" Z="3234.865" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="3">
+		  <Area>
+			<Objects>
+			  <Object>Serelda's Documents</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4008.908" Y="970.2376" Z="3236.948" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Jewelry Case</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4022.909" Y="973.9146" Z="3282.963" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<!-- Combat Use Item Target Location of Lost Soul 's, then interactwith, gossip 2 times, and loot the popup window - You'll have to do this quest manually until the code is written as it is required to unlock the other chains!
+				Gossip1: Ensaring Anima
+				Gossip2: Gather Lost Soul
+				loot window
+		-->
+		<If Condition="HasQuest(&quot;Ensnaring Anima&quot;)">
+			<Python Statement="Logging.Write(&quot;Bot doesn't do this quest - read the xml&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+	 
+		<KillMobsObjective Quest="The Darkest Magic" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Wizard</Mob>
+			  <Mob>Corrupt Mercenary</Mob>
+			  <Mob>Vile Mercenary</Mob>
+			  <Mob>Wicked Mercenary</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3956.918" Y="972.9211" Z="3257.811" />
+				<Hotspot X="4018.182" Y="972.496" Z="3270.655" />
+				<Hotspot X="4075.958" Y="963.8197" Z="3267.55" />
+				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />				
+				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
+				<Hotspot X="3914.706" Y="970.9369" Z="3347.411" />
+				<Hotspot X="4081.939" Y="964.5016" Z="3299.652" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Darkest Magic" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Corrupt Mercenary</Mob>
+			  <Mob>Vile Mercenary</Mob>
+			  <Mob>Wicked Mercenary</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3903.098" Y="976.941" Z="3234.865" />
+				<Hotspot X="3956.918" Y="972.9211" Z="3257.811" />
+				<Hotspot X="4018.182" Y="972.496" Z="3270.655" />
+				<Hotspot X="4075.958" Y="963.8197" Z="3267.55" />	
+				<Hotspot X="4039.041" Y="971.098" Z="3268.016" />		
+				<Hotspot X="3933.412" Y="968.1443" Z="3315.825" />
+				<Hotspot X="4081.939" Y="964.5016" Z="3299.652" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- not hasquest Something's Afoot 
+		<If Condition="not HasQuest(&quot;&quot;)"> and not questcompleted
+			<MoveTo X="3904.573" Y="971.3445" Z="3360.878" />
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
+			<MoveTo X="3902.979" Y="971.5938" Z="3394.602" />
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+			<UseObject Name="Pickaxe" X="3902.979" Y="971.5938" Z="3394.602" />
+			<Wait Seconds="5" />
+			<PickUpQuest Name="Something's Afoot" Npc="Alfred Mannew" X="3903.206" Y="971.4769" Z="3396.728" />
+		</If>
+		-->
+		<If Condition="HasQuest(&quot;Something's Afoot&quot;)">
+	<TurnInQuest Name="Something's Afoot" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+		</If>
+	<TurnInQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<TurnInQuest Name="The Darkest Magic" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<TurnInQuest Name="Ensnaring Anima" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Ranged - 1=int wis end wand, 2=str dex gun, 3=str dex end gun, 4= int wis end wand -->
+	<PickUpQuest Name="Words with the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+
+		<UseObjectsObjective Quest="Words with the Dead" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Soul Crucible</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3837.567" Y="971.5426" Z="3002.812" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Words with the Dead&quot;)">
+			<Wait Seconds="12" />
+			<!--
+			<TalkToNpcObjective Npc="Pacified Spirit" X="3843.141" Y="970.6825" Z="3000.198" />
+			-->
+		</If>
+
+	<TurnInQuest Name="Words with the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Free Souls" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Let Them Go" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	
+		<If Condition="HasQuest(&quot;Free Souls&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!-- UseItemAtLocation Tracking 1 - for Free Souls - 3 sec cast.  Soul Chime is the itemname
+				<Hotspot X="4065.323" Y="968.1088" Z="3233.459" />
+				<Hotspot X="4087.631" Y="967.5104" Z="3213.21" />
+				<Hotspot X="4048.573" Y="965.2663" Z="3169.849" />
+				<Hotspot X="4023.71" Y="966.218" Z="3221.895" />
+				<Hotspot X="4023.563" Y="971.5172" Z="3256.355" />
+				<Hotspot X="4008.479" Y="970.1602" Z="3323.226" />
+				<Hotspot X="3921.992" Y="968.2139" Z="3306.408" />
+				<Hotspot X="3899.666" Y="975.7885" Z="3254.68" />
+			-->
+		</If>
+	
+		<KillMobsObjective Quest="Let Them Go" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Enslaved Corpse</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4060.15" Y="965.1263" Z="3215.652" />
+				<Hotspot X="4093.923" Y="965.9996" Z="3215.787" />
+				<Hotspot X="4081.924" Y="967.873" Z="3239.541" />
+				<Hotspot X="4065.323" Y="968.1088" Z="3233.459" />
+				<Hotspot X="4087.631" Y="967.5104" Z="3213.21" />
+				<Hotspot X="4048.573" Y="965.2663" Z="3169.849" />
+				<Hotspot X="4023.71" Y="966.218" Z="3221.895" />
+				<Hotspot X="4023.563" Y="971.5172" Z="3256.355" />
+				<Hotspot X="4008.479" Y="970.1602" Z="3323.226" />
+				<Hotspot X="3921.992" Y="968.2139" Z="3306.408" />
+				<Hotspot X="3899.666" Y="975.7885" Z="3254.68" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Free Souls" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<PickUpQuest Name="Army of the Dead" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+	<TurnInQuest Name="Let Them Go" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Reporting Losses" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+	<PickUpQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<PickUpQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
+		<!-- Stonecrest Quests -->
+
+		<!-- Gas Tanks - (Vile Brew Quest) 
+		item - Crude Explosives - waittime 4-5 sec
+		hotspots:
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+		-->
+	
+		<UseObjectsObjective Quest="Unloading the Burden" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Loaded Cart</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+				<Hotspot X="4072.875" Y="1027.646" Z="3475.628" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Army of the Dead&quot;)">
+			<!-- I need the devs to do this quest - I can't just head butt this with useitem .  I need to move and use the item and anything else that is attacking me i need to face them and use the item (ie: throw fire at anything near me)
+			
+			<MoveTo X="4012.479" Y="1029.541" Z="3480.057" />
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
+
+			<MoveTo X="4003.724" Y="1029.844" Z="3504.797" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3998.116" Y="1029.531" Z="3519.094"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3999.905" Y="1029.634" Z="3519.762"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="4000.911" Y="1029.946" Z="3523.008"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3997.729" Y="1029.717" Z="3526.872" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			
+			<UseObject Npc="Dark Phylactery" X="3997.729" Y="1029.717" Z="3526.872" />
+			turn in quest Army of the Dead
+			accept quest End of the Endless from popup
+			
+			<MoveTo X="4012.479" Y="1029.541" Z="3480.057" />
+
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+			
+		-->
+		</If>
+
+		<If Condition="HasQuest(&quot;End of the Endless&quot;)"> <!-- Tracking 1 -->
+			<MoveTo X="3936.222" Y="1037.105" Z="3479.406" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Dark Phylactery&quot;)" />
+			<Wait Seconds="1" />
+		</If>
+
+		<KillMobsObjective Quest="End of the Endless" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Angdralthus the Lich Lord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3935.987" Y="1037.674" Z="3484.26" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Skeletal Miner</Mob>
+			  <Mob>Endless Court Knight</Mob>
+			  <Mob>Endless Court Blademaster</Mob>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Knight</Mob>
+			  <Mob>Endless Court Blademaster</Mob>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reporting Losses" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Witch</Mob>
+			  <Mob>Endless Court Necromancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reporting Losses" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Necromancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="End of the Endless" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Belt -->
+	<TurnInQuest Name="Reporting Losses" Reward="1" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" /> <!-- Neck - 1=int wis end, 2=str dex, 3=dex end, 4=int end -->
+	<TurnInQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<TurnInQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
+	<TurnInQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Is It Over?" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		<!-- End of Stonecrest / Crimson Watch Quests -->
+		
+		<!-- Granitedust Gulch Quests -->
+	<TurnInQuest Name="Is It Over?" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="What's Become of Them?" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="The Banishing" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="Colluding with Evil" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+		
+		<UseObjectsObjective Quest="What's Become of Them?" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Tortured Body</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4160.472" Y="967.6412" Z="3428.365" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="What's Become of Them?" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<PickUpQuest Name="Planar Invaders" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<PickUpQuest Name="Get Thee Gone" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+	<PickUpQuest Name="Into Scarwood Reach" Npc="Jarik Braun" X="4281.853" Y="953.5267" Z="3461.513" />
+
+		<KillMobsObjective Quest="Colluding with Evil" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Xenlor the Technomancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4234.466" Y="994.8834" Z="3279.322" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Colluding with Evil" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Defiant Arbiter</Mob>
+			  <Mob>Defiant Soulblade</Mob>
+			  <Mob>Defiant Guard</Mob>
+			  <Mob>Defiant Technomancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4305.158" Y="954.9537" Z="3322.756" />
+				<Hotspot X="4334.733" Y="955.1642" Z="3368.101" />
+				<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
+				<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
+				<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- grind to - hasitem x3 (Runed Gem) from technomancers -->
+		<UseItemOnMobsObjective Quest="The Banishing" Item="Runed Gem" CastTime="7" Cooldown="5" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Captured Planar</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
+				<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
+				<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+	<TurnInQuest Name="The Banishing" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<TurnInQuest Name="Colluding with Evil" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> <!-- OH WPN - 1=1h str dex end axe, 2=cleric shield, 3=warrior shield, 4=caster OH -->
+
+		<!-- check to see if Freeing x3 quests are avail now, or only after turning in the get thee gone / planar invaders -->
+	<PickUpQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
+	<PickUpQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
+	<PickUpQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
+		
+		<UseObjectsObjective Quest="Freeing Sedrick Finely" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Gwen Finely's Doll</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4470.09" Y="927.166" Z="3486.316" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Freeing Sandra Roe" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Portrait of Lidia Roe</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4441.478" Y="918.3105" Z="3630.391" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Freeing Nambus Parm" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Parm's Poesy</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4382.121" Y="921.2587" Z="3647.5" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Freeing Nambus Parm" Npc="Nambus Parm" X="4535.488" Y="918.3859" Z="3478.854" />
+	<TurnInQuest Name="Freeing Sandra Roe" Npc="Sandra Roe" X="4533.518" Y="918.3859" Z="3482.393" />
+	<TurnInQuest Name="Freeing Sedrick Finely" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
+	<PickUpQuest Name="Seeing Reason" Npc="Sedrick Finely" X="4531.066" Y="918.3859" Z="3479.75" />
+	
+		<!-- Combat UseItemTargetLocation, but it works if you simply kill them too, lol 
+		<UseItemOnMobsObjective Quest="Get Thee Gone" Item="Binding Chalk" CastTime="0" Cooldown="5" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fireborn Imp</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+		-->
+		
+		<KillMobsObjective Quest="Get Thee Gone" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Fireborn Imp</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4320.643" Y="937.286" Z="3512.247" />
+				<Hotspot X="4379.245" Y="920.9647" Z="3508.734" />
+				<Hotspot X="4352.108" Y="916.1263" Z="3540.749" />
+				<Hotspot X="4434.002" Y="916.1213" Z="3598.52" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4490.227" Y="916.2762" Z="3603.371" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Planar Invaders" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Planar Invaders" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Planar Invaders" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+	
+	<TurnInQuest Name="Seeing Reason" Reward="3" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" /> <!-- Ring - 1=int end, 2=str dex end 3=int wis end 4=str dex -->
+	<TurnInQuest Name="Get Thee Gone" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+	<TurnInQuest Name="Planar Invaders" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> <!-- Boots -->
+	<!-- Ignoring Daily - but it's scripted b/c i picked it up
+	<PickUpQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> -->
+	<PickUpQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
+	
+		<!-- put freeing x3 here if they're not avail above -->
+
+		<!-- if con has quest and not hasitem x3 (Jade Key) - farm for 3 keys from smoldering reavers (which are beside cages) -->
+		<UseObjectsObjective Quest="Caged and Abused" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Crude Prison</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4471.756" Y="915.4981" Z="3650.656" />
+				<Hotspot X="4549.542" Y="918.4421" Z="3467.553" />
+				<Hotspot X="4457.613" Y="916.5106" Z="3495.036" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+		
+		<If Condition="HasQuest(&quot;Rise Up&quot;)">
+		<KillMobsObjective Quest="Rise Up" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Tormentor</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4360.673" Y="916.6567" Z="3558.825" />
+				<Hotspot X="4365.809" Y="919.2304" Z="3643.344" />
+				<Hotspot X="4495.202" Y="916.135" Z="3623.376" />
+				<Hotspot X="4492.921" Y="916.2971" Z="3505.667" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		<KillMobsObjective Quest="Rise Up" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Smoldering Tormentor</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4360.673" Y="916.6567" Z="3558.825" />
+				<Hotspot X="4365.809" Y="919.2304" Z="3643.344" />
+				<Hotspot X="4495.202" Y="916.135" Z="3623.376" />
+				<Hotspot X="4492.921" Y="916.2971" Z="3505.667" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		</If>
+
+		<If Condition="HasQuest(&quot;Rise Up&quot;)">
+	<TurnInQuest Name="Rise Up" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+		</If>
+	<TurnInQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
+		<!-- ignoring Last Stand - 3 player group quest daily -->
+	<!-- Grind to level 30 -->
+
+	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
+	
+	
+	
+
+    <Loop />
+  </Tasks>
+</Profile>
