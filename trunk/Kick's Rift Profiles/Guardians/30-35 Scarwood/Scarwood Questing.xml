@@ -17,6 +17,7 @@
         </Vendors>
       </Vendor>
     </AddJob>
+    <LoadMesh Name="Scarwood" />
 	
 	<!-- Grind to level 30 -->
     <GrindTo Level="30">
@@ -28,7 +29,7 @@
           <Mob>Bloodstone Enforcer</Mob>
         </Mobs>
         <Hotspots>
-          <Hotspot X="3675.734" Y="1092.098" Z="3431.467" />
+          <Hotspot X="3687.86" Y="1098.63" Z="3268.648" />
           <Hotspot X="3807.829" Y="1082.242" Z="3370.592" />
           <Hotspot X="3748.766" Y="1111.99" Z="3359.273" />
           <Hotspot X="3764.928" Y="1118.888" Z="3329.543" />

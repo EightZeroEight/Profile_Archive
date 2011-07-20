@@ -194,9 +194,43 @@
 		
 		<!-- Gloamwood Pines Turnin / Pickups -->
 	<PickUpQuest Name="Ill Tidings" Npc="Captain Trebian" X="5673.396" Y="982.5151" Z="3426.573" /> 
-	<TurnInQuest Name="Into the Nest" Reward="1" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" /> <!-- Gloves -->
+		<If Condition="HasQuest(&quot;Into the Nest&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Into the Nest" Reward="1" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Silkweb Vambracer&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Into the Nest" Reward="2" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Silk Spun Gloves&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Into the Nest" Reward="3" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gloamsilk Bracers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Into the Nest" Reward="4" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Broodmother's Gauntlets&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="A Solemn Solution" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
-	<TurnInQuest Name="A Dangerous Trade" Reward="1" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" /> <!-- Helmet -->
+		<If Condition="HasQuest(&quot;A Dangerous Trade&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Dangerous Trade" Reward="1" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Porter's Coif&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Dangerous Trade" Reward="2" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Tradesman's Cap&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Dangerous Trade" Reward="3" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Runner's Head&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Dangerous Trade" Reward="4" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Body Guard's Helm&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
 	<TurnInQuest Name="Ill Tidings" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
 	<!-- Ignoring Dungeon Quest
@@ -391,7 +425,24 @@
 	<TurnInQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<TurnInQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="Shade of the Family" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
-	<TurnInQuest Name="Bleeding Green" Reward="1" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" /> <!-- Ranged WPN - 1=str dex bow, 2=dex end bow, 3=int wis end wand, 4=int wis end wand. -->
+		<If Condition="HasQuest(&quot;Bleeding Green&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Bleeding Green" Reward="4" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blighted Caster's Stick&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Bleeding Green" Reward="4" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Blighted Caster's Stick&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Bleeding Green" Reward="2" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Deft Goblin Slayer&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Bleeding Green" Reward="1" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mighty Goblin Stinger&quot;)" />
+			 </If>
+		</If>
 	<TurnInQuest Name="Pried from Their Dead Hands" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<TurnInQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
@@ -525,8 +576,42 @@
 		<Escort Npc="Captured Civilian" Quest="Out of Harm's Way" Tracking="1" /> 
 	<TurnInQuest Name="Out of Harm's Way" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
 		 If there's an invasion, you fail this escort (there was an invasion QQ) -->
-	<TurnInQuest Name="Removing the Head" Reward="1" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" /> <!-- Shoulders -->
-	<TurnInQuest Name="Heirlooms of the Dead" Reward="1" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> <!-- Ring - 1=int wis end, 2=int end, 3=str dex, 4=str end -->
+		<If Condition="HasQuest(&quot;Removing the Head&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Removing the Head" Reward="1" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Emancipator's Spaulders&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Removing the Head" Reward="2" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Nizak's Mantle&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Removing the Head" Reward="3" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Keeper's Shoulderpads&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Removing the Head" Reward="4" Npc="Waykeeper Sera" X="5134.129" Y="999.2169" Z="2420.483" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warden's Pauldrons&quot;)" />
+			 </If>
+		</If>
+		<If Condition="HasQuest(&quot;Heirlooms of the Dead&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="1" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Valorous Band&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="1" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Valorous Band&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="3" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Lodestone Band&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Heirlooms of the Dead" Reward="4" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Wrecker's Band&quot;)" />
+			 </If>
+		</If>
 	<TurnInQuest Name="Fire and Venom" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 	<PickUpQuest Name="The Light in the Gloam" Npc="Waykeeper Sharla" X="5132.224" Y="999.2538" Z="2416.366" /> 
 		<!-- End of Darkening Deeps Quests -->
@@ -547,7 +632,24 @@
 		</If>
 	<TurnInQuest Name="The Goblin Bane" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
 	<PickUpQuest Name="In Recognition of Valor" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
-	<TurnInQuest Name="In Recognition of Valor" Reward="1" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" /> <!-- Chest -->
+		<If Condition="HasQuest(&quot;In Recognition of Valor&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="In Recognition of Valor" Reward="1" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hauberk of Flame&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="In Recognition of Valor" Reward="2" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Flamecaller's Raiment&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="In Recognition of Valor" Reward="3" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Venom-stained Duster&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="In Recognition of Valor" Reward="4" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chestguard of Wanton Destruction&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="Aiding the Waykeepers" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
 	<PickUpQuest Name="Marching Onward" Npc="Thalia Cosmin" X="5182.819" Y="943.9993" Z="3136.933" />
 	<TurnInQuest Name="Marching Onward" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
@@ -669,7 +771,24 @@
 		</If>
 	<PickUpQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 		<!-- if con hasquest Quieting the beast - forcetrain -->
-	<TurnInQuest Name="Quieting the Beast" Reward="1" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> <!-- WPN - 1=1h str end axe, 2=caster staff, 3=1h str dex end sword, 4=2h caster hammer -->
+		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Quieting the Beast" Reward="2" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Oakheart Staff&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Quieting the Beast" Reward="2" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Oakheart Staff&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Quieting the Beast" Reward="1" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bloodharvest Axe&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Quieting the Beast" Reward="3" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warforged Sword&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 
@@ -770,7 +889,24 @@
 	<PickUpQuest Name="Undying Shards" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<TurnInQuest Name="Soul Echoes" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	<PickUpQuest Name="Mill Infestation" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
-	<TurnInQuest Name="Millrush Reclamation" Reward="1" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> <!-- Helm -->
+		<If Condition="HasQuest(&quot;Millrush Reclamation&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Millrush Reclamation" Reward="1" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Millrush Coif&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Millrush Reclamation" Reward="2" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Millrush Cowl&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Millrush Reclamation" Reward="3" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waterlogged Hood&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Millrush Reclamation" Reward="4" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brain Case&quot;)" />
+			 </If>
+		</If>
 		<If Condition="HasQuest(&quot;The End of a Legend&quot;)">
 	<TurnInQuest Name="The End of a Legend" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> 
 		</If>
@@ -842,7 +978,24 @@
 		</If>
 	<TurnInQuest Name="Death's Defense" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<TurnInQuest Name="Mathosian Manifestations" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
-	<TurnInQuest Name="Mill Infestation" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" /> <!-- Boots -->
+		<If Condition="HasQuest(&quot;Mill Infestation&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Mill Infestation" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Braided Chain Heavy Boots&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Mill Infestation" Reward="2" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Surestep Slippers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Mill Infestation" Reward="3" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Deftstep Boots&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Mill Infestation" Reward="4" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warmarch Sabatons&quot;)" />
+			 </If>
+		</If>
 		<!-- End of Mathosian Mill Quests -->
 	<PickUpQuest Name="Bite Marks" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	
@@ -979,7 +1132,24 @@
 
 	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
 	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<TurnInQuest Name="A Family Heirloom" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- Neck - 1=str dex end, 2=int wis, 3=str end, 4=int wis end -->
+		<If Condition="HasQuest(&quot;A Family Heirloom&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Family Heirloom" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fiona's Chain&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Family Heirloom" Reward="3" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Thick Iron Chain&quot;)" />
+			 </If>
+		</If>
 	
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 	<TurnInQuest Name="Secret of the Pines" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1043,7 +1213,21 @@
 	<TurnInQuest Name="Infectious Hosts" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	<PickUpQuest Name="The Light of Jebiah" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	<TurnInQuest Name="Nuha the Wolf" Npc="Arthur Roames" X="4608.193" Y="1106.585" Z="2741.57" />
-	<TurnInQuest Name="Finishing Touches" Reward="1" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" /> <!-- OH - 1=cleric shield, 2=caster OH, 3=1h str dex end sword, 4=warrior shield -->
+		<If Condition="HasQuest(&quot;Finishing Touches&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Finishing Touches" Reward="1" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Finishing Touches" Reward="1" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Finishing Touches" Reward="3" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ceremonial Scimitar&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Finishing Touches" Reward="1" Npc="Fiona Leone" X="4597.868" Y="1106.589" Z="2745.684" />
+			 </If>
+		</If>
 	
 		<!-- Tracking 1-->
 		<If Condition="HasQuest(&quot;The Light of Jebiah&quot;)"> 
@@ -1110,7 +1294,24 @@
 			<Wait Seconds="60" />
 		</If>
 		
-	<TurnInQuest Name="Cleansing Fire" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" /> <!-- Legs -->
+		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Cleansing Fire" Reward="1" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Leg Guards of the Inquisitorial Flame&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Cleansing Fire" Reward="2" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Aconitum Breeches&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Cleansing Fire" Reward="3" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Werewolf Hide Leggings&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Cleansing Fire" Reward="4" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Greaves of the Wolf Slayer&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="She's Lived Long Enough" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 		
 		<!-- Tracking 1 -->
@@ -1304,7 +1505,24 @@
 			-->
 		</If>
 		
-	<TurnInQuest Name="An End to the Court" Reward="1" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" /> <!-- Gloves -->
+		<If Condition="HasQuest(&quot;An End to the Court&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="An End to the Court" Reward="1" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waykeeper's Vambraces&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="An End to the Court" Reward="2" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waykeeper's Gloves&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="An End to the Court" Reward="3" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waykeeper's Bracers&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="An End to the Court" Reward="4" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waykeeper's Gauntlets&quot;)" />
+			 </If>
+		</If>
 	<TurnInQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<TurnInQuest Name="Taking the Shadows" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- Helm -->
 		<!-- End of Deepwood Cottage Quests -->
@@ -1316,7 +1534,24 @@
 			<Wait Seconds="1" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Gloam Bell&quot;)" />
 		</If>
-	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- WPN - 1=1h, 2=2h -->
+		<If Condition="HasQuest(&quot;Savior of Gloamwood&quot;)"> <!-- this needs to be ran by someone and get me the rewards that pop up --> <!-- WPN - 1=1h, 2=2h -->
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Icon of the Forest Mender&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spire of the Sisters&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Savior of Gloamwood" Reward="1" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Talon of the Hag&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Savior of Gloamwood" Reward="2" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shadefall&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
 	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
 	
