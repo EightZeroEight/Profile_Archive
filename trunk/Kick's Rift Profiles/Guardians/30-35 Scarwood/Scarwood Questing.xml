@@ -41,6 +41,54 @@
 		<If Condition="HasQuest(&quot;Into Scarwood Reach&quot;)">
 	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
 		</If>
+	<PickUpQuest Name="Lost Cargo" Npc="Sergeant Coda" X="3731.341" Y="1090.634" Z="3223.521" />
+	<PickUpQuest Name="Dealing with the Defiant" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
+	
+	
+	
+	
+	
+		<!-- 
+	<PickUpQuest Name="" 
+	<TurnInQuest Name="" 
+		-->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

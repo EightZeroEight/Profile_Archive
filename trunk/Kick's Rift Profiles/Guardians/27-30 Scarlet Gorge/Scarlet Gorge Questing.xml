@@ -29,6 +29,9 @@
 		<If Condition="HasQuest(&quot;By the Power of the Vigil&quot;)">
 			<MoveTo X="3975.19" Y="1079.238" Z="3045.252" />
 			<!-- Rift is wanting to target a wardstone that is at crimson instead of right in front of us -->
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Ancient Wardstone&quot;)" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;cast Activate Ancient Wardstone&quot;)" />
@@ -53,6 +56,8 @@
 	<PickUpQuest Name="Foul Patrols" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
 	<PickUpQuest Name="Going Up" Npc="Cheev Nash" X="3833.206" Y="979.4971" Z="2914.862" />
 		<If Condition="HasQuest(&quot;Stone Cold Survivors&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 			<!--
 			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="You'll be safe - I cleared the way." />
 			<TalkToNpcObjective Npc="Stonecrest Survivor" X="4008.771" Y="980.3442" Z="2704.608" Text="Head to Crimson Wash. They can help you there." />
@@ -383,9 +388,15 @@
 		</UseObjectsObjective>
 
 		<If Condition="HasQuest(&quot;Army of the Dead&quot;)">
-			<!-- I need the devs to do this quest - I can't just head butt this with useitem .  I need to move and use the item and anything else that is attacking me i need to face them and use the item (ie: throw fire at anything near me)
+			<!-- I need the devs to do this quest - I can't just head butt this with useitem .  I need to move and use the item and anything else that is attacking me i need to face them and use the item (ie: throw fire at anything near me) -->
+			
 			
 			<MoveTo X="4012.479" Y="1029.541" Z="3480.057" />
+			
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+			<!--
 			<RemoveJob>
 				<Job Name="HandleCombat" />
 			</RemoveJob>

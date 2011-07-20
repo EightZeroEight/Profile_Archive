@@ -83,6 +83,7 @@
 		<Else>
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
+			
 		</Else>
 
 
@@ -105,6 +106,26 @@
 
 
 
+
+
+		<If Condition="HasQuest(&quot;&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+		<TurnInQuest 
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+		<TurnInQuest 
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+		<TurnInQuest 
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+		<TurnInQuest 
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
+			 </If>
+		</If>
 
 
 
