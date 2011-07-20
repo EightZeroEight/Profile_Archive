@@ -1,5 +1,6 @@
 <Profile>
   <Tasks>
+    <AddDefaultJobs />
     <AddJob>
       <HandleCombat />
 	  <HandleRest />

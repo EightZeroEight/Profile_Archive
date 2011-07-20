@@ -1,0 +1,50 @@
+﻿<Profile>
+  <Tasks>
+    <AddDefaultJobs />
+    <AddJob>
+      <MendSoul>
+        <Healers>
+          <!--Kain's Command-->
+          <Healer X="3165.028" Y="1095.186" Z="3878.661" />
+        </Healers>
+      </MendSoul>
+    </AddJob>
+    <AddJob>
+      <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
+        <Vendors>
+          <!--Kain's Command-->
+          <Vendor X="3153.187" Y="1095.186" Z="3883.377" />
+        </Vendors>
+      </Vendor>
+    </AddJob>
+	
+	<!-- Grind to level 30 -->
+    <GrindTo Level="30">
+      <GrindArea>
+        <Mobs>
+          <Mob>Twisted Thunderlash</Mob>
+          <Mob>Bloodstone Foreman</Mob>
+          <Mob>Bloodstone Miner</Mob>
+          <Mob>Bloodstone Enforcer</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="3675.734" Y="1092.098" Z="3431.467" />
+          <Hotspot X="3807.829" Y="1082.242" Z="3370.592" />
+          <Hotspot X="3748.766" Y="1111.99" Z="3359.273" />
+          <Hotspot X="3764.928" Y="1118.888" Z="3329.543" />
+          <Hotspot X="3729.794" Y="1102.525" Z="3261.682" />
+          <Hotspot X="3592.652" Y="1097.244" Z="3347.262" />
+        </Hotspots>
+      </GrindArea>
+    </GrindTo>
+
+		<If Condition="HasQuest(&quot;Into Scarwood Reach&quot;)">
+	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
+		</If>
+	
+	
+	
+
+    <Loop />
+  </Tasks>
+</Profile>
