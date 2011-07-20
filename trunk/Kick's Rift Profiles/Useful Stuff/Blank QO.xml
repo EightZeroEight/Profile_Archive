@@ -79,16 +79,6 @@
 
 		<Escort Npc="" Quest="" Tracking="1" />
 
-		<KillMobsObjective Quest="" Tracking="2">
-		  <Area>
-			<Mobs>
-			  <Mob></Mob>
-			  <Mob></Mob>
-			  <Mob></Mob>
-			</Mobs>
-		  </Area>
-		</KillMobsObjective>
-
 
 		<Else>
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
@@ -96,15 +86,20 @@
 		</Else>
 
 
-		<RemoveJob>
-			<Job Name="HandleCombat" />
-		</RemoveJob>
+		<If Condition="HasQuest(&quot;&quot;)">
+			<MoveTo 
+			
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
 
-		<MoveTo 
+			<MoveTo 
 
-		<AddJob>
-			<HandleCombat />
-		</AddJob>
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+
+		</If>
 
 
 

@@ -6,13 +6,15 @@
         <Healers>
 			<Healer X="3837.347" Y="984.7518" Z="3074.589" /> <!-- Crimson Wash -->
 			<Healer X="4162.334" Y="969.2657" Z="3282.168" /> <!-- Granitedust Gulch -->
-        </Healers>
+ 			<Healer X="4277.38" Y="955.5984" Z="3475.183" /> <!-- Rock Ridge -->
+       </Healers>
       </MendSoul>
     </AddJob>
     <AddJob>
       <Vendor SellWhites="False" SellGreens="True" SellBlues="True" SellPurples="False">
         <Vendors>
 			<Vendor X="3960.191" Y="1079.244" Z="3030.326" /> <!-- Overwatch -->
+			<Vendor X="4277.38" Y="955.5984" Z="3475.183" /> <!-- Rock Ridge -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -168,6 +170,7 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- End of Riverfell Quests -->
 	<TurnInQuest Name="For the Birds" Npc="Ward Graves" X="3937.135" Y="1134.713" Z="2676.887" />
 	<TurnInQuest Name="Nesting Instinct" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
 	<TurnInQuest Name="It Stings Because It's Working" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
@@ -178,6 +181,7 @@
 	<TurnInQuest Name="Free and Clear" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 	<PickUpQuest Name="Ensnaring Anima" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
 	<PickUpQuest Name="Mementos of the Dead" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+		<!-- Crimson Watch Quests -->
 
 		<UseObjectsObjective Quest="Mementos of the Dead" Tracking="1">
 		  <Area>
@@ -349,14 +353,266 @@
 	<PickUpQuest Name="Reporting Losses" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
 	<PickUpQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
 	<PickUpQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
+		<!-- Stonecrest Quests -->
+
+		<!-- Gas Tanks - (Vile Brew Quest) 
+		item - Crude Explosives - waittime 4-5 sec
+		hotspots:
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+		-->
 	
+		<UseObjectsObjective Quest="Unloading the Burden" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Loaded Cart</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+				<Hotspot X="4072.875" Y="1027.646" Z="3475.628" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<If Condition="HasQuest(&quot;Army of the Dead&quot;)">
+			<!-- I need the devs to do this quest - I can't just head butt this with useitem .  I need to move and use the item and anything else that is attacking me i need to face them and use the item (ie: throw fire at anything near me)
+			
+			<MoveTo X="4012.479" Y="1029.541" Z="3480.057" />
+			<RemoveJob>
+				<Job Name="HandleCombat" />
+			</RemoveJob>
+
+			<MoveTo X="4003.724" Y="1029.844" Z="3504.797" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3998.116" Y="1029.531" Z="3519.094"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3999.905" Y="1029.634" Z="3519.762"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="4000.911" Y="1029.946" Z="3523.008"
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+
+			<MoveTo X="3997.729" Y="1029.717" Z="3526.872" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Tavril's Will&quot;)" />
+			
+			<UseObject Npc="Dark Phylactery" X="3997.729" Y="1029.717" Z="3526.872" />
+			turn in quest Army of the Dead
+			accept quest End of the Endless from popup
+			
+			<MoveTo X="4012.479" Y="1029.541" Z="3480.057" />
+
+			<AddJob>
+				<HandleCombat />
+			</AddJob>
+			
+		-->
+		</If>
+
+		<If Condition="HasQuest(&quot;End of the Endless&quot;)"> <!-- Tracking 1 -->
+			<MoveTo X="3936.222" Y="1037.105" Z="3479.406" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Dark Phylactery&quot;)" />
+			<Wait Seconds="1" />
+		</If>
+
+		<KillMobsObjective Quest="End of the Endless" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Angdralthus the Lich Lord</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3935.987" Y="1037.674" Z="3484.26" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Skeletal Miner</Mob>
+			  <Mob>Endless Court Knight</Mob>
+			  <Mob>Endless Court Blademaster</Mob>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Knight</Mob>
+			  <Mob>Endless Court Blademaster</Mob>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Cleansing" Tracking="3">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Archer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reporting Losses" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Witch</Mob>
+			  <Mob>Endless Court Necromancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Reporting Losses" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Endless Court Necromancer</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="3935.086" Y="1037.711" Z="3472.281" />
+				<Hotspot X="4005.287" Y="1026.238" Z="3385.27" />
+				<Hotspot X="4049.893" Y="1028.111" Z="3430.34" />
+				<Hotspot X="4045.1" Y="1025.928" Z="3403.648" />
+				<Hotspot X="4040.815" Y="1028.797" Z="3435.792" />
+				<Hotspot X="4077.367" Y="1026.129" Z="3415.403" />
+				<Hotspot X="4111.388" Y="1021.698" Z="3419.521" />
+				<Hotspot X="4130.084" Y="1022.096" Z="3469.74" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="End of the Endless" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" /> <!-- Belt -->
+	<TurnInQuest Name="Reporting Losses" Reward="1" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" /> <!-- Neck - 1=int wis end, 2=str dex, 3=dex end, 4=int end -->
+	<TurnInQuest Name="The Cleansing" Npc="Serelda Peel" X="3854.854" Y="974.4755" Z="3042.198" />
+	<TurnInQuest Name="Unloading the Burden" Npc="Mallard Drewen" X="3861.313" Y="974.8011" Z="3048.468" />
+	<TurnInQuest Name="Vile Brew" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+	<PickUpQuest Name="Is It Over?" Npc="Sir Greg Armex" X="3849.408" Y="976.2191" Z="3045.677" />
+		<!-- End of Stonecrest / Crimson Watch Quests -->
+		
+		<!-- Granitedust Gulch Quests -->
+	<TurnInQuest Name="Is It Over?" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="What's Become of Them?" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="The Banishing" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+	<PickUpQuest Name="Colluding with Evil" Npc="Sir Ollo Stonejoy" X="4156.025" Y="970.545" Z="3291.614" />
+		
+		<UseObjectsObjective Quest="What's Become of Them?" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Tortured Body</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4160.472" Y="967.6412" Z="3428.365" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="What's Become of Them?" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<PickUpQuest Name="What's Become of Them?" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<PickUpQuest Name="Get Thee Gone" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+	<PickUpQuest Name="Into Scarwood Reach" Npc="Jarik Braun" X="4281.853" Y="953.5267" Z="3461.513" />
+
+		<KillMobsObjective Quest="Colluding with Evil" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Xenlor the Technomancer</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Colluding with Evil" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Defiant </Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<!-- grind to - hasitem x3 (Runed Gem) -->
+		<UseItemOnMobsObjective Quest="The Banishing" Item="Runed Gem" CastTime="4" Cooldown="2" WhenDead="False" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Captured Planar</Mob>
+			</Mobs>
+			<Hotspots>
+				
+				
+				
+				
+				
+			</Hotspots>
+		  </Area>
+		</UseItemOnMobsObjective>
+
+
 	
 		<!-- 
 	<PickUpQuest Name="" 
 	<TurnInQuest Name="" 
 	
 	
-	<Hotspot X="3902.851" Y="971.5574" Z="3394.934" /> // alfred mannew
+	<Hotspot X="4188.749" Y="1033.395" Z="4159.974" /> // scarwood lift summit (top)
 		-->
 
 
