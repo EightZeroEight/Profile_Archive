@@ -573,7 +573,7 @@
 			  <Mob>Xenlor the Technomancer</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="4234.466" Y="994.8834" Z="3279.322" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -581,30 +581,37 @@
 		<KillMobsObjective Quest="Colluding with Evil" Tracking="1">
 		  <Area>
 			<Mobs>
-			  <Mob>Defiant </Mob>
+			  <Mob>Defiant Arbiter</Mob>
+			  <Mob>Defiant Soulblade</Mob>
+			  <Mob>Defiant Guard</Mob>
+			  <Mob>Defiant Technomancer</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="4305.158" Y="954.9537" Z="3322.756" />
+				<Hotspot X="4334.733" Y="955.1642" Z="3368.101" />
+				<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
+				<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
+				<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
 
-		<!-- grind to - hasitem x3 (Runed Gem) -->
-		<UseItemOnMobsObjective Quest="The Banishing" Item="Runed Gem" CastTime="4" Cooldown="2" WhenDead="False" Tracking="1">
+		<!-- grind to - hasitem x3 (Runed Gem) from technomancers -->
+		<UseItemOnMobsObjective Quest="The Banishing" Item="Runed Gem" CastTime="7" Cooldown="5" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
 			  <Mob>Captured Planar</Mob>
 			</Mobs>
 			<Hotspots>
-				
-				
-				
-				
-				
+				<Hotspot X="4234.147" Y="984.1884" Z="3286.83" />
+				<Hotspot X="4294.164" Y="954.9591" Z="3304.363" />
+				<Hotspot X="4315.009" Y="955.0612" Z="3312.259" />
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
 
+	<TurnInQuest Name="The Banishing" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+	<TurnInQuest Name="Colluding with Evil" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" /> <!-- OH WPN - 1=1h str dex end axe, 2=cleric shield, 3=warrior shield, 4=caster OH -->
 
 	
 		<!-- 
