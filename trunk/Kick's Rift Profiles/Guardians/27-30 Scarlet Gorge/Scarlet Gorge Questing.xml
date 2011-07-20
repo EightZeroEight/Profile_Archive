@@ -802,7 +802,35 @@
 		</If>
 	<TurnInQuest Name="Caged and Abused" Npc="Peter Narren" X="4274.768" Y="953.672" Z="3453.574" /> 
 		<!-- ignoring Last Stand - 3 player group quest daily -->
+		
 	<!-- Grind to level 30 -->
+    <GrindTo Level="30">
+      <GrindArea>
+			<Mobs>
+			  <Mob>Smoldering Tormentor</Mob>
+			  <Mob>Smoldering Fiend</Mob>
+			  <Mob>Smoldering Charlatan</Mob>
+			  <Mob>Smoldering Reaver</Mob>
+			  <Mob>Smoldering Hellion</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4348.984" Y="937.4148" Z="3491.851" />
+				<Hotspot X="4379.629" Y="921.8115" Z="3486.856" />
+				<Hotspot X="4377.249" Y="922.2768" Z="3475.383" />
+				<Hotspot X="4399.19" Y="919.2344" Z="3616.937" />
+				<Hotspot X="4463.42" Y="915.6395" Z="3637.16" />
+				<Hotspot X="4524.602" Y="917.8225" Z="3590.746" />
+				<Hotspot X="4488.567" Y="916.1002" Z="3580.449" />
+				<Hotspot X="4360.673" Y="916.6567" Z="3558.825" />
+				<Hotspot X="4365.809" Y="919.2304" Z="3643.344" />
+				<Hotspot X="4495.202" Y="916.135" Z="3623.376" />
+				<Hotspot X="4492.921" Y="916.2971" Z="3505.667" />
+			</Hotspots>
+      </GrindArea>
+    </GrindTo>
+	
+			<Python Statement="Logging.Write(&quot;Use the Elevator to Scarwood and manually load that profile.&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 
 	<TurnInQuest Name="Into Scarwood Reach" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
 	
