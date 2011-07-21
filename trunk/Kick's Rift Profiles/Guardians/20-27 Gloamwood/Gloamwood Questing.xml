@@ -70,14 +70,13 @@
 				if con hasquest asotp - interactwith porticulum master Npc="Suze Vega" X="5123.377" Y="947.6406" Z="3226.685"
 		-->
 	<TurnInQuest Name="A Shadow on the Path" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
-	<!-- Ignoring Dungeon Quest 
+		<!-- Ignoring Dungeon Quest 
 	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
 	<PickUpQuest Name="Marshal the Troops" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<PickUpQuest Name="A Dangerous Trade" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
 	<PickUpQuest Name="Reclaim Silkweb Pass" Npc="Waykeeper Thimm" X="5317.767" Y="938.2914" Z="3187.938" />
 	
 		<!-- Silkweb Pass Quests -->
-	
 		<UseObjectsObjective Quest="A Dangerous Trade" Tracking="1">
 		  <Area>
 			<Objects>
@@ -182,10 +181,10 @@
 	<PickUpQuest Name="March of the Defenders" Npc="Sergeant Faid" X="5903.724" Y="934.9285" Z="3798.382" />
 		<Escort Npc="8th Guard Recruit" Quest="March of the Defenders" Tracking="1" />
 	<TurnInQuest Name="March of the Defenders" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> <!-- You will probably die here after the recruits die -->
-	<!-- I didn't get any agro here - but I don't know if the bot is going to use the road or pull mobs. IE: i haven't tested this quest, only did it by hand -->
+		<!-- I didn't get any agro here - but I don't know if the bot is going to use the road or pull mobs. IE: i haven't tested this quest, only did it by hand -->
 	<PickUpQuest Name="Havoc Trail" Npc="Lieutenant Ezan" X="5751.195" Y="959.2689" Z="3678.103" /> 
 		<!-- <Escort Npc="Injured Recruit" Quest="Havoc Trail" Tracking="1" /> -->
-		<If Condition="HasQuest(&quot;Injured Recruit&quot;)">
+		<If Condition="HasQuest(&quot;Havoc Trail&quot;)">
 			<MoveTo X="5686.117" Y="982.5849" Z="3425.082" />
 			<Wait Seconds="5" />
 		</If>
@@ -233,8 +232,6 @@
 		</If>
 	<PickUpQuest Name="Good Luck Charms" Npc="John Tintan" X="5209.142" Y="943.6487" Z="3138.957" />
 	<TurnInQuest Name="Ill Tidings" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
-	<!-- Ignoring Dungeon Quest
-	<PickUpQuest Name="The Toxic Source" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> -->
 	<PickUpQuest Name="Green Eyed Monster" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" /> 
 	<TurnInQuest Name="Creeping Paralysis" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
 	<PickUpQuest Name="The Seed of History" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
@@ -275,6 +272,9 @@
 	<PickUpQuest Name="Blood of the Ancients" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 	<PickUpQuest Name="Bleeding Green" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
 		<!-- RunTo <Hotspot X="5409.1" Y="959.9289" Z="2647.35" /> and interactwith gameobject Forest Altar to summon Laria -->
+		<If Condition="HasQuest(&quot;The Seed of History&quot;)">
+ 			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
+       </If>
 	<TurnInQuest Name="The Seed of History" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
@@ -382,7 +382,7 @@
 			<Hotspots>
 				<Hotspot X="5185.664" Y="979.2342" Z="2648.519" />
 				<Hotspot X="5033.078" Y="1063.026" Z="2638.085" />
-				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" /> <!-- standing stones -->
+				<Hotspot X="4994.621" Y="1074.922" Z="2715.552" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -422,6 +422,9 @@
 		<!-- Goblin Necklace offers a Quest, dropped from the Nightrock Goblins -->
 	
 		<!-- runto the Forest Altar and use the gameobject -->
+		<If Condition="HasQuest(&quot;A Dangerous Harvest&quot;)">
+ 			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
+       </If>
 	<TurnInQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<TurnInQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="Shade of the Family" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
@@ -677,6 +680,9 @@
 
 		<!-- To Tearfall Run -->
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+		<If Condition="HasQuest(&quot;Planting Hope&quot;)">
+ 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+       </If>
 	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 
@@ -703,6 +709,9 @@
 		</If>
 
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+		<If Condition="HasQuest(&quot;Dead Water&quot;)">
+ 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+		</If>
 	<TurnInQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 
@@ -748,13 +757,17 @@
 		</KillMobsObjective>
 
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
-	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" /> <!-- No Chain -->
+		<If Condition="HasQuest(&quot;In Death as in Life&quot;)">
+ 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+       </If>
+	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
 	<PickUpQuest Name="Quieting the Beast" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
 		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
+			<MoveTo X="5256.864" Y="987.1636" Z="3074.8" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		<!--
-			<MoveTo X="5256.864" Y="987.1636" Z="3074.8" />
 			interactwith (tracking 2)
 			Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
 			gossip: Quieting the Beast
@@ -809,7 +822,12 @@
 	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" />
 	
-	<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
+		<If Condition="HasQuest(&quot;Mysterious Messages&quot;)">
+			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+		<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
 		<UseObjectsObjective Quest="Mysterious Messages" Tracking="1">
 		  <Area>
 			<Objects>
@@ -837,10 +855,10 @@
 	<PickUpQuest Name="It Knows No Depths" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<PickUpQuest Name="Soul Echoes" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	<PickUpQuest Name="Millrush Reclamation" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
-	<!-- Ignoring 3 person group quest
+		<!-- Ignoring 3 person group quest
 	<PickUpQuest Name="Felling an Ancient" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" /> 
-	If you kill him, it drops a 'heart of hte legend' dropquest
-	-->
+		If you kill him, it drops a 'heart of hte legend' dropquest
+		-->
 	
 		<KillMobsObjective Quest="It Knows No Depths" Tracking="1">
 		  <Area>
@@ -913,7 +931,6 @@
 	<PickUpQuest Name="Mathosian Manifestations" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
 	
 		<!-- Mathosian Mill Quests -->
-
 		<KillMobsObjective Quest="Mill Infestation" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1015,12 +1032,13 @@
 		<If Condition="HasQuest(&quot;A Burgher with Lies&quot;)">
 			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
 			<Wait Seconds="2" />
-			<Python Statement="Logging.Write(&quot;Bot needs to interactwith vault door and then interactwith npc &quot;)" />
+			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
+			<Python Statement="Logging.Write(&quot;Bot needs to interactwith npc &quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			<!-- Interactwith door - Vault Door
 			<TalkToNpcObjective Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
 			<MoveTo X="5252.234" Y="987.0877" Z="3076.445" />
-			Interactwith door - Vault Door
+			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
 			-->
 		</If>
 	<TurnInQuest Name="A Burgher with Lies" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
@@ -1152,6 +1170,9 @@
 		</If>
 	
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+		<If Condition="HasQuest(&quot;Secret of the Pines&quot;)">
+ 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+		</If>
 	<TurnInQuest Name="Secret of the Pines" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 		<!-- Deepwood Cottage Quests -->
 	<PickUpQuest Name="Diary of a Hag" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1316,17 +1337,21 @@
 		
 		<!-- Tracking 1 -->
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
-		<!--
 			<MoveTo X="4201.292" Y="1139.27" Z="2916.706" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			<!--
 			<Wait Seconds="2" />
 			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Confront the Hag" />
 			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Take your best shot, hag." />
 			<Wait Seconds="15" />
-		-->
+			-->
 			<!-- Waiting for port -->
 		</If>
 		
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
+		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
+ 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="She's Lived Long Enough" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="The Iron Pine Butcher" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
@@ -1366,7 +1391,6 @@
 			<Wait Seconds="5" />
 		</If>
 		
-		
 		<KillMobsObjective Quest="The Iron Pine Butcher" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -1399,7 +1423,24 @@
 	<PickUpQuest Name="A Woman Scorned" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<PickUpQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
-	<TurnInQuest Name="The Iron Pine Butcher" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" /> <!-- Belt -->
+		<If Condition="HasQuest(&quot;The Iron Pine Butcher&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="The Iron Pine Butcher" Reward="1" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Etherial Chain Girdle&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="The Iron Pine Butcher" Reward="2" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shadewarden's Sash&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="The Iron Pine Butcher" Reward="3" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Butcher's Belt&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="The Iron Pine Butcher" Reward="4" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Waykeeper's Tassets&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="An End to the Court" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
 	<TurnInQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<PickUpQuest Name="Taking the Shadows" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
@@ -1487,6 +1528,14 @@
 			<MoveTo X="4677.791" Y="1201.058" Z="2453.22" />
 			<Wait Seconds="5" />
 			
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			<Python Statement="Logging.Write(&quot;HELP ME!&quot;)" />
+			
 			<!-- we have to complete a 2 tier 'rift' thing here, but they should agro us -->
 			<KillMobsObjective Quest="A Woman Scorned" Tracking="1">
 			  <Area>
@@ -1524,7 +1573,24 @@
 			 </If>
 		</If>
 	<TurnInQuest Name="Flickering Shadows" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
-	<TurnInQuest Name="Taking the Shadows" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- Helm -->
+		<If Condition="HasQuest(&quot;Taking the Shadows&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="Taking the Shadows" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ruinous Coif&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="Taking the Shadows" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fellshade Cap&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="Taking the Shadows" Reward="3" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fellshadow Hood&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="Taking the Shadows" Reward="4" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shadewarden's Helm&quot;)" />
+			 </If>
+		</If>
 		<!-- End of Deepwood Cottage Quests -->
 	<PickUpQuest Name="Spreading the Word" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> <!-- To Scarlet Gorge -->
 	<TurnInQuest Name="A Woman Scorned" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" />
@@ -1555,7 +1621,22 @@
 	<PickUpQuest Name="A Hero's Duty" Npc="Furtho Dragomir" X="5258.569" Y="987.0327" Z="3072.375" /> <!-- To Scarlet Gorge -->
 	<PickUpQuest Name="The Ancient Ward" Npc="Paula Becksten" X="3984.344" Y="1102.438" Z="2923.706" /> <!-- First Quest in Scarlet Gorge -->
 	
-	<!-- Grind to 27 -->
+    <GrindTo Level="27">
+      <GrindArea>
+        <Mobs>
+          <Mob>Goremouth</Mob>
+          <Mob>Mudscale Viper</Mob>
+          <Mob>Mudscale Bilefang</Mob>
+          <Mob>Dusk Bat</Mob>
+          <Mob>Rotshell Grumbler</Mob>
+        </Mobs>
+        <Hotspots>
+          <Hotspot X="4874.237" Y="1040.2" Z="2504.099" />
+          <Hotspot X="4709.434" Y="1045.187" Z="2596.503" />
+          <Hotspot X="4689.567" Y="1044.879" Z="2564.52" />
+        </Hotspots>
+      </GrindArea>
+    </GrindTo>
 	
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
