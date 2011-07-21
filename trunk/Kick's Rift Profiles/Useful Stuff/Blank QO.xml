@@ -127,8 +127,10 @@
 			 </If>
 		</If>
 
-
-
+			<!-- Rogues:
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equipslot 8 &quot;)" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equipslot 9 &quot;)" />
+			-->
 
 
 

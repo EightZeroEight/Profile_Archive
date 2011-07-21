@@ -4,16 +4,17 @@
     <AddJob>
       <MendSoul>
         <Healers>
-          <!--Kain's Command-->
-          <Healer X="3165.028" Y="1095.186" Z="3878.661" />
+          <Healer X="3165.028" Y="1095.186" Z="3878.661" /> <!--Kain's Command-->
+		  <Healer X="3621.687" Y="1105.182" Z="3510.847" /> <!-- Camp Vigil -->
         </Healers>
       </MendSoul>
     </AddJob>
     <AddJob>
       <Vendor SellWhites="True" SellGreens="True" SellBlues="True" SellPurples="False">
         <Vendors>
-          <!--Kain's Command-->
-          <Vendor X="3153.187" Y="1095.186" Z="3883.377" />
+          <Vendor X="3153.187" Y="1095.186" Z="3883.377" /> <!--Kain's Command-->
+		  <Vendor X="3508.757" Y="1087.717" Z="3502.026" /> <!-- Scarwood Pass -->
+		  <Vendor X="3647.716" Y="1105.557" Z="3508.033" /> <!-- Camp Vigil -->
         </Vendors>
       </Vendor>
     </AddJob>
@@ -45,8 +46,96 @@
 	<PickUpQuest Name="Lost Cargo" Npc="Sergeant Coda" X="3731.341" Y="1090.634" Z="3223.521" />
 	<PickUpQuest Name="Dealing with the Defiant" Npc="Kerevik Amblefoot" X="3731.341" Y="1090.634" Z="3223.521" />
 	
+		<UseObjectsObjective Quest="Lost Cargo" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Lost Cargo Crate</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3645.982" Y="1093.98" Z="3304.411" />
+				<Hotspot X="3643.964" Y="1095.2" Z="3364.595" />
+				<Hotspot X="3597.586" Y="1090.743" Z="3406.272" />
+				<Hotspot X="3538.485" Y="1089.363" Z="3482.151" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Lost Cargo" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+	<PickUpQuest Name="Seeds of Their Destruction" Npc="Captain Ledisko" X="3614.544" Y="1105.097" Z="3509.324" />
+	<TurnInQuest Name="Dealing with the Defiant" Npc="Commandant Rigur" X="3644.927" Y="1104.78" Z="3498.033" />
+	<PickUpQuest Name="The Gods Are Not to be Defied" Npc="Commandant Rigur" X="3644.927" Y="1104.78" Z="3498.033" />
+	<PickUpQuest Name="Storm Chasers" Npc="Sergeant Perdaro" X="3622.419" Y="1104.878" Z="3485.102" />
 	
 	
+		<UseObjectsObjective Quest="Seeds of Their Destruction" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Dead Fall</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3725.902" Y="1113.115" Z="3382.12" />
+				<Hotspot X="3759.37" Y="1118.858" Z="3338.537" />
+				<Hotspot X="3763.331" Y="1118.805" Z="3316.31" />
+				<Hotspot X="3768.592" Y="1118.838" Z="3328.597" />
+				<Hotspot X="3793.696" Y="1112.05" Z="3445.699" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<UseObjectsObjective Quest="Seeds of Their Destruction" Tracking="2">
+		  <Area>
+			<Objects>
+			  <Object>Raw Stormstone</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="3961.935" Y="1080.978" Z="3440.205" />
+				<Hotspot X="3793.696" Y="1112.05" Z="3445.699" />
+				<Hotspot X="3980.531" Y="1081.385" Z="3472.472" />
+				<Hotspot X="4014.112" Y="1075.028" Z="3578.8" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+		<KillMobsObjective Quest="Storm Chasers" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Duskwing Rukh</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3930.323" Y="1090.025" Z="3579.311" />
+				<Hotspot X="3902.057" Y="1089.961" Z="3565.979" />
+				<Hotspot X="3937.515" Y="1095.562" Z="3605.758" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Storm Chasers" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Sharptalon Siren</Mob>
+			  <Mob>Sharptalon Windwitch</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="3951.592" Y="1083.274" Z="3512.211" />
+				<Hotspot X="3961.935" Y="1080.978" Z="3440.205" />
+				<Hotspot X="3793.696" Y="1112.05" Z="3445.699" />
+				<Hotspot X="3980.531" Y="1081.385" Z="3472.472" />
+				<Hotspot X="4014.112" Y="1075.028" Z="3578.8" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="The Gods Are Not to be Defied" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Brigadier Ignatios</Mob>
+			</Mobs>
+			<Hotspots>
+				
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 	
 	
 		<!-- 
