@@ -643,12 +643,26 @@
 
     <PickUpQuest Name="A Dim, Dark Eye" Npc="Cyril Kalmar" X="1031.156" Y="838.2434" Z="1057.226" />
 
-    <If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
+		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
 
-      <MoveTo X="881.4838" Y="824.8659" Z="943.6005" />
-      <Wait Seconds="2" />
-    </If>
+			<MoveTo X="881.4838" Y="824.8659" Z="943.6005" />
+			<Wait Seconds="3" />
+			<MoveTo X="828.6042" Y="843.5499" Z="895.4312" />
+			<Wait Seconds="3" />
+		  
+			<!-- we may need some more moveto's so it clears the area from agro 
+			<MoveTo X="825.6334" Y="843.291" Z="878.3607" />
+			<Wait Seconds="3" />
+			<UseObject Name="Rift Generator" X="825.6334" Y="843.291" Z="878.3607" />
+			
+			<MoveTo X="811.6838" Y="843.201" Z="891.847" />
+			<Wait Seconds="3" />
+			<UseObject Name="Rift Generator" X="811.6838" Y="843.201" Z="891.847" />
+		  -->
+		</If>
 
+	<!--
+	-->
     <UseObjectsObjective Quest="A Dim, Dark Eye" Tracking="1">
       <Area>
         <Objects>
@@ -660,8 +674,21 @@
         </Hotspots>
       </Area>
     </UseObjectsObjective>
+	
+    <Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
 
-    <Escort Npc="Borrin Gammult" Quest="Brood of Regulos" Tracking="2" /> <!-- Escort fails.  so we'll need to put in vile drake x2, ettin x2 -->
+		<!-- if con hasquest The Tyrant - 
+		<KillMobsObjective Quest="The Tyrant" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Shade of Regulos</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="817.5942" Y="843.2152" Z="886.1696" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+		-->
 
     <UseItemOnMobsObjective Quest="A Dim, Dark Eye" Item="Hammer of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="3">
       <Area>
