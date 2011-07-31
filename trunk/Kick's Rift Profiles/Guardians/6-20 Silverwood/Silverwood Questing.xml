@@ -1284,8 +1284,13 @@
     <PickUpQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="The Perfect Specimen" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
 
+		<If Condition="HasQuest(&quot;Anti-Intelligence Report&quot;)">
+			<Python Statement="Logging.Write(&quot;Please go around and use the wand on boglings&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
+		  <!-- Range 20-30 needs to be added.  This can be used in combat if we need to temp disable it 
 		<UseItemOnMobsObjective Quest="Anti-Intelligence Report" Item="Simplicity Wand" CastTime="3" Cooldown="10" WhenDead="False" Tracking="1">
-		  <!-- Range 20-30 needs to be added.  This can be used in combat if we need to temp disable it -->
 		  <Area>
 			<Mobs>
 			  <Mob>Bogling Thief</Mob>
@@ -1304,8 +1309,14 @@
 			</Hotspots>
 		  </Area>
 		</UseItemOnMobsObjective>
+		-->
 
 		<!-- This Quest Doesn't work properly.  Use the objects x2, then interactwith (no gossip needed) the spirit guide ('save the spirit guide' is the tracking) -->
+		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
+			<Python Statement="Logging.Write(&quot;This quest also doesn't work correctly.  use the 2 gameobjects and then interactwith the spirit guide&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
+
 		<UseObjectsObjective Quest="Saving the Spirit Guide" Tracking="1">
 		  <Area>
 			<Objects>
@@ -1317,12 +1328,12 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))">
 		  <!-- and is not completed doesn't work properly.  When it does, move quest before spirit guide -->
-		  <MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
-		  <Wait Seconds="1" />
-		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Fused Faetouched Splinters&quot;)" />
-		  <Wait Seconds="6" />
+		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))">
+			<MoveTo X="6608.674" Y="820.9843" Z="3518.82" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Fused Faetouched Splinters&quot;)" />
+			<Wait Seconds="6" />
 		</If>
 
     <TurnInQuest Name="Saving the Spirit Guide" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
@@ -1371,18 +1382,22 @@
 		<If Condition="HasQuest(&quot;The Altar of Reflection&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Altar of Reflection" Reward="1" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Unyielding Breeches&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="The Altar of Reflection" Reward="2" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Truthseeker's Trousers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Altar of Reflection" Reward="3" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pants of the Prophet&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="The Altar of Reflection" Reward="4" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Visionary's Legplates&quot;)" />
 			 </If>
 		</If>
@@ -1516,7 +1531,7 @@
 			  <Mob>Commander Falem</Mob>
 			</Mobs>
 			<Hotspots>
-			  <Hotspot X="7073.661" Y="820.4274" Z="3321.624" />
+			  <Hotspot X="7073.426" Y="820.4687" Z="3322.332" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
