@@ -105,15 +105,18 @@
     <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
     <PickUpQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
 
-		<If Condition="HasQuest(&quot;Fire Upon the Water&quot;)">
-		  <MoveTo X="6154.955" Y="820.3726" Z="3986.674" />
+		<UseObjectsObjective Quest="Fire Upon the Water" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Water Bucket</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="6154.955" Y="820.3726" Z="3986.674" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
-		  <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6154.955, 820.3726, 3986.674)) &lt; 10*10">
-			<UseObject Name="Water Bucket" X="6154.955" Y="820.3726" Z="3986.674" />
-		  </If>
-
-
-		  <UseObjectsObjective Quest="Fire Upon the Water" Tracking="2">
+		<UseObjectsObjective Quest="Fire Upon the Water" Tracking="2">
 			<Area>
 			  <Objects>
 				<Object>Guardian Catapult</Object>
@@ -123,7 +126,6 @@
 			  </Hotspots>
 			</Area>
 		  </UseObjectsObjective>
-		</If>
 
     <TurnInQuest Name="Fire Upon the Water" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
     <PickUpQuest Name="Moral Chasm" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
@@ -146,7 +148,7 @@
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;tar Centurion Osteneer&quot;)" />
 		  <Wait Seconds="1" />
 		  <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Harrowing Talisman&quot;)" />
-		  <Wait Seconds="5" />
+		  <Wait Seconds="10" />
 
 		</If>
 
@@ -259,16 +261,19 @@
 		</If>
 
     <PickUpQuest Name="Wanton Flame" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+    <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
 	
+	<!-- bot still doesn't accept quest, even after sticking in the pickup
 		<If Condition="HasQuest(&quot;Wanton Flame&quot;)">
 		  <If Condition="not HasQuest(&quot;Recovered Notes&quot;)">
 			<MoveTo X="6281.302" Y="820.6832" Z="3737.72" />
 
 			<If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6281.302, 820.6832, 3737.72)) &lt; 10*10">
-			  <UseObject Name="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
+				<UseObject Name="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
+				<Wait Seconds="2" />
+				<PickUpQuest Name="Recovered Notes" Object="Scattered Stones" X="6281.302" Y="820.6832" Z="3737.72" />
 		</If></If></If>
-
-    <PickUpQuest Name="Help From Above" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+	-->
 
 		<KillMobsObjective Quest="Help From Above" Tracking="1">
 		  <Area>
@@ -308,10 +313,6 @@
 		  </Area>
 		</UseObjectsObjective>
 
-		<!--  !HasQuest &amp;&amp; !IsQuestCompleted - pickup quest from gameobject?
-		<PickUpQuest Name="Recovered Notes" Npc="Scattered Stones" X="6279.939" Y="820.6118" Z="3740.049" /> a rock - turns in to Legate Nathen Creen 
-			[10:46:58.375 N] Can not find NPC Scattered Stones at System.Func`1[Giga.Common.Vector3] -->
-
 		<UseObjectsObjective Quest="Out of the Hands of Evil" Tracking="1">
 		  <Area>
 			<Objects>
@@ -326,6 +327,8 @@
 		<!-- This is a UseItem and then click the AoE Circle on ground(UseItemTargetLocation from WoW).  Do note, this npc is not targettable -->
 
 		<If Condition="HasQuest(&quot;Wanton Flame&quot;)">
+		  <MoveTo  X="6341" Y="820.9684" Z="3798.137" />
+		  
 		  <Python Statement="Logging.Write(&quot;Bot doesn't Click the AoE Effect after using item&quot;)" />
 		  <Python Statement="GigaBot.Stop()" />
 
@@ -340,51 +343,63 @@
 		-->
 		</If>
 
+    <TurnInQuest Name="Wanton Flame" Npc="Spirit of Carwin" X="6244.929" Y="835.0805" Z="3876.081" />
+    <!-- We learned Planar Lure -->
+	
     <TurnInQuest Name="Out of the Hands of Evil" Reward="1" Npc="Andrin Kahn" X="6210.281" Y="831.4265" Z="3852.067"/>
 		<If Condition="HasQuest(&quot;Help From Above&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Help From Above" Reward="4" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Orin's Pikestaff&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Help From Above" Reward="4" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Orin's Pikestaff&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Help From Above" Reward="2" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Roughedged Hatchet&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Help From Above" Reward="1" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Virtuous Claymore&quot;)" />
 			 </If>
 		</If>
 
     <PickUpQuest Name="Carrying the Light" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" />
-    <TurnInQuest Name="Wanton Flame" Npc="Spirit of Carwin" X="6244.929" Y="835.0805" Z="3876.081" />
 
-    <TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
-    <!-- We learned Planar Lure -->
+ 		<If Condition="HasQuest(&quot;Recovered Notes&quot;)">
+   <TurnInQuest Name="Recovered Notes" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
+		</If>
 
-    <PickUpQuest Name="A Tear in Telara" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
+		<!-- ignoring 
+    <PickUpQuest Name="A Tear in Telara" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" /> -->
     <!-- End of Divine Landing Quests -->
 
     <!-- Sterling Hills Quests -->
  		<If Condition="HasQuest(&quot;Carrying the Light&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Carrying the Light" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Lightbinder's Waist&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Carrying the Light" Reward="2" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Watchful Cord&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Carrying the Light" Reward="3" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Insidious Belt&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Carrying the Light" Reward="4" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brilliant Waistguard&quot;)" />
 			 </If>
 		</If>
@@ -393,13 +408,14 @@
     <PickUpQuest Name="Agitated Wildlife"  Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
     <!-- Ignoring Daily - Guardian of Ways and Means - kill 10 creatures from rifts / invasions Npc="Berthold Stronn" X="6208.949" Y="820.8959" Z="3582.466" -->
 
-		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! -->
+		<!-- Singed Hives.  Bot doesn't want to kill the stupid hives! 
+		-->
 		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
 			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
 			<Python Statement="Logging.Write(&quot;Bot doesn't kill Vespid Hives. It walks up to it and then leaves.  If I use combatbot, it kills it - but if i get extra agro, it doesn't re-target afterwards&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
 		</If>
-
+		
 		<KillMobsObjective Quest="Singed Hives" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -483,18 +499,22 @@
  		<If Condition="HasQuest(&quot;Singed Hives&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Singed Hives" Reward="2" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Teardrop Wand&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Singed Hives" Reward="2" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Teardrop Wand&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Singed Hives" Reward="1" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Deadshot Rifle&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Singed Hives" Reward="3" Npc="Rudi Tanlop" X="6213.977" Y="821.0825" Z="3589.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Warpwood Shortbow&quot;)" />
 			 </If>
 		</If>
@@ -575,23 +595,25 @@
 		  </Area>
 		</KillMobsObjective>
 
-    <TurnInQuest Name="A Tear in Telara" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
-
 		<If Condition="HasQuest(&quot;Shrines of Tavril&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Shrines of Tavril" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Honored Chain Boots&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Shrines of Tavril" Reward="2" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Boots of Rapture&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Shrines of Tavril" Reward="3" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ruthless Footpads&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Shrines of Tavril" Reward="4" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sabatons of the Advocate&quot;)" />
 			 </If>
 		</If>
@@ -662,18 +684,22 @@
 		<If Condition="HasQuest(&quot;Minions of Maelforge&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Minions of Maelforge" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Radiant Chainmail&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Minions of Maelforge" Reward="2" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Robe of Embers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Minions of Maelforge" Reward="3" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vest of Quickness&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Minions of Maelforge" Reward="4" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Defender's Armor&quot;)" />
 			 </If>
 		</If>
@@ -681,18 +707,22 @@
 		<If Condition="HasQuest(&quot;Immolation Avenged&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Immolation Avenged" Reward="1" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Avenger's Hand Guards&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Immolation Avenged" Reward="2" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Avenger's Gloves&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Immolation Avenged" Reward="3" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Avenger's Handgrips&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Immolation Avenged" Reward="4" Npc="Colten Feddel" X="6073.269" Y="817.1885" Z="3256.092" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Avenger's Gauntlets&quot;)" />
 			 </If>
 		</If>
@@ -888,18 +918,22 @@
 		<If Condition="HasQuest(&quot;Barrel Full of Goblins&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Barrel Full of Goblins" Reward="2" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scorcher's Staff&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Barrel Full of Goblins" Reward="2" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scorcher's Staff&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Barrel Full of Goblins" Reward="4" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Swiftripper&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Barrel Full of Goblins" Reward="1" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 			<!-- warrior 1h
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hearthfire Hammer&quot;)" />
 			-->
@@ -1040,6 +1074,7 @@
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Teacher's Pet" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dissection Knife&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
@@ -1088,18 +1123,22 @@
 		<If Condition="HasQuest(&quot;Bug Off&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Bug Off" Reward="1" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sterling Chain Circle&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Bug Off" Reward="2" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Spider Silk Strap&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Bug Off" Reward="3" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Astute Waistband&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Bug Off" Reward="4" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Quicksilver Girdle&quot;)" />
 			 </If>
 		</If>
@@ -1108,12 +1147,14 @@
     <PickUpQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
     <PickUpQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+		<If Condition="HasQuest(&quot;March Out to the Marsh&quot;)">
     <TurnInQuest Name="March Out to the Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
+			<Python Statement="Logging.Write(&quot;If it's not picking up Dirty Stinking Marsh, just wait for Scotty to come back and the bot will get the quest&quot;)" />
+		</If>
     <PickUpQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
 		<!-- If someone is currently Escorting Scotty, he won't be avail to escort and keeps clicking the window open and closed -->
 		<If Condition="HasQuest(&quot;Dirty Stinking Marsh&quot;)">
-		  <Escort Npc="Scotty" Quest="Dirty Stinking Marsh" Tracking="1" />
-		  <!-- This Escort currently has issues targetting and attacking what Scotty is being attacked by.  It keeps blacklisting the spawns -->
+			<Escort Npc="Scotty" Quest="Dirty Stinking Marsh" Tracking="1" />
 		</If>
     <TurnInQuest Name="Dirty Stinking Marsh" Npc="Kelnin Malm" X="6528.14" Y="828.5143" Z="3329.785" />
 
@@ -1234,7 +1275,11 @@
     <TurnInQuest Name="Ritual Reappropriation" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
     <PickUpQuest Name="Saving the Spirit Guide" Npc="Thomas Penthas" X="6497.212" Y="828.3802" Z="3287.786" />
     <TurnInQuest Name="An Oppressive Odor" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+		<If Condition="HasQuest(&quot;Stolen Implements&quot;)">
     <TurnInQuest Name="Stolen Implements" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Bogling Knapsack&quot;)" />
+		</If>
     <TurnInQuest Name="Unusual Belongings" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="Anti-Intelligence Report" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
     <PickUpQuest Name="The Perfect Specimen" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
@@ -1286,18 +1331,22 @@
  		<If Condition="HasQuest(&quot;The Perfect Specimen&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Perfect Specimen" Reward="2" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Maffle's Stone Baton&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="The Perfect Specimen" Reward="2" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Maffle's Stone Baton&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Perfect Specimen" Reward="1" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Marshwood Bow&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="The Perfect Specimen" Reward="4" Npc="Nora Glen" X="6501.765" Y="828.9728" Z="3287.085" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Marsh Gas Blunderbuss&quot;)" />
 			 </If>
 		</If>
@@ -1443,6 +1492,7 @@
  		<If Condition="HasQuest(&quot;The Aelfwar Threat&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Aelfwar Threat" Reward="1" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scepter of Vigilance&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
@@ -1450,6 +1500,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Aelfwar Threat" Reward="3" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Insidious Kris&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -1473,18 +1524,22 @@
 		<If Condition="HasQuest(&quot;Thorn in the Side&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Thorn in the Side" Reward="1" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Saintly Shoulderguards&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Thorn in the Side" Reward="2" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mantle of Life&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Thorn in the Side" Reward="3" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shoulderpads of Mastery&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Thorn in the Side" Reward="4" Npc="Isilwyn Alrai" X="6969.549" Y="842.3188" Z="3299.399" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vigilant Pauldrons&quot;)" />
 			 </If>
 		</If>
@@ -1619,18 +1674,22 @@
 		<If Condition="HasQuest(&quot;A Secret Pact&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="A Secret Pact" Reward="1" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Boots of Warding&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="A Secret Pact" Reward="2" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sagewood Shoes&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="A Secret Pact" Reward="3" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Conniver's Boots&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="A Secret Pact" Reward="4" Npc="Ramis Twistroot" X="7184.902" Y="871.7161" Z="3033.116" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Infamous Sabatons&quot;)" />
 			 </If>
 		</If>
@@ -1693,18 +1752,22 @@
 		<If Condition="HasQuest(&quot;Clearing the Forest&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Clearing the Forest" Reward="1" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vigorous Chainmail&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Clearing the Forest" Reward="1" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Raiment of Guidance&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Clearing the Forest" Reward="1" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Brilliant Leather Tunic&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Clearing the Forest" Reward="1" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Exemplar's Armor&quot;)" />
 			 </If>
 		</If>
@@ -1845,6 +1908,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Mind's Eyes" Reward="1" Npc="Dalin Erst" X="6927.3" Y="875.6207" Z="2911.115" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Piercing Edge&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -1868,18 +1932,22 @@
 		<If Condition="HasQuest(&quot;Vision of Danger&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Vision of Danger" Reward="1" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Seer's Chain Legs&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Vision of Danger" Reward="2" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Starhearth Pants&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Vision of Danger" Reward="3" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prophetic Trousers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Vision of Danger" Reward="4" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Leggings of Prophecy&quot;)" />
 			 </If>
 		</If>
@@ -1990,18 +2058,22 @@
 		<If Condition="HasQuest(&quot;Rescuing Foresters&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Rescuing Foresters" Reward="1" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Forester's Chain Belt&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Rescuing Foresters" Reward="2" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Greenleaf Sash&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Rescuing Foresters" Reward="3" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Woodsman's Cord&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Rescuing Foresters" Reward="4" Npc="Mila Darina" X="6571.614" Y="839.8177" Z="2776.897" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Girdle of the Grove&quot;)" />
 			 </If>
 		</If>
@@ -2023,18 +2095,22 @@
 		<If Condition="HasQuest(&quot;Lord of the Fae&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Lord of the Fae" Reward="1" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shoulders of Radiance&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Lord of the Fae" Reward="2" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Pauldrons of the Labryinth&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Lord of the Fae" Reward="3" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Duplicitous Shoulders&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Lord of the Fae" Reward="4" Npc="Tristan Alecourt" X="6576.343" Y="839.8177" Z="2780.682" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Malevolent Shoulderguards&quot;)" />
 			 </If>
 		</If>
@@ -2172,18 +2248,22 @@
 		<If Condition="HasQuest(&quot;Hope and Fear&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Hope and Fear" Reward="1" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gloves of Tavril&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Hope and Fear" Reward="2" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handwraps of Tavril&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Hope and Fear" Reward="3" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Handgrips of Tavril&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Hope and Fear" Reward="4" Npc="Cerys Amare" X="6056.884" Y="817.9724" Z="3034.632" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gauntlets of Tavril&quot;)" />
 			 </If>
 		</If>
@@ -2254,10 +2334,12 @@
 		<If Condition="HasQuest(&quot;Black Eyes and Bloody Claws&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Black Eyes and Bloody Claws" Reward="4" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Black Eye Staff&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Black Eyes and Bloody Claws" Reward="4" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Black Eye Staff&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
@@ -2265,6 +2347,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Black Eyes and Bloody Claws" Reward="1" Npc="Rolant Hennel" X="6055.511" Y="829.2474" Z="2823.566" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cleaver of Vengeance&quot;)" />
 			 </If>
 		</If>
@@ -2400,18 +2483,22 @@
 		<If Condition="HasQuest(&quot;Power of the Vigil&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Power of the Vigil" Reward="4" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Wand of Consecration&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Power of the Vigil" Reward="4" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Wand of Consecration&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Power of the Vigil" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Palisade Bow&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Power of the Vigil" Reward="2" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Longshot Rifle&quot;)" />
 			 </If>
 		</If>
@@ -2565,18 +2652,22 @@
 		<If Condition="HasQuest(&quot;For Sanity's Sake&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="For Sanity's Sake" Reward="1" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Helm of the Exemplar&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="For Sanity's Sake" Reward="2" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Invoker's Cowl&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="For Sanity's Sake" Reward="3" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Conqueror's Hood&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="For Sanity's Sake" Reward="4" Npc="Harold Adler" X="5927.237" Y="812.1957" Z="3041.995" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Faceplate of the Fortress&quot;)" />
 			 </If>
 		</If>
@@ -2698,14 +2789,17 @@
 		<If Condition="HasQuest(&quot;Tete-a-Tete&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Tete-a-Tete" Reward="1" Npc="Loras Tivan" X="6262.305" Y="838.3229" Z="3242.823" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of the Peacebroker&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Tete-a-Tete" Reward="1" Npc="Loras Tivan" X="6262.305" Y="838.3229" Z="3242.823" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of the Peacebroker&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Tete-a-Tete" Reward="4" Npc="Loras Tivan" X="6262.305" Y="838.3229" Z="3242.823" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sword of the Tactician&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -2715,18 +2809,22 @@
 		<If Condition="HasQuest(&quot;Aelfwar Monstrosities&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Aelfwar Monstrosities" Reward="2" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Watcher's Strand&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Aelfwar Monstrosities" Reward="2" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Watcher's Strand&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Aelfwar Monstrosities" Reward="3" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Choker of Shadows&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Aelfwar Monstrosities" Reward="4" Npc="Loras Tivan" X="6262.274" Y="838.3229" Z="3242.822" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Infiltrator's Pendant&quot;)" />
 			 </If>
 		</If>
@@ -2934,6 +3032,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Discordant Spirits" Reward="1" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Swirling Shadow&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -2965,18 +3064,22 @@
 			
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Vigil's Shield" Reward="1" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Coif of the Spirit Guide&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="The Vigil's Shield" Reward="2" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Shroud of the Spirit Guide&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Vigil's Shield" Reward="3" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cowl of the Spirit Guide&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="The Vigil's Shield" Reward="4" Npc="Spirit Guide" X="6556.051" Y="908.3539" Z="3075.738" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Helm of the Spirit Guide&quot;)" />
 			 </If>
 		</If>
@@ -3009,28 +3112,35 @@
 		<If Condition="HasQuest(&quot;Kongeegon, the Glory of the Aelfwar&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Kongeegon, the Glory of the Aelfwar" Reward="1" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Treantslayer Gloves&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Kongeegon, the Glory of the Aelfwar" Reward="2" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Treantslayer Handwraps&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Kongeegon, the Glory of the Aelfwar" Reward="3" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Treantslayer Grips&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Kongeegon, the Glory of the Aelfwar" Reward="4" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Treantslayer Gauntlets&quot;)" />
 			 </If>
 		</If>
     <PickUpQuest Name="Dormant Power" Npc="Niall Adnar" X="6420.318" Y="895.0527" Z="3169.623" />
 
+	<!--
 		<If Condition="HasQuest(&quot;A Tear in Telara&quot;)"> 
-    <TurnInQuest Name="A Tear in Telara" Npc="Legate Nathen Creen" X="6205.787" Y="831.1597" Z="3847.033" />
+    <TurnInQuest Name="A Tear in Telara" Npc="Rorth Devalm" X="6093" Y="817" Z="3255" />
+				<Wait Seconds="2" />
 			<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sigil of the Planes&quot;)" />
 		</If>
-
+	-->
+	
 		<UseObjectsObjective Quest="Dormant Power" Tracking="1">
 		  <Area>
 			<Objects>
@@ -3046,18 +3156,22 @@
 		<If Condition="HasQuest(&quot;Dormant Power&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Dormant Power" Reward="1" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Boots of the Chosen&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Dormant Power" Reward="2" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Slippers of the Chosen&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Dormant Power" Reward="3" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Footpads of the Chosen&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Dormant Power" Reward="4" Npc="Brougan Grote" X="6025.485" Y="827.7359" Z="3079.525" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Sabatons of the Chosen&quot;)" />
 			 </If>
 		</If>

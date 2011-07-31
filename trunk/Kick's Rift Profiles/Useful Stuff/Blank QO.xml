@@ -114,18 +114,22 @@
 		<If Condition="HasQuest(&quot;&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 		<TurnInQuest 
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 		<TurnInQuest 
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 		<TurnInQuest 
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 		<TurnInQuest 
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip &quot;)" />
 			 </If>
 		</If>
