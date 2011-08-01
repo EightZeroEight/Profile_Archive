@@ -2792,23 +2792,6 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Aelfwar Stoneroot</Mob>
-			  <Mob>Aelfwar Mystic</Mob>
-			  <Mob>Aelfwar Defender</Mob>
-			</Mobs>
-			<Hotspots>
-			  <Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
-			  <Hotspot X="6418.837" Y="909.702" Z="3139.833" />
-			  <Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
-			  <Hotspot X="6290.473" Y="867.1844" Z="3144.907" />
-			  <Hotspot X="6279.364" Y="879.2234" Z="3040.441" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
 		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="2">
 		  <Area>
 			<Mobs>
@@ -2820,6 +2803,21 @@
 			  <Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
 			  <Hotspot X="6418.837" Y="909.702" Z="3139.833" />
 			  <Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Aelfwar Monstrosities" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Aelfwar Defender</Mob>
+			</Mobs>
+			<Hotspots>
+			  <Hotspot X="6379.762" Y="895.1133" Z="3206.53" />
+			  <Hotspot X="6418.837" Y="909.702" Z="3139.833" />
+			  <Hotspot X="6382.424" Y="895.9774" Z="3176.208" />
+			  <Hotspot X="6290.473" Y="867.1844" Z="3144.907" />
+			  <Hotspot X="6279.364" Y="879.2234" Z="3040.441" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>

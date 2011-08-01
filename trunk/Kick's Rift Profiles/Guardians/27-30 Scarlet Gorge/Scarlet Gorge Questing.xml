@@ -120,18 +120,22 @@
 		<If Condition="HasQuest(&quot;Going Up&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Going Up" Reward="1" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Court Spaulders&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Going Up" Reward="2" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Riverfell Mantle&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Going Up" Reward="3" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Climber's Harness&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Going Up" Reward="4" Npc="Dame Chloe Hisler" X="3936.14" Y="1134.713" Z="2679.227" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mortal Plate&quot;)" />
 			 </If>
 		</If>
@@ -200,18 +204,22 @@
 		<If Condition="HasQuest(&quot;Foul Patrols&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Foul Patrols" Reward="1" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Gorge Chausses&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Foul Patrols" Reward="2" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Crimson Washed Trousers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Foul Patrols" Reward="3" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Demon Slayer's Chaps&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Foul Patrols" Reward="4" Npc="Yannis Violet" X="3834.065" Y="979.7368" Z="2912.681" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ridge Plate Legs&quot;)" />
 			 </If>
 		</If>
@@ -327,18 +335,22 @@
 		<If Condition="HasQuest(&quot;Ensnaring Anima&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Ensnaring Anima" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Doom Rod&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Ensnaring Anima" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Doom Rod&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Ensnaring Anima" Reward="2" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Jezebel&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Ensnaring Anima" Reward="3" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prudence&quot;)" />
 			 </If>
 		</If>
@@ -602,36 +614,44 @@
 		<If Condition="HasQuest(&quot;End of the Endless&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="End of the Endless" Reward="1" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Endless Court Belt&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="End of the Endless" Reward="2" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Angdralthus' Belt&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="End of the Endless" Reward="3" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Lich-Stained Leather Belt&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="End of the Endless" Reward="4" Npc="Hellen Terrellis" X="3851.44" Y="976.2171" Z="3044.208" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Righteous Buckle&quot;)" />
 			 </If>
 		</If>
 		<If Condition="HasQuest(&quot;Reporting Losses&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Reporting Losses" Reward="1" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Memento for the Lost&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Reporting Losses" Reward="1" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Memento for the Lost&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Reporting Losses" Reward="3" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Wheel of the Dead&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Reporting Losses" Reward="2" Npc="Kristan Stern" X="3850.953" Y="974.8193" Z="3050.65" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Dead Luck Charm&quot;)" />
 			 </If>
 		</If>
@@ -716,6 +736,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Colluding with Evil" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Scarlet Chopper&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -858,18 +879,22 @@
 		<If Condition="HasQuest(&quot;Seeing Reason&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Seeing Reason" Reward="3" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Circular Reasoning&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Seeing Reason" Reward="3" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Circular Reasoning&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Seeing Reason" Reward="4" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Band of Truth&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Seeing Reason" Reward="2" Npc="Anla Helmfast" X="4276.029" Y="955.5284" Z="3463.366" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ring of Doubt&quot;)" />
 			 </If>
 		</If>
@@ -877,18 +902,22 @@
 		<If Condition="HasQuest(&quot;Planar Invaders&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="Planar Invaders" Reward="1" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rock Ridge Sabatons&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
 	<TurnInQuest Name="Planar Invaders" Reward="2" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rock Ridge Slippers&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Planar Invaders" Reward="3" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rock Ridge Boots&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
 	<TurnInQuest Name="Planar Invaders" Reward="4" Npc="Sir Reginald Gaunt" X="4274.038" Y="955.5284" Z="3463.007" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Rock Ridge Schynbalds&quot;)" />
 			 </If>
 		</If>
