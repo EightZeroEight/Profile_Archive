@@ -1398,6 +1398,7 @@
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="She's Lived Long Enough" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+		</If>
 	<PickUpQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="The Iron Pine Butcher" Npc="Arthur Roames" X="4608.433" Y="1106.585" Z="2741.176" />
 	<PickUpQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
