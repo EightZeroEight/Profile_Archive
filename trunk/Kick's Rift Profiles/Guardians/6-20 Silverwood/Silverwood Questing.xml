@@ -1300,22 +1300,15 @@
 		</UseItemOnMobsObjective>
 		-->
 
-		<!-- This Quest Doesn't work properly.  Use the objects x2, then interactwith (no gossip needed) the spirit guide ('save the spirit guide' is the tracking) -->
+		<!-- These changes are untested -->
 		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
-			<Python Statement="Logging.Write(&quot;This quest also doesn't work correctly.  use the 2 gameobjects and then interactwith the spirit guide&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
+  			  <MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
+		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6583.324, 820.7825, 3630.43)) &lt; 10*10">
+			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
+			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
+         </If>
+			<TalkToNpcObjective Quest="Saving the Spirit Guide" Npc="Spirit Guide" X="6583.324" Y="820.7825" Z="3630.43" Options="1" Tracking="1" />
 		</If>
-
-		<UseObjectsObjective Quest="Saving the Spirit Guide" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Binding Point</Object>
-			</Objects>
-			<Hotspots>
-			  <Hotspot X="6583.324" Y="820.7825" Z="3630.43" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
 
 		  <!-- and is not completed doesn't work properly.  When it does, move quest before spirit guide -->
 		<If Condition="((HasQuest(&quot;The Perfect Specimen&quot;)) and (not IsQuestCompleted(&quot;The Perfect Specimen&quot;)))">
@@ -1354,18 +1347,14 @@
    <PickUpQuest Name="Further Exploration" Npc="Furias Talwin" X="6507.19" Y="828.389" Z="3290.398" />
     <!-- To Silver Landing Quest -->
 
-		<!-- another 'use gameobject and gossip with npc' quest.  the usegameobject doesn't go to next tracking -->
-		<UseObjectsObjective Quest="The Altar of Reflection" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Altar of Reflection</Object>
-			</Objects>
-			<Hotspots>
-			  <Hotspot X="6530.395" Y="830.6285" Z="3255.836" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
-		<!-- Gossip with Npc="Spirit Guide" X="6527.509" Y="830.4241" Z="3255.887" to complete Quest -->
+		<!-- These changes are untested -->
+		<If Condition="HasQuest(&quot;The Altar of Reflection&quot;)">
+  			  <MoveTo X="6530.395" Y="830.6285" Z="3255.836" />
+		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6530.395, 830.6285, 3255.836)) &lt; 10*10">
+			<UseObject Name="Binding Point" X="6530.395" Y="830.6285" Z="3255.836" />
+         </If>
+			<TalkToNpcObjective Quest="The Altar of Reflection" Npc="Spirit Guide" X="6530.395" Y="830.6285" Z="3255.836" Options="1" Tracking="1" />
+		</If>
 
     <!-- for some reason when you turn in this quest, you spin in circles -->
 		<If Condition="HasQuest(&quot;The Altar of Reflection&quot;)">
@@ -1701,7 +1690,6 @@
     <!-- End of Sanctum Watch Quests -->
 
     <!-- Treant's Grove Quests -->
-    <!-- interactwith gameobject Altar of Reflection to summon the Spirit Guide for each turnin (and it should be avail at pickups) - Hawker / Main / etc, have fun fixing this chain -->
 		<If Condition="HasQuest(&quot;The Awakened Grove&quot;)">
 			<UseObject Name="Altar of Reflection" X="6780.289" Y="839.1034" Z="3153.032" />
 	<TurnInQuest Name="The Awakened Grove" Npc="Spirit Guide" X="6780.289" Y="839.1034" Z="3153.032" />
@@ -1931,7 +1919,6 @@
 
     <!-- Point Solitude Quest -->
     <PickUpQuest Name="Lost in Solitude" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
-    <!-- Here's that interactwith object (Altar of Insight), then turnin quest type again! -->
 		<If Condition="HasQuest(&quot;Lost in Solitude&quot;)">
  			<UseObject Name="Altar of Insight" X="7179.341" Y="885.3551" Z="2944.73" />
     <TurnInQuest Name="Lost in Solitude" Npc="Spirit Guide" X="7179.341" Y="885.3551" Z="2944.73" />
@@ -2159,9 +2146,7 @@
 	<PickUpQuest Name="Hazers to Hazees" Npc="Murbo Malm" X="5981.471" Y="812.1272" Z="3059.051" />
 		<If Condition="HasQuest(&quot;Hazers to Hazees&quot;)">
 			Objective 1:
-			interactwith Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908" 
-			Gossip: Do you have a Wand of Empowerment?
-			Gossip: Take the wand.
+			<TalkToNpcObjective Quest="Hazers to Hazees" Npc="Samerre Brightridge" X="5944.049" Y="814.991" Z="3151.908"  Options="1,1" Tracking="1" />
 			<Loot the popup window>
 			
 			Objective 2:
@@ -2192,7 +2177,6 @@
 			-->
 
     <!-- Mirror of Ages Quests -->
-    <!-- RunTo Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" and use gameobject Tavra Altar and then turn in quest, get next quest -->
  		<If Condition="HasQuest(&quot;Ask the Elders&quot;)">
  			<UseObject Name="Tavra Altar" X="5718.144" Y="870.6053" Z="2841.199" />
    <TurnInQuest Name="Ask the Elders" Npc="Spirit Guide" X="5718.144" Y="870.6053" Z="2841.199" />
@@ -2745,9 +2729,8 @@
 		<If Condition="HasQuest(&quot;Tete-a-Tete&quot;)">
 			<Wait Seconds="4" />
 			<Escort Npc="Aelfwar Honor Guard" Quest="Tete-a-Tete" Tracking="1" />
-			<!-- <Interactwith Prince Hylas 1 time> Tracking 2 and then quest completes - Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" -->
-			<Python Statement="Logging.Write(&quot;Write code: Interactwith Prince Hylas&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
+			<!-- these changes are untested -->
+			<TalkToNpcObjective Quest="Tete-a-Tete" Npc="Prince Hylas" X="6526.388" Y="943.237" Z="3022.437" Options="1" Tracking="1" />
 		</If>
 
 		<UseObjectsObjective Quest="Remembrance of Things Past" Tracking="1">
@@ -2862,8 +2845,6 @@
     <PickUpQuest Name="Servants of Twyl" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
     <PickUpQuest Name="Remember the Chosen" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
 
-    <!-- there are teleporters here that teleport us to the other towers! too cool! (bot can't use them i don't think). They're called "Faetouched Translocator" and you have to interactwith gameobject them -->
-    <!-- The order of things is done as if I were doing them manually.  If the bot can't interact with the porter after the UseGameObject, then re-arrangement is needed -->
 		<!-- The mesh in the towers may need to be tweaked -->
 		<If Condition="HasQuest(&quot;Remember the Chosen&quot;)">
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="2">
