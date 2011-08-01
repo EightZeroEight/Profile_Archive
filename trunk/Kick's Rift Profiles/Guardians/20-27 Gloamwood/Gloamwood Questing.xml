@@ -30,7 +30,7 @@
     <LoadMesh Name="Gloamwood" />
 
 		<!-- Gloamwood Post Quests (Entrance to Gloamwood) -->
-	<PickUpQuest Name="The Apothecary" Npc="Waykeeper Thil" X="5384.748" Y="954.0096" Z="2705.682" />
+	<PickUpQuest Name="The Apothecary" Npc="Waykeeper Brion" X="5385.407" Y="953.9913" Z="2705.846" />
 	<PickUpQuest Name="A Shadow on the Path" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> <!-- To Gloamwood Pines -->
 	
 		<KillMobsObjective Quest="The Apothecary" Tracking="2">
@@ -1701,8 +1701,6 @@
 	
 			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
-		
-	
 
     <Loop />
   </Tasks>
