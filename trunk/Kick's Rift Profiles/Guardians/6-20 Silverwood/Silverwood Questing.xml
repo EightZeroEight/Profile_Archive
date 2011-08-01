@@ -3219,6 +3219,12 @@
       </GrindArea>
     </GrindTo>
 	
+			<Python Statement="Logging.Write(&quot;End of Line\nYes, I fight for the Users!&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+	
+	
+	
+	
     <Loop />
   </Tasks>
 </Profile>
