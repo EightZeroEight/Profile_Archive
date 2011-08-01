@@ -253,6 +253,7 @@
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
 	<TurnInQuest Name="Offworld Woes" Npc="Orin Bancroft" X="6209.044" Y="831.4424" Z="3866.6" Reward="1" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Hardened Slicer&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
@@ -1825,18 +1826,22 @@
 		<If Condition="HasQuest(&quot;Twisted Horticulture&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Twisted Horticulture" Reward="2" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of Clarity&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Twisted Horticulture" Reward="2" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staff of Clarity&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Twisted Horticulture" Reward="3" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Direwind Blade&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Twisted Horticulture" Reward="4" Npc="Maris Telluria" X="7190.729" Y="871.7161" Z="3033.646" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Heavy Treantcleaver&quot;)" />
 			 </If>
 		</If>
@@ -1893,6 +1898,7 @@
 		  </Area>
 		</KillMobsObjective>
 
+		<!-- hasquest useitem amphibious brew -->
 		<KillMobsObjective Quest="The Mind's Eyes" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -2388,18 +2394,22 @@
 		<If Condition="HasQuest(&quot;Researching Wretched Weeds&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Researching Wretched Weeds" Reward="1" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Reclaimer's Pants&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Researching Wretched Weeds" Reward="2" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Leggings of Focus&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Researching Wretched Weeds" Reward="3" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Cunning Breeches&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Researching Wretched Weeds" Reward="4" Npc="Alene Rifton" X="6051.865" Y="817.238" Z="3054.574" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Ardent Greaves&quot;)" />
 			 </If>
 		</If>
@@ -2458,6 +2468,10 @@
 
 		<!-- This one is haywirey - you have to use the Wand of Grace at the location of a 'Fallen Citizen - but you can't target them.  The bot will path to them on it's own, but then nothin. 
 			I could temp fix it and moveto, useitem, wait 4 sec ... but that's ugly. Maybe UseItemAtNpc/Object Objective  where the bot locates something and then uses the item w/in a range of it -->
+		<If Condition="HasQuest(&quot;Bless the Fallen&quot;)">
+			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 		<UseItemOnMobsObjective Quest="Bless the Fallen" Item="Wand of Grace" CastTime="3" Cooldown="2" WhenDead="True" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -2521,18 +2535,22 @@
 		<If Condition="HasQuest(&quot;The Snarebrush Talon&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Snarebrush Talon" Reward="1" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Evoker's Cord&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="The Snarebrush Talon" Reward="2" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Mudsplattered Wrap&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Snarebrush Talon" Reward="3" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Belt of the Goblinslayer&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="The Snarebrush Talon" Reward="4" Npc="Jerome Drift" X="5940.145" Y="812.1755" Z="3045.017" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Seething Girdle&quot;)" />
 			 </If>
 		</If>
@@ -2692,18 +2710,22 @@
 		<If Condition="HasQuest(&quot;The Power of Life&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="The Power of Life" Reward="1" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Chainmail of Sacrifice&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="The Power of Life" Reward="2" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Robe of the Vigil&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="The Power of Life" Reward="3" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Vindicator's Tunic&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="The Power of Life" Reward="4" Npc="Thelliam Bedstraw" X="5942.058" Y="812.1957" Z="3028.975" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Staunch Chestplate&quot;)" />
 			 </If>
 		</If>
@@ -2980,18 +3002,22 @@
 		<If Condition="HasQuest(&quot;Remember the Chosen&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
     <TurnInQuest Name="Remember the Chosen" Reward="1" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prophet's Waistguard&quot;)" />
 			</If>
 			 <If Condition="Me.Class == UnitClass.Mage">
     <TurnInQuest Name="Remember the Chosen" Reward="2" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prophet's Loop&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Rogue">
     <TurnInQuest Name="Remember the Chosen" Reward="3" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prophet's Belt&quot;)" />
 			 </If>
 			 <If Condition="Me.Class == UnitClass.Warrior">
     <TurnInQuest Name="Remember the Chosen" Reward="4" Npc="Emilyn Summers" X="6418.971" Y="895.0527" Z="3166.429" />
+				<Wait Seconds="2" />
 				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Prophet's Girdle&quot;)" />
 			 </If>
 		</If>
