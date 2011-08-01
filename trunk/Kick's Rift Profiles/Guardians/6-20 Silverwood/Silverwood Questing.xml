@@ -72,34 +72,22 @@
 		</If>
 
 		<If Condition="HasQuest(&quot;The Return&quot;)">
-				<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-				<Python Statement="GigaBot.Stop()" />
-				
-		  <!-- click gossip 1, 2 times per npc
-		  <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="What happened" />
-		  <TalkToNpcObjective Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Text="I am here" />
-		  <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="What happened" />
-		  <TalkToNpcObjective Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Text="We will" />
-		-->
+			<TalkToNpcObjective Quest="The Return" Npc="Sienna Faralon" X="6094.229" Y="820.5621" Z="3982.417" Options="1,1" Tracking="1" />
+			<TalkToNpcObjective Quest="The Return" Npc="Alwin Demler" X="6071.847" Y="820.7329" Z="3998.7" Options="1,1" Tracking="2" />
 		</If>
 
     <TurnInQuest Name="The Return" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
     <PickUpQuest Name="Last Breath" Npc="Captain Glott" X="6103.346" Y="823.1987" Z="4011.844" />
 
 		<If Condition="HasQuest(&quot;Last Breath&quot;)">
-				<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-				<Python Statement="GigaBot.Stop()" />
-				
-		 <!-- click gossip 1, 2 times per npc 
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="Wake Up" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Text="With the" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Text="The Guardian" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6042.759" Y="819.0661" Z="4065.603" Text="We will" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6079.757" Y="819.0661" Z="4073.073"  Text="We will" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Text="We will" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Text="We will" />
-		  <TalkToNpcObjective Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Text="We will" />
-		-->
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1,1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6058.352" Y="818" Z="4043.66" Options="1,1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6038.548" Y="818" Z="4047.186" Options="1,1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6042.759" Y="819.0661" Z="4065.603" Options="1,1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6079.757" Y="819.0661" Z="4073.073"  Options="1,1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6098.454" Y="818" Z="4070.521" Options="1,1" Tracking="1"  />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6113.77" Y="818" Z="4059.406" Options="1,1" Tracking="1" />
+			<TalkToNpcObjective Quest="Last Breath" Npc="Unconscious Guardian" X="6132.797" Y="818" Z="4028.809" Options="1,1" Tracking="1" />
 		</If>
 
     <TurnInQuest Name="Last Breath" Npc="Catelyn Silera" X="6151.334" Y="820.4576" Z="3977.64" />
@@ -2890,13 +2878,15 @@
 		  </Area>
 		</UseObjectsObjective>
 		
- 			<UseObject Name="Faetouched Translocator" X="6569.25" Y="927.1528" Z="3043.729" />
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6569.25, 927.1528, 3043.729)) &lt; 10*10">
+			<UseObject Name="Faetouched Translocator" X="6569.25" Y="927.1528" Z="3043.729" />
+        </If>
 
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="1">
 		  <!-- North -->
 		  <Area>
 			<Objects>
-			  <Object>Bahrlat's Reliquary</Object>
+			  <Object>Bahralt's Reliquary</Object>
 			</Objects>
 			<Hotspots>
 			  <Hotspot X="6492.187" Y="927.0859" Z="2969.544" />
@@ -2904,7 +2894,9 @@
 		  </Area>
 		</UseObjectsObjective>
 		
- 			<UseObject Name="Faetouched Translocator" X="6492.187" Y="927.0859" Z="2969.544" />
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6492.187, 927.0859, 2969.544)) &lt; 10*10">
+			<UseObject Name="Faetouched Translocator" X="6492.187" Y="927.0859" Z="2969.544" />
+        </If>
 
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="6">
 		  <!-- NW -->
@@ -2918,20 +2910,9 @@
 		  </Area>
 		</UseObjectsObjective>
 		
- 			<UseObject Name="Faetouched Translocator" X="6424.586" Y="944.774" Z="3035.864" />
-
-		<UseObjectsObjective Quest="Discordant Spirits" Tracking="1">
-		  <!-- N/NW -->
-		  <!-- this is assuming we can't tower hop.  if we can, move this below the remember the chosen quest chain -->
-		  <Area>
-			<Objects>
-			  <Object>Dehrnal's Table</Object>
-			</Objects>
-			<Hotspots>
-			  <Hotspot X="6470.812" Y="908.4207" Z="2999.938" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6424.586, 944.774, 3035.864)) &lt; 10*10">
+			<UseObject Name="Faetouched Translocator" X="6424.586" Y="944.774" Z="3035.864" />
+        </If>
 
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="5">
 		  <!-- West -->
@@ -2945,7 +2926,9 @@
 		  </Area>
 		</UseObjectsObjective>
 		
- 			<UseObject Name="Faetouched Translocator" X="6406.396" Y="944.7219" Z="3106.686" />
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6406.396, 944.7219, 3106.686)) &lt; 10*10">
+			<UseObject Name="Faetouched Translocator" X="6406.396" Y="944.7219" Z="3106.686" />
+        </If>
 
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="4">
 		  <!-- SW -->
@@ -2959,7 +2942,9 @@
 		  </Area>
 		</UseObjectsObjective>
 		
- 			<UseObject Name="Faetouched Translocator" X="6455.444" Y="944.5909" Z="3152.162" />
+         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6455.444, 944.5909, 3152.162)) &lt; 10*10">
+			<UseObject Name="Faetouched Translocator" X="6455.444" Y="944.5909" Z="3152.162" />
+        </If>
 
 		<UseObjectsObjective Quest="Remember the Chosen" Tracking="3">
 		  <!-- S -->
@@ -2975,7 +2960,6 @@
 		
 		</If>
 
-		<!-- 2x on purpose -->
 		<UseObjectsObjective Quest="Discordant Spirits" Tracking="1">
 		  <!-- N/NW -->
 		  <Area>

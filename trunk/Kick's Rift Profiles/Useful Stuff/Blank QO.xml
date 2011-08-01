@@ -63,6 +63,8 @@
 		</If>
 
         <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(, , )) &lt; 10*10">
+        </If>
+        <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(, , )) &lt; 10*10">
 			<UseObject Name="" 
         </If>
 		<If Condition="HasQuest(&quot;&quot;)">
