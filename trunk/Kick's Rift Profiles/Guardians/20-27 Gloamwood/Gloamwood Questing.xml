@@ -429,7 +429,6 @@
 
 		<!-- Goblin Necklace offers a Quest, dropped from the Nightrock Goblins -->
 	
-		<!-- runto the Forest Altar and use the gameobject -->
 		<If Condition="HasQuest(&quot;A Dangerous Harvest&quot;)">
  			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
        </If>

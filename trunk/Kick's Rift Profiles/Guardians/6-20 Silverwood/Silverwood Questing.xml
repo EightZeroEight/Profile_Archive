@@ -32,6 +32,7 @@
     <LoadMesh Name="Guardian 6-20" />
 
 		<!--Select rewards-->
+		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
 		<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
 	<TurnInQuest Name="A Dim, Dark Eye" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" Reward="3" />
 		  <!--<ElseIf Condition="Me.Class == UnitClass.Rogue">
@@ -47,6 +48,7 @@
 			<Python Statement="Logging.Write(&quot;Please manually turn in the first quest and select the correct reward!&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		  </Else>
+		</If>
 		</If>
 
     <PickUpQuest Name="The Return" Npc="Messenger of the Vigil" X="6071.291" Y="820.4066" Z="3961.944" />
