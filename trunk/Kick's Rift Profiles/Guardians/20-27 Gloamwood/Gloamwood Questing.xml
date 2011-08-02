@@ -462,6 +462,10 @@
 	<PickUpQuest Name="Field Tested, Goblin Approved" Npc="Laenaya Niro" X="5392.703" Y="953.7731" Z="2717.711" /> 
 
 		<!-- Use Item at Range 20-30 yards, or combat useitemon.  I had to do this quest manually -->
+		<If Condition="HasQuest(&quot;Field Tested, Goblin Approved&quot;)">
+			<Python Statement="Logging.Write(&quot;Run around and use the Goblin Venom on goblins, and then kill them&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+		</If>
 		<UseItemOnMobsObjective Quest="Field Tested, Goblin Approved" Item="Goblin Venom" CastTime="3" Cooldown="1" WhenDead="False" Tracking="1">
 		  <Area>
 			<Mobs>
@@ -528,6 +532,26 @@
 	-->
 	<!-- do goblin camps (1), turn in The Waykeeper's Keeper and then 3 / Graul (head 2), then 2, then removing head 3 (cave), then 1 / nizak (head 1) -->
 	
+		<If Condition="HasQuest(&quot;Fire and Venom&quot;)">
+			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
+			<Wait Seconds="2" />
+			<MoveTo X="4916.158" Y="928.3635" Z="2417.971" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<KillMobsObjective Quest="Removing the Head" Tracking="1"> <!-- North -->
+		  <Area>
+			<Mobs>
+			  <Mob>Nizak</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="5006.846" Y="928.4081" Z="2411.685" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
 		<KillMobsObjective Quest="Removing the Head" Tracking="2"> <!-- S / SW -->
 		  <Area>
 			<Mobs>
@@ -538,14 +562,32 @@
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
-
+		
+		<If Condition="HasQuest(&quot;Fire and Venom&quot;)"> 
+			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
+			<Wait Seconds="2" />
+			<MoveTo X="4993.25" Y="982.0694" Z="2237.763" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
+		<If Condition="HasQuest(&quot;Fire and Venom&quot;)">
+			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
+			<Wait Seconds="2" />
+			<MoveTo X="4976.418" Y="928.4117" Z="2374.091" />
+			<Wait Seconds="2" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Waykeeper's Bomb&quot;)" />
+			<Wait Seconds="5" />
+		</If>
+		
 		<KillMobsObjective Quest="Removing the Head" Tracking="3"> <!-- Cave, Central -->
 		  <Area>
 			<Mobs>
 			  <Mob>Buguk</Mob>
 			</Mobs>
 			<Hotspots>
-				
+				<Hotspot X="4982.985" Y="949.6379" Z="2196.051" />
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
@@ -572,16 +614,6 @@
 		  </Area>
 		</KillMobsObjective>
 
-		<KillMobsObjective Quest="Removing the Head" Tracking="1"> <!-- North -->
-		  <Area>
-			<Mobs>
-			  <Mob>Nizak</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="5006.846" Y="928.4081" Z="2411.685" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
 		<!-- Venom-Stained Key offers a Quest! - this has you give the key to a captured civilian -->
 	
 		<!-- if con hasquest Venom-Stained Key - turnin at Npc="Captured Civilian" X="5003.474" Y="983.1315" Z="2250.526" (right beside Graul's Area), then escort him out of the area.  Bot has trouble interacting w/ him because he's in a cage
