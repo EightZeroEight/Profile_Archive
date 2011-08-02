@@ -1304,11 +1304,9 @@
 
 		<!-- These changes are untested -->
 		<If Condition="HasQuest(&quot;Saving the Spirit Guide&quot;)">
-  			  <MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
-		 <If Condition="Vector3.DistanceSqr(Me.Location, Vector3(6583.324, 820.7825, 3630.43)) &lt; 10*10">
+			<MoveTo X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
 			<UseObject Name="Binding Point" X="6583.324" Y="820.7825" Z="3630.43" />
-         </If>
 			<TalkToNpcObjective Quest="Saving the Spirit Guide" Npc="Spirit Guide" X="6583.324" Y="820.7825" Z="3630.43" Options="1" Tracking="1" />
 		</If>
 
