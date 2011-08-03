@@ -661,21 +661,24 @@
 		  -->
 		</If>
 
-	<!--
-	-->
-    <UseObjectsObjective Quest="A Dim, Dark Eye" Tracking="1">
-      <Area>
-        <Objects>
-          <Object>Rift Generator</Object>
-        </Objects>
-        <Hotspots>
-          <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
-          <Hotspot X="811.6838" Y="843.201" Z="891.847" />
-        </Hotspots>
-      </Area>
-    </UseObjectsObjective>
+			<!--
+			-->
+		<UseObjectsObjective Quest="A Dim, Dark Eye" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Rift Generator</Object>
+			</Objects>
+			<Hotspots>
+			  <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
+			  <Hotspot X="811.6838" Y="843.201" Z="891.847" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 	
-    <Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
+		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
+		  <Wait Seconds="15" />
+		</If>
+		<Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
 
 		<!-- if con hasquest The Tyrant - 
 		<KillMobsObjective Quest="The Tyrant" Tracking="2">
