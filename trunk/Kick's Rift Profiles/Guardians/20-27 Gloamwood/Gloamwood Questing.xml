@@ -836,26 +836,18 @@
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
        </If>
 	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
+	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 	<TurnInQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
 	<PickUpQuest Name="Quieting the Beast" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
 		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
-			<MoveTo X="5256.864" Y="987.1636" Z="3074.8" />
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-		<!--
-			interactwith (tracking 2)
-			Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
-			gossip: Quieting the Beast
+			<TalkToNpcObjective Quest="Quieting the Beast" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" Options="1" Tracking="2" />
 
 			<MoveTo X="5142.6" Y="946.6837" Z="3129.284" />
-			Useitem (tracking 3)
-			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Medal of Valor&quot;)" />
+			<Wait Seconds="1" />
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Medal of Valor&quot;)" /> <!-- 3 -->
+			<Wait Seconds="1" />
 
-			<MoveTo X="5190.124" Y="951.0361" Z="3100.165" />
-			interactwith (tracking 1)
-			Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165"
-			gossip: Quieting the Beast
-		-->
+			<TalkToNpcObjective Quest="Quieting the Beast" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" Options="1" Tracking="1" />
 		</If>
 		<!-- if con hasquest Quieting the beast - forcetrain -->
 		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
@@ -881,10 +873,8 @@
 			 </If>
 		</If>
 	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
-	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-
-	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
-	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" />
+	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" /> <!-- is this quest avail earlier? -->
+	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> 
 	
 		<If Condition="HasQuest(&quot;Mysterious Messages&quot;)">
 			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
@@ -913,7 +903,7 @@
 		</UseObjectsObjective>
 		
 		huge fire invasion atm so i can't do anything
-	-->
+		-->
 
 	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<PickUpQuest Name="It Knows No Depths" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
@@ -1105,10 +1095,8 @@
 			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
 			<Wait Seconds="2" />
 			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
-			<Python Statement="Logging.Write(&quot;Bot needs to interactwith npc &quot;)" />
-			<Python Statement="GigaBot.Stop()" />
+			<TalkToNpcObjective Quest="A Burgher with Lies" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" Options="1" Tracking="1" />
 			<!-- Interactwith door - Vault Door
-			<TalkToNpcObjective Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" />
 			<MoveTo X="5252.234" Y="987.0877" Z="3076.445" />
 			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
 			-->

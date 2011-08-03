@@ -72,7 +72,7 @@
        </If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
-			<TalkToNpcObjective Npc=""  Text="" />
+			<TalkToNpcObjective Quest=""  Options="1" Tracking="1" />
 		</If>
 
 		<If Condition="HasQuest(&quot;&quot;)">
