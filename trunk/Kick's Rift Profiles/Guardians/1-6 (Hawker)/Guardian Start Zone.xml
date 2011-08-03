@@ -649,20 +649,8 @@
 			<Wait Seconds="3" />
 			<MoveTo X="828.6042" Y="843.5499" Z="895.4312" />
 			<Wait Seconds="3" />
-		  
-			<!-- we may need some more moveto's so it clears the area from agro 
-			<MoveTo X="825.6334" Y="843.291" Z="878.3607" />
-			<Wait Seconds="3" />
-			<UseObject Name="Rift Generator" X="825.6334" Y="843.291" Z="878.3607" />
-			
-			<MoveTo X="811.6838" Y="843.201" Z="891.847" />
-			<Wait Seconds="3" />
-			<UseObject Name="Rift Generator" X="811.6838" Y="843.201" Z="891.847" />
-		  -->
 		</If>
 
-			<!--
-			-->
 		<UseObjectsObjective Quest="A Dim, Dark Eye" Tracking="1">
 		  <Area>
 			<Objects>
@@ -680,35 +668,26 @@
 		</If>
 		<Escort Npc="Borrin Gammult" Quest="A Dim, Dark Eye" Tracking="2" />
 
-		<!-- if con hasquest The Tyrant - 
-		<KillMobsObjective Quest="The Tyrant" Tracking="2">
+		<UseItemOnMobsObjective Quest="A Dim, Dark Eye" Item="Hammer of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="3">
 		  <Area>
 			<Mobs>
 			  <Mob>Shade of Regulos</Mob>
 			</Mobs>
 			<Hotspots>
-				<Hotspot X="817.5942" Y="843.2152" Z="886.1696" />
+			  <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
+			  <Hotspot X="811.6838" Y="843.201" Z="891.847" />
 			</Hotspots>
 		  </Area>
-		</KillMobsObjective>
-		-->
+		</UseItemOnMobsObjective>
 
-    <UseItemOnMobsObjective Quest="A Dim, Dark Eye" Item="Hammer of the Vigil" CastTime="3" Cooldown="4" WhenDead="True" Tracking="3">
-      <Area>
-        <Mobs>
-          <Mob>Shade of Regulos</Mob>
-        </Mobs>
-        <Hotspots>
-          <Hotspot  X="825.6334" Y="843.291" Z="878.3607" />
-          <Hotspot X="811.6838" Y="843.201" Z="891.847" />
-        </Hotspots>
-      </Area>
-    </UseItemOnMobsObjective>
+		<If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
+			<Wait Seconds="45" />
+		</If>
 
-    <If Condition="HasQuest(&quot;A Dim, Dark Eye&quot;)">
-      <Wait Seconds="45" /> <!-- Video -->
-    </If>
-
+			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
+			<Python Statement="GigaBot.Stop()" />
+			
+	  <!-- Auto Load 6-20 profile.    \..\6-20 Silverwood\Silverwood Questing.xml -->
+			
   </Tasks>
-  <!-- Auto Load 6-20 profile.    ..\6-20\SilverwoodQuesting.xml   at least that's the name it is currently -->
 </Profile>
