@@ -874,11 +874,116 @@
 		</If>
 	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" /> <!-- is this quest avail earlier? -->
-	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> 
 	
+		<!-- Tearfall Creek Quests -->
+	<PickUpQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+		<UseObjectsObjective Quest="Camping by the Creek" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Campfire</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4795.982" Y="1066.751" Z="2734.669" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+	<TurnInQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+
+		<KillMobsObjective Quest="Blood on the Water" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Dusk Bat</Mob>
+			  <Mob>Rotshell Grumbler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
+				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
+				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
+				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
+				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
+				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
+				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
+				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
+				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Blood Flows Downhill" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Rotshell Grumbler</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
+				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
+				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
+				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
+				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
+				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
+				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
+				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
+				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<TurnInQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+		
+		<UseObjectsObjective Quest="Final Rest" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Lusa's Body</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4732.585" Y="1057.227" Z="2700.517" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
+
+	<TurnInQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	
+		<KillMobsObjective Quest="Up the Creek" Tracking="1">
+		  <Area>
+			<Mobs>
+			  <Mob>Mudscale Viper</Mob>
+			  <Mob>Mudscale Bilefang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
+				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
+				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
+				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
+				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+		<KillMobsObjective Quest="Up the Creek" Tracking="2">
+		  <Area>
+			<Mobs>
+			  <Mob>Mudscale Bilefang</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
+				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
+				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
+				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
+				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
+			</Hotspots>
+		  </Area>
+		</KillMobsObjective>
+
+	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
+	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
 		<If Condition="HasQuest(&quot;Mysterious Messages&quot;)">
 			<MoveTo X="4994.621" Y="1074.922" Z="2715.552" />
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
+			<Python Statement="Logging.Write(&quot;Please manually do quest and turn it in&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 		</If>
 		<!-- this won't work for this quest, you'll have to runto and useitem Rubbing Paper, wait, and run to next and stick it in a while.
@@ -905,7 +1010,31 @@
 		huge fire invasion atm so i can't do anything
 		-->
 
+	
 	<TurnInQuest Name="Mysterious Messages" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" /> 
+		<If Condition="HasQuest(&quot;A Family Heirloom&quot;)">
+			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
+	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
+			</If>
+			 <If Condition="Me.Class == UnitClass.Mage">
+	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Rogue">
+	<TurnInQuest Name="A Family Heirloom" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fiona's Chain&quot;)" />
+			 </If>
+			 <If Condition="Me.Class == UnitClass.Warrior">
+	<TurnInQuest Name="A Family Heirloom" Reward="3" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
+				<Wait Seconds="2" />
+				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Thick Iron Chain&quot;)" />
+			 </If>
+		</If>
 	<PickUpQuest Name="It Knows No Depths" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<PickUpQuest Name="Soul Echoes" Npc="Brother Jebiah" X="4608.559" Y="1106.584" Z="2747.586" />
 	<PickUpQuest Name="Millrush Reclamation" Npc="Arthur Roames" X="4608.44" Y="1106.585" Z="2741.176" />
@@ -1047,6 +1176,7 @@
 	<TurnInQuest Name="Undying Shards" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 	<PickUpQuest Name="Death's Defense" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 		<If Condition="HasQuest(&quot;Death's Defense&quot;)">
+			<Wait Seconds="5" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Death Shield&quot;)" />
 			<Wait Seconds="2" />
 		<Escort Npc="Fiona Leone" Quest="Death's Defense" Tracking="1" />
@@ -1084,7 +1214,8 @@
 			  <Object>Expensive Shelf</Object>
 			</Objects>
 			<Hotspots>
-				<Hotspot X="5188.875" Y="951.1003" Z="3097.662" />
+				<Hotspot X="5191.888" Y="951.1044" Z="3097.303" />
+				<Hotspot X="5188.973" Y="951.1044" Z="3094.714" />
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
@@ -1094,7 +1225,8 @@
 		<If Condition="HasQuest(&quot;A Burgher with Lies&quot;)">
 			<MoveTo X="5247.397" Y="987.0558" Z="3078.16" />
 			<Wait Seconds="2" />
-			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" />
+			<!--	sometimes we have the door here... is there a way to say 'if X is near, use it'
+			<UseObject Name="Vault Door" X="5247.397" Y="987.0558" Z="3078.16" /> -->
 			<TalkToNpcObjective Quest="A Burgher with Lies" Npc="Furtho Dragomir" X="5256.864" Y="987.1636" Z="3074.8" Options="1" Tracking="1" />
 			<!-- Interactwith door - Vault Door
 			<MoveTo X="5252.234" Y="987.0877" Z="3076.445" />
@@ -1104,136 +1236,6 @@
 	<TurnInQuest Name="A Burgher with Lies" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
 	<PickUpQuest Name="Secret of the Pines" Npc="Gwyddon Duskenleaf" X="5179.172" Y="952.1046" Z="3228.039" />
 
-		<!-- Tearfall Creek Quests -->
-	<PickUpQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		<UseObjectsObjective Quest="Camping by the Creek" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Campfire</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="4795.982" Y="1066.751" Z="2734.669" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
-	<TurnInQuest Name="Camping by the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<PickUpQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<PickUpQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-
-		<KillMobsObjective Quest="Blood on the Water" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Dusk Bat</Mob>
-			  <Mob>Rotshell Grumbler</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
-				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
-				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
-				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
-				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
-				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
-				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
-				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
-				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
-		<KillMobsObjective Quest="Blood Flows Downhill" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Rotshell Grumbler</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="4813.879" Y="1066.547" Z="2720.103" />
-				<Hotspot X="4843.406" Y="1063.747" Z="2681.593" />
-				<Hotspot X="4810.553" Y="1057.972" Z="2657.698" />
-				<Hotspot X="4818.664" Y="1055.439" Z="2618.874" />
-				<Hotspot X="4830.878" Y="1048.144" Z="2571.585" />
-				<Hotspot X="4816.034" Y="1051.107" Z="2547.499" />
-				<Hotspot X="4844.416" Y="1044.83" Z="2517.049" />
-				<Hotspot X="4880.24" Y="1040.126" Z="2517.907" />
-				<Hotspot X="4864.867" Y="1040.021" Z="2565.779" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
-	<TurnInQuest Name="Blood Flows Downhill" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<TurnInQuest Name="Blood on the Water" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<PickUpQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<PickUpQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		
-		<UseObjectsObjective Quest="Final Rest" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Lusa's Body</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="4732.585" Y="1057.227" Z="2700.517" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
-
-	<TurnInQuest Name="Final Rest" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	
-		<KillMobsObjective Quest="Up the Creek" Tracking="1">
-		  <Area>
-			<Mobs>
-			  <Mob>Mudscale Viper</Mob>
-			  <Mob>Mudscale Bilefang</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
-				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
-				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
-				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
-				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
-		<KillMobsObjective Quest="Up the Creek" Tracking="2">
-		  <Area>
-			<Mobs>
-			  <Mob>Mudscale Bilefang</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot X="4827.358" Y="1051.246" Z="2602.689" />
-				<Hotspot X="4859.59" Y="1042.477" Z="2589.678" />
-				<Hotspot X="4884.809" Y="1038.035" Z="2551.8" />
-				<Hotspot X="4824.536" Y="1050.708" Z="2540.172" />
-				<Hotspot X="4789.962" Y="1051.112" Z="2549.675" />
-			</Hotspots>
-		  </Area>
-		</KillMobsObjective>
-
-	<TurnInQuest Name="Up the Creek" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-	<PickUpQuest Name="A Family Heirloom" Npc="Ral Teralar" X="4845.336" Y="1057.759" Z="2754.621" />
-		<If Condition="HasQuest(&quot;A Family Heirloom&quot;)">
-			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
-	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
-			</If>
-			 <If Condition="Me.Class == UnitClass.Mage">
-	<TurnInQuest Name="A Family Heirloom" Reward="2" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Attuner's Chain&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Rogue">
-	<TurnInQuest Name="A Family Heirloom" Reward="1" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Fiona's Chain&quot;)" />
-			 </If>
-			 <If Condition="Me.Class == UnitClass.Warrior">
-	<TurnInQuest Name="A Family Heirloom" Reward="3" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-				<Wait Seconds="2" />
-				<Python Statement="GigaRift.Chat.ExecuteCommand(&quot;equip Thick Iron Chain&quot;)" />
-			 </If>
-		</If>
-	
-		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Secret of the Pines&quot;)">
   			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1338,13 +1340,13 @@
 			<Hotspots>
 				<Hotspot X="4648.03" Y="1094.742" Z="2899.55" />
 				<!--
+				-->
 				<Hotspot X="4624.829" Y="1090.203" Z="2903.598" />
 				<Hotspot X="4634.119" Y="1091.101" Z="2915.769" />
 				<Hotspot X="4611.22" Y="1094.633" Z="2942.047" />
 				<Hotspot X="4663.469" Y="1094.794" Z="2942.209" />
 				<Hotspot X="4676.081" Y="1094.629" Z="2924.825" />
 				<Hotspot X="4694.552" Y="1095.314" Z="2904.575" />
-				-->
 			</Hotspots>
 		  </Area>
 		</UseObjectsObjective>
@@ -1352,7 +1354,7 @@
 	<TurnInQuest Name="The Light of Jebiah" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<PickUpQuest Name="Cleansing Fire" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 		
-		<!-- Might need some tweaking -->
+		<!-- this quest has major issues -->
 			<!--  Tracking 1 -->
 		<If Condition="HasQuest(&quot;Cleansing Fire&quot;)"> 
 			<MoveTo X="5237.996" Y="939.1862" Z="3175.519" />
@@ -1368,7 +1370,8 @@
 			<MoveTo X="5208.479" Y="955.5005" Z="3221.969" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
-			<MoveTo X="5192.214" Y="958.3904" Z="3228.616" />
+			<Wait Seconds="2" />
+			<MoveTo X="5195.064" Y="957.3527" Z="3221.723" />
 			<Wait Seconds="60" />
 		</If>
 		
@@ -1377,6 +1380,7 @@
 			<MoveTo X="5214.01" Y="974.0383" Z="2939.08" />
 			<Wait Seconds="2" />
 			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;use Cleansing Fire&quot;)" />
+			<Wait Seconds="2" />
 			<MoveTo X="5231.413" Y="976.0449" Z="2926.729" />
 			<Wait Seconds="60" />
 		</If>
@@ -1408,18 +1412,12 @@
 		<!-- Tracking 1 -->
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
 			<MoveTo X="4201.292" Y="1139.27" Z="2916.706" />
-			<Python Statement="Logging.Write(&quot;Please manually do quest&quot;)" />
-			<Python Statement="GigaBot.Stop()" />
-			<!--
 			<Wait Seconds="2" />
-			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Confront the Hag" />
-			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Text="Take your best shot, hag." />
+			<TalkToNpcObjective Npc="Hag" X="4201.292" Y="1139.27" Z="2916.706" Options="1,1" Tracking="1"  />
 			<Wait Seconds="15" />
-			-->
 			<!-- Waiting for port -->
 		</If>
 		
-		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
   			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -1430,7 +1428,6 @@
 	<PickUpQuest Name="Slaying the Shadebent" Npc="Brother Jebiah" X="4608.902" Y="1106.584" Z="2747.921" />
 	<PickUpQuest Name="Purification Ritual" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
 		
-		<!-- -->
 		<If Condition="HasQuest(&quot;Stemming the Darkness&quot;)">
 			<MoveTo X="4744.422" Y="1104.054" Z="2475.055" />
 			<Wait Seconds="2" />
@@ -1623,9 +1620,8 @@
 				</Hotspots>
 			  </Area>
 			</KillMobsObjective>
-			<!-- gossip with Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472"
-				Does the Vigil have need of me?
-				Yes, please.  I must tell the people of Gloamwood Pines the news.
+			<!-- gossip (quest completed)
+			<TalkToNpcObjective Quest="A Woman Scorned" Npc="Messenger of the Vigil" X="4686.682" Y="1200.99" Z="2456.472" Options="1,1" Tracking="2" />
 				<Wait Seconds="15" /> // waiting for port \\
 			-->
 		</If>

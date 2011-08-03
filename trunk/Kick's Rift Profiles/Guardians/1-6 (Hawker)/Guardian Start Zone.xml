@@ -520,9 +520,9 @@
     <TurnInQuest Name="Fields Run Red" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" Reward="5"/>
     <PickUpQuest Name="Rightful Owners" Npc="Marshal Kain" X="1030.569" Y="838.2336" Z="1044.145" />
 
-    <If Condition="HasQuest(&quot;Rightful Owners&quot;)">
-      <Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Flamewrought Bag&quot;)" />
-    </If>
+		<If Condition="HasQuest(&quot;Rightful Owners&quot;)">
+			<Python Statement = "GigaRift.Chat.ExecuteCommand(&quot;equip Flamewrought Bag&quot;)" />
+		</If>
 
     <KillMobsObjective Quest="Rightful Owners" Tracking="1">
       <Area>
