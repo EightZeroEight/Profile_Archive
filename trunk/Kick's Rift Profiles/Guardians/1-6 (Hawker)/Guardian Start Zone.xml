@@ -684,7 +684,7 @@
 			<Wait Seconds="45" />
 		</If>
 
-			<Python Statement="Logging.Write(&quot;End of Line&quot;)" />
+			<Python Statement="Logging.Write(&quot;End of Profile\n\nPlease load the Silverwood Questing Profile and press start&quot;)" />
 			<Python Statement="GigaBot.Stop()" />
 			
 	  <!-- Auto Load 6-20 profile.    \..\6-20 Silverwood\Silverwood Questing.xml -->
