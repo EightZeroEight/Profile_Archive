@@ -281,7 +281,8 @@
 	<PickUpQuest Name="Bleeding Green" Npc="Waykeeper Thil" X="5383.333" Y="954.0413" Z="2708.337" />
 		<!-- RunTo <Hotspot X="5409.1" Y="959.9289" Z="2647.35" /> and interactwith gameobject Forest Altar to summon Laria -->
 		<If Condition="HasQuest(&quot;The Seed of History&quot;)">
- 			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
+  			<MoveTo X="5409.313" Y="959.6286" Z="2648.996" />
+			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
        </If>
 	<TurnInQuest Name="The Seed of History" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<PickUpQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
@@ -430,7 +431,8 @@
 		<!-- Goblin Necklace offers a Quest, dropped from the Nightrock Goblins -->
 	
 		<If Condition="HasQuest(&quot;A Dangerous Harvest&quot;)">
- 			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
+   			<MoveTo X="5409.313" Y="959.6286" Z="2648.996" />
+			<UseObject Name="Forest Altar" X="5409.313" Y="959.6286" Z="2648.996" />
        </If>
 	<TurnInQuest Name="A Dangerous Harvest" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
 	<TurnInQuest Name="Blood on the Roots" Npc="Laria" X="5409.313" Y="959.6286" Z="2648.996" />
@@ -714,6 +716,7 @@
 	<PickUpQuest Name="What Goes Bump in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<TurnInQuest Name="What Goes Bump in the Wood" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
 	<PickUpQuest Name="The Beast of Greybriar Hollow" Npc="Drusk Nightclaw" X="5176.468" Y="951.0075" Z="3102.791" />
+	<PickUpQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 	
 		<!-- Solemn's Outlook again - would this be better up top w/ the first one? -->
 		<KillMobsObjective Quest="Janina's Revenge" Tracking="1">
@@ -736,6 +739,7 @@
 		<!-- To Tearfall Run -->
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Planting Hope&quot;)">
+  			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
        </If>
 	<TurnInQuest Name="Planting Hope" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -765,7 +769,8 @@
 
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Dead Water&quot;)">
- 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+   			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
+			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 		</If>
 	<TurnInQuest Name="Dead Water" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 	<PickUpQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -780,6 +785,20 @@
 			</Hotspots>
 		  </Area>
 		</KillMobsObjective>
+
+		<UseObjectsObjective Quest="Where the Moon Blossoms" Tracking="1">
+		  <Area>
+			<Objects>
+			  <Object>Moon Blossom</Object>
+			</Objects>
+			<Hotspots>
+				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
+				<Hotspot X="4780.575" Y="1100.106" Z="2877.354" />
+				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
+				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
+			</Hotspots>
+		  </Area>
+		</UseObjectsObjective>
 
 		<KillMobsObjective Quest="The Beast of Greybriar Hollow" Tracking="2">
 		  <Area>
@@ -813,6 +832,7 @@
 
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;In Death as in Life&quot;)">
+ 			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
  			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
        </If>
 	<TurnInQuest Name="In Death as in Life" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
@@ -837,7 +857,6 @@
 			gossip: Quieting the Beast
 		-->
 		</If>
-	<PickUpQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 		<!-- if con hasquest Quieting the beast - forcetrain -->
 		<If Condition="HasQuest(&quot;Quieting the Beast&quot;)">
 			<If Condition="GigaRift.Me.Class == UnitClass.Cleric">
@@ -863,20 +882,6 @@
 		</If>
 	<PickUpQuest Name="Trouble in the Wood" Npc="Marshal Oakheart" X="5124.46" Y="946.6212" Z="3212.264" />
 	<TurnInQuest Name="Trouble in the Wood" Npc="Fiona Leone" X="4597.87" Y="1106.589" Z="2745.684" />
-
-		<UseObjectsObjective Quest="Where the Moon Blossoms" Tracking="1">
-		  <Area>
-			<Objects>
-			  <Object>Moon Blossom</Object>
-			</Objects>
-			<Hotspots>
-				<Hotspot X="4743.873" Y="1091.986" Z="2885.355" />
-				<Hotspot X="4780.575" Y="1100.106" Z="2877.354" />
-				<Hotspot X="4585.198" Y="1094.715" Z="2857.391" />
-				<Hotspot X="4547.074" Y="1087.118" Z="2922.058" />
-			</Hotspots>
-		  </Area>
-		</UseObjectsObjective>
 
 	<TurnInQuest Name="Where the Moon Blossoms" Npc="Doctor Oswell" X="5190.124" Y="951.0361" Z="3100.165" />
 	<PickUpQuest Name="Mysterious Messages" Npc="John Tintan" X="5209.101" Y="943.6487" Z="3138.666" />
@@ -1242,7 +1247,8 @@
 	
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;Secret of the Pines&quot;)">
- 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+  			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
+			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 		</If>
 	<TurnInQuest Name="Secret of the Pines" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 		<!-- Deepwood Cottage Quests -->
@@ -1427,7 +1433,8 @@
 		
 		<!-- runto Laria and then use the Forest Altar <Hotspot X="4632.759" Y="1109.963" Z="2736.392" /> -->
 		<If Condition="HasQuest(&quot;She's Lived Long Enough&quot;)">
- 			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
+  			<MoveTo X="4633.705" Y="1109.907" Z="2738.195" />
+			<UseObject Name="Forest Altar" X="4633.705" Y="1109.907" Z="2738.195" />
 	<TurnInQuest Name="She's Lived Long Enough" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
 		</If>
 	<PickUpQuest Name="Stemming the Darkness" Npc="Laria" X="4633.705" Y="1109.907" Z="2738.195" />
